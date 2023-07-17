@@ -6,7 +6,7 @@ import { useState } from 'react'
 import ButtonIcon from '../comum/ButtonIcon'
 
 export default function Header() {
-	const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<header className='lg:py-10 py-5 flex justify-between'>
 			<Link href='/'>
