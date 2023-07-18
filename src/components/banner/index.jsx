@@ -47,7 +47,7 @@ export default function Banner() {
 					<ButtonSocial icon={<FaFacebookF />} />
 					<ButtonSocial
 						icon={<FaWhatsapp />}
-						href='httpa://wa.me/5544998692094'
+						href='https://wa.me/5544998692094'
 					/>
 				</div>
 			</div>

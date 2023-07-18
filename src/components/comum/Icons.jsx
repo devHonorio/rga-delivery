@@ -42,7 +42,7 @@ export const Bolo = ({ className = 'h-5 w-5 ', strokeWidth = 1.5 }) => {
 			viewBox='0 0 24 24'
 			strokeWidth={strokeWidth}
 			stroke='currentColor'
-			class={'w-6 h-6 ' + className}>
+			className={'w-6 h-6 ' + className}>
 			<path
 				strokeLinecap='round'
 				strokeLinejoin='round'
