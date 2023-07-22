@@ -1,6 +1,6 @@
 import { Bolo } from '../comum/Icons'
 import MiniButtonIcon from '../comum/MiniButtonIcon'
-
+import { recheios } from '../../data/bolos/recheios'
 import { PiDropBold } from 'react-icons/pi'
 import { LuCupSoda } from 'react-icons/lu'
 import { RiCake3Line } from 'react-icons/ri'
@@ -15,13 +15,19 @@ export default function CardapioIndex() {
 				<MiniButtonIcon icon={<LuCupSoda />} content='Bebidas' />
 			</nav>
 
-			<div className='flex py-8 gap-4 flex-wrap justify-center '>
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
-				<CardProduct title='Recheio de brigadeiro' value='R$ 30,00/kg' />
+			<div className='py-8 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4  lg:grid-cols-4'>
+				{recheios.map((r) => {
+					return (
+						<CardProduct
+							id={r.id}
+							name={r.name}
+							title={r.title}
+							price={r.price}
+							image={r.image}
+							value={r}
+						/>
+					)
+				})}
 			</div>
 		</main>
 	)

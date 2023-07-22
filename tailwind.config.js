@@ -16,7 +16,17 @@ module.exports = {
 				sans: ['var(--font-poppins)'],
 				mono: ['var(--font-roboto-mono)'],
 			},
-		},
+			animation: {
+				float: 'float 3s linear 0s',
+			},
+			keyframes: {
+				float: {
+					'0%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' },
+					'100%': { transform: 'translateY(0)' },
+				},
+			},
+		}, //animation: float 2s linear 0s infinite alternate both;
 	},
 	plugins: [require('tailwindcss-animated')],
 }

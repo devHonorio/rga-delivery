@@ -1,17 +1,45 @@
-export default function CardProduct({ title, value, image }) {
+import Image from 'next/image'
+import { useState } from 'react'
+
+const className = {
+	label: ' font-medium group',
+	conatainer:
+		'bg-white p-2 rounded-3xl flex flex-col items-center gap-2 shadow-sm md:p-3 hover:bg-orange-400 transition-all ',
+}
+export default function CardProduct({ id, name, title, value, image, price }) {
+	const [checked, setChecked] = useState(false)
+
 	return (
-		<div className='group bg-white flex flex-col basis-28 flex-grow  h-48  md:h-72 md:basis-52 p-3 rounded-3xl shadow-sm justify-between items-center hover:bg-orange-400 cursor-pointer md:flex-grow-0 '>
-			<div className='bg-[url("/bolos/recheios/brigadeiro.jpg")] bg-cover w-full h-48 rounded-3xl mb-2 '></div>
-			<h2 className='font-semibold text-xs text-center mb-1 leading-3 md:text-base '>
-				{title}
-			</h2>
-			<div className='flex '>
-				<button className='hidden'>+</button>
-				<button className='hidden'>-</button>
-				<p className='font-semibold text-orange-500 text-xs md:text-base group-hover:text-white group-hover:font-extrabold'>
-					{value}
+		<label className={className.label} htmlFor={id}>
+			<input
+				type='checkbox'
+				name={name}
+				id={id}
+				checked={checked}
+				onChange={() => {
+					setChecked(!checked)
+				}}
+				className='peer hidden'
+				value={value}
+			/>
+
+			<div className={className.conatainer + 'peer-checked:bg-black'}>
+				<Image
+					width={100}
+					height={100}
+					src={image}
+					alt={title}
+					className='w-full rounded-3xl'
+				/>
+
+				<h2
+					className={`text-xs text-orange-500 font-bold pl-2 group-checked:text-white group-hover:text-white`}>
+					{title}
+				</h2>
+				<p className={`text-sm opacity-70 ${checked && 'text-white'}`}>
+					{price}
 				</p>
 			</div>
-		</div>
+		</label>
 	)
 }

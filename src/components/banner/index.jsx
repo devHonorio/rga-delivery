@@ -58,7 +58,7 @@ export default function Banner() {
 					alt='Bolo decorado bolo fofos'
 					width={400}
 					height={400}
-					className='w-full md:w-1/2 lg:w-full relative z-10'
+					className='animate-float anime w-full md:w-1/2 lg:w-full relative z-10'
 				/>
 				<div className='lg:w-60 lg:h-60 h-40 w-40 md:bg-orange-200 bg-orange-400 rounded-[4.5rem] absolute top-5 right-0 z-0'></div>
 			</div>
