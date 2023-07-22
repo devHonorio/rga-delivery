@@ -12,12 +12,12 @@ export default function Banner() {
 	return (
 		<section className='grid lg:grid-cols-2 lg:py-10'>
 			<div className='flex flex-col justify-center xl:items-start'>
-				<h1 className='lg:text-5xl text-4xl font-medium'>
+				<h1 className='lg:text-5xl text-4xl font-medium animate-fade-right animate-once animate-duration-[900ms] animate-ease-in-out'>
 					Faça seu
 					<br /> pedido{' '}
 					<span className='font-semibold text-orange-400'>favorito.</span>
 				</h1>
-				<p className='mt-4 text-gray-600 text-sm'>
+				<p className='mt-4 text-gray-600 text-sm animate-fade animate-once animate-duration-[2s] animate-ease-in-out animate-normal'>
 					Aproveite nosso cardapio, escolha o que desejar e receba em sua casa
 					de forma rápida e segura
 				</p>
