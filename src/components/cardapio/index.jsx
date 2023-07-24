@@ -55,9 +55,10 @@ export default function CardapioIndex() {
 			</nav>
 
 			<ContainerCardapio className={navCardapio !== 'Bolos' && 'hidden'}>
-				{produtos.recheios.map((r) => {
+				{produtos.recheios.map((r, i) => {
 					return (
 						<CardProduct
+							key={i}
 							id={r.id}
 							title={r.title}
 							price={r.price}
@@ -67,10 +68,12 @@ export default function CardapioIndex() {
 					)
 				})}
 			</ContainerCardapio>
+
 			<ContainerCardapio className={navCardapio !== 'Salgados' && 'hidden'}>
-				{produtos.recheios.map((d) => {
+				{produtos.recheios.map((d, i) => {
 					return (
 						<CardProduct
+							key={i}
 							id={d.id}
 							title={d.title}
 							price={d.price}
@@ -80,10 +83,12 @@ export default function CardapioIndex() {
 					)
 				})}
 			</ContainerCardapio>
+
 			<ContainerCardapio className={navCardapio !== 'Doces' && 'hidden'}>
-				{produtos.doces.tradicionais.map((r) => {
+				{produtos.doces.tradicionais.map((r, i) => {
 					return (
 						<CardProduct
+							key={i}
 							id={r.id}
 							title={r.title}
 							price={r.price}
@@ -93,10 +98,12 @@ export default function CardapioIndex() {
 					)
 				})}
 			</ContainerCardapio>
+
 			<ContainerCardapio className={navCardapio !== 'Bebidas' && 'hidden'}>
-				{produtos.recheios.map((r) => {
+				{produtos.recheios.map((r, i) => {
 					return (
 						<CardProduct
+							key={i}
 							id={r.id}
 							title={r.title}
 							price={r.price}
@@ -106,11 +113,13 @@ export default function CardapioIndex() {
 					)
 				})}
 			</ContainerCardapio>
+
 			<ContainerCardapio
 				className={navCardapio !== 'Bolo de forma' && 'hidden'}>
-				{produtos.recheios.map((r) => {
+				{produtos.recheios.map((r, i) => {
 					return (
 						<CardProduct
+							key={i}
 							id={r.id}
 							title={r.title}
 							price={r.price}
