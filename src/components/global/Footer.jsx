@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Title from '../comum/Title'
+
 import Informacoes from '../comum/Informacoes'
 import ButtonSocial from '../comum/ButtonSocial'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'

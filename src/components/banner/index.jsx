@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 
 export default function Banner() {
 	const router = useRouter()
+
 	return (
 		<section className='grid lg:grid-cols-2 lg:py-10'>
 			<div className='flex flex-col justify-center xl:items-start'>

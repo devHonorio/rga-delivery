@@ -34,11 +34,11 @@ export default function CardProduct({ id, name, title, value, image, price }) {
 				/>
 
 				<h2
-					className={`text-xs text-orange-500 font-bold pl-2 group-checked:text-white group-hover:text-white`}>
+					className={`text-xs text-orange-500 font-bold pl-2 lg:text-base group-checked:text-white group-hover:text-white`}>
 					{title}
 				</h2>
 				<p className={`text-sm opacity-70`}>
-					<span className={`${checked && 'hidden'}`}>{price}</span>
+					<span className={`${checked && 'hidden'} lg:text-xl`}>{price}</span>
 
 					<span
 						className={`${
