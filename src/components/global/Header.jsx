@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Bag, Menu } from '../comum/Icons'
 import { useState } from 'react'
 import ButtonIcon from '../comum/ButtonIcon'
+import Modal from '../cardapio/carrinho/Modal'
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)

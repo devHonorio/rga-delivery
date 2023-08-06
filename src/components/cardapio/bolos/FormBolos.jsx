@@ -7,9 +7,9 @@ export default function FormBolos({ className }) {
 	const [bolos, setBolos] = useState({})
 	return (
 		<form className={` mt-20 flex flex-col items-center gap-8  ${className}`}>
-			<Peso />
-			<InputRecheio />
-			<Formato />
+			<Peso className={`hidden`} />
+			<InputRecheio className={``} />
+			<Formato className={`hidden`} />
 		</form>
 	)
 }

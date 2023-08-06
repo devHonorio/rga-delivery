@@ -2,9 +2,9 @@ import Button from './Button'
 import InputBento from './InputBento'
 import InputBolos from './InputBolos'
 
-export default function Peso() {
+export default function Peso({ className }) {
 	return (
-		<div className='hidden flex-col items-center gap-6'>
+		<div className={`flex flex-col items-center gap-6 ${className}`}>
 			<InputBolos />
 			<InputBento />
 			<Button content={'Avançar'} />
