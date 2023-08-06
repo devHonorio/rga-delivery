@@ -6,7 +6,7 @@ export default function InputBolos({ bento }) {
 		<div className={`flex flex-col w-full items-center gap-9`}>
 			<label
 				htmlFor='peso'
-				className='text-center text-6xl font-semibold animate-fade-left animate-duration-[400ms] animate-ease-in animate-fill-forwards'>
+				className='mt-10 text-center text-3xl font-semibold animate-fade-left animate-duration-[400ms] animate-ease-in animate-fill-forwards'>
 				Quantos quilos(kg) gostaria ?
 			</label>
 			<label
