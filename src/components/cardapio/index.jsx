@@ -11,7 +11,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import FormBolos from './bolos/FormBolos'
 export default function CardapioIndex() {
-	const [navCardapio, setNavCardapio] = useState('Salgados')
+	const [navCardapio, setNavCardapio] = useState('Bolos')
 
 	return (
 		<main className='py-10'>

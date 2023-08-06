@@ -1,6 +1,6 @@
+import { Check } from '@/components/comum/Icons'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Check } from '../comum/Icons'
 import { toast } from 'react-toastify'
 
 const className = {
@@ -8,7 +8,17 @@ const className = {
 	conatainer:
 		'bg-white p-2 rounded-3xl flex flex-col items-center gap-2 shadow-sm md:p-3 hover:bg-orange-400 transition-all animate-fade animate-once animate-duration-[1s] animate-ease-in-out animate-normal cursor-pointer ',
 }
-export default function CardProduct({ id, name, title, value, image, price }) {
+export default function CardBolo({
+	id,
+	name,
+	title,
+	value,
+	image,
+	price,
+	addRecheio,
+	removeRecheio,
+	tamanho,
+}) {
 	const [checked, setChecked] = useState(false)
 
 	return (
@@ -22,8 +32,16 @@ export default function CardProduct({ id, name, title, value, image, price }) {
 					setChecked(!checked)
 					if (checked) {
 						toast.error('Recheio Removido')
+						removeRecheio(value)
 					} else {
 						toast.success('Recheio adicionado')
+						addRecheio(value)
+						if (tamanho()) {
+							removeRecheio(value)
+							alert('Pode ser escolhido apenas 2 recheios')
+							setChecked(false)
+							toast.error('Recheio Removido')
+						}
 					}
 				}}
 				className='peer hidden'
