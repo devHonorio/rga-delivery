@@ -4,10 +4,11 @@ import Link from 'next/link'
 import { Bag, Menu } from '../comum/Icons'
 import { useState } from 'react'
 import ButtonIcon from '../comum/ButtonIcon'
-import Modal from '../cardapio/carrinho/Modal'
+import { useRouter } from 'next/router'
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
+	const router = useRouter()
 	return (
 		<header className='lg:py-10 py-5 flex justify-between'>
 			<Link href='/'>
@@ -25,6 +26,7 @@ export default function Header() {
 					icon={<Bag strokeWidth={1.5} className={'h-5 w-5 '} />}
 					content='Meu pedido'
 					align='flex-row-reverse'
+					href={'/carrinho'}
 				/>
 				<button onClick={() => setIsOpen(!isOpen)} className='lg:hidden'>
 					<Menu className='h-6 w-6' />

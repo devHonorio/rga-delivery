@@ -40,6 +40,7 @@ export default function Banner() {
 								/>
 							}
 							content='(44) 9 9869204'
+							href={'tel:5544998692094'}
 						/>
 					</a>
 				</div>
