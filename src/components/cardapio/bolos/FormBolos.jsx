@@ -1,13 +1,18 @@
 import Peso from './Peso'
 import InputRecheio from './InputRecheio'
 import Formato from './Formato'
+import { useState } from 'react'
 
 export default function FormBolos({ className }) {
+	const [nav, setNav] = useState('peso')
 	return (
-		<form className={` mt-20 flex flex-col items-center gap-8  ${className}`}>
-			<Peso className={``} />
-			<InputRecheio className={`hidden`} />
-			<Formato className={`hidden`} />
+		<form className={`flex flex-col items-center gap-8  ${className}`}>
+			<Peso className={`${nav !== 'peso' && 'hidden'}`} nav={setNav} />
+			<InputRecheio
+				className={`${nav !== 'recheio' && 'hidden'}`}
+				nav={setNav}
+			/>
+			<Formato className={`${nav !== 'formato' && 'hidden'}`} nav={setNav} />
 		</form>
 	)
 }

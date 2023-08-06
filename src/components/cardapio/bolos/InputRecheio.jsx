@@ -4,7 +4,7 @@ import ContainerCardapio from '../ContainerCardapio'
 import Button from './Button'
 import CardBolo from './CardBolo'
 
-export default function InputRecheio({ className }) {
+export default function InputRecheio({ className, nav }) {
 	const listaRecheio = []
 
 	function addRecheio(recheio) {
@@ -44,8 +44,8 @@ export default function InputRecheio({ className }) {
 				})}
 			</ContainerCardapio>
 			<div className={`flex gap-5`}>
-				<Button content={'Voltar'} />
-				<Button content={'Avançar'} />
+				<Button content={'Voltar'} nav={() => nav('peso')} />
+				<Button content={'Avançar'} nav={() => nav('formato')} />
 			</div>
 		</div>
 	)

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from './Button'
 
-export default function Formato({ className }) {
+export default function Formato({ className, nav }) {
 	const [formato, setFormato] = useState('retangular')
 	return (
 		<div className={`flex flex-col items-center gap-10  ${className}`}>
@@ -54,7 +54,7 @@ export default function Formato({ className }) {
 				</label>
 			</div>
 			<div className={`flex gap-5`}>
-				<Button content={'Voltar'} />
+				<Button content={'Voltar'} nav={() => nav('recheio')} />
 				<Button content={'Adicionar ao carrinho'} />
 			</div>
 		</div>
