@@ -4,6 +4,7 @@ import CardProduct from '../cardProduct'
 import Button from './Button'
 
 export default function InputRecheio({ className }) {
+	const listaRecheio = []
 	return (
 		<div className={`flex flex-col items-center gap-5 ${className}`}>
 			<ContainerCardapio className={`grid`}>
@@ -17,6 +18,7 @@ export default function InputRecheio({ className }) {
 							price={recheio.price}
 							image={recheio.image}
 							key={i}
+							recheios={listaRecheio}
 						/>
 					)
 				})}

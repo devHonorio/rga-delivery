@@ -13,9 +13,9 @@ export default function Navigation({ isOpen, setIsOpen }) {
 				<Close className='h-6 w-6' />
 			</button>
 			<Nlink href='/' content='Home' className='lg:hidden' />
-			<Nlink href='/cardapio' content='Cardapio' />
+			<Nlink href='/Cardapio' content='Cardapio' />
 			<Nlink href='/reservas' content='Reservas' />
-			<Nlink href='depoimentos' content='Depoimentos' />
+			<Nlink href='/pedidos' content='Meus pedidos' />
 		</nav>
 	)
 }

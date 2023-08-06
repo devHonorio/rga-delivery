@@ -19,7 +19,7 @@ export const produtos = {
 			type: 'recheio',
 			title: 'Recheio de abacaxi',
 			price: 'R$ 30,00/kg',
-			image: '/bolos/recheios/abacaxi.png',
+			image: '/bolos/recheios/abacaxi.jpg',
 		},
 		,
 		{
@@ -51,7 +51,7 @@ export const produtos = {
 			type: 'recheio',
 			title: 'Recheio de doce de leite',
 			price: 'R$ 30,00/kg',
-			image: '/bolos/recheios/doceDeLeite.png',
+			image: '/bolos/recheios/doceDeLeite.jpg',
 		},
 	],
 	doces: {

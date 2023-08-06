@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function ButtonIcon({ icon, content, align, href }) {
+export default function ButtonIcon({ icon, content, align, href = '' }) {
 	return (
 		<Link
 			href={href}

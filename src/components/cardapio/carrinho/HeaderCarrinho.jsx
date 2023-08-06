@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Bolinha from './Bolinha'
 
 export default function HeaderCarrinho() {
@@ -16,9 +17,11 @@ export default function HeaderCarrinho() {
 				<p className='font-bold mt-6 text-xl'>Seu carrinho:</p>
 			</div>
 
-			<button className='rounded-2xl font-semibold text-gray-600 shadow-md bg-white w-24 h-12'>
+			<Link
+				href={'/'}
+				className='flex items-center justify-center rounded-2xl font-semibold text-gray-600 shadow-md bg-white w-24 h-12'>
 				Fechar
-			</button>
+			</Link>
 		</div>
 	)
 }

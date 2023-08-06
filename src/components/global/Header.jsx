@@ -4,11 +4,10 @@ import Link from 'next/link'
 import { Bag, Menu } from '../comum/Icons'
 import { useState } from 'react'
 import ButtonIcon from '../comum/ButtonIcon'
-import { useRouter } from 'next/router'
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
-	const router = useRouter()
+
 	return (
 		<header className='lg:py-10 py-5 flex justify-between'>
 			<Link href='/'>

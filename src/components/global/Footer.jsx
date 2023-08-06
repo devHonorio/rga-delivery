@@ -27,15 +27,32 @@ export default function Footer() {
 					href='https://goo.gl/maps/p7LuYRSPTTTNKHi96'
 				/>
 
-				<Informacoes title='Contato' description='(44) 9 9869204' />
+				<Informacoes
+					title='Contato'
+					description='(44) 9 9869204'
+					href={'tel:5546988158699'}
+				/>
 
-				<Informacoes title='Instagram' description='@rga_doces_e_salgados' />
+				<Informacoes
+					title='Instagram'
+					description='@rga_doces_e_salgados'
+					href={'https://www.instagram.com/rga_doces_e_salgados/'}
+				/>
 			</div>
 
 			<div className='flex items-center justify-center gap-4 mt-20'>
-				<ButtonSocial icon={<FaInstagram />} />
-				<ButtonSocial icon={<FaFacebookF />} />
-				<ButtonSocial icon={<FaWhatsapp />} />
+				<ButtonSocial
+					icon={<FaInstagram />}
+					href={'https://www.instagram.com/rga_doces_e_salgados/'}
+				/>
+				<ButtonSocial
+					icon={<FaFacebookF />}
+					href={'https://www.facebook.com/profile.php?id=100057216799863'}
+				/>
+				<ButtonSocial
+					icon={<FaWhatsapp />}
+					href={'https://wa.me/5546988158699'}
+				/>
 			</div>
 		</footer>
 	)

@@ -15,7 +15,7 @@ export default function Banner() {
 			<div className='flex flex-col justify-center xl:items-start'>
 				<h1 className='lg:text-5xl text-4xl font-medium animate-fade-right animate-once animate-duration-[900ms] animate-ease-in-out'>
 					Faça seu
-					<br /> pedido{' '}
+					<br /> pedido
 					<span className='font-semibold text-orange-400'>favorito.</span>
 				</h1>
 				<p className='mt-4 text-gray-600 text-sm animate-fade animate-once animate-duration-[2s] animate-ease-in-out animate-normal'>
@@ -28,28 +28,33 @@ export default function Banner() {
 						content='Ver cardápio'
 						bgColor='orange-400'
 						color='white'
-						onClick={() => router.push('/cardapio')}
+						onClick={() => router.push('/Cardapio')}
 					/>
-					<a type='button' href='tel:5544998692094'>
-						<ButtonIcon
-							icon={
-								<Phone
-									strokeWidth={1.5}
-									className={'h-5 w-5'}
-									aling='flex-row-reverse'
-								/>
-							}
-							content='(44) 9 9869204'
-							href={'tel:5544998692094'}
-						/>
-					</a>
+
+					<ButtonIcon
+						icon={
+							<Phone
+								strokeWidth={1.5}
+								className={'h-5 w-5'}
+								aling='flex-row-reverse'
+							/>
+						}
+						content='(44) 9 9869204'
+						href={'tel:5544998692094'}
+					/>
 				</div>
 				<div className='flex gap-4 mt-8 justify-center'>
-					<ButtonSocial icon={<FaInstagram />} />
-					<ButtonSocial icon={<FaFacebookF />} />
+					<ButtonSocial
+						icon={<FaInstagram />}
+						href={'https://www.instagram.com/rga_doces_e_salgados/'}
+					/>
+					<ButtonSocial
+						icon={<FaFacebookF />}
+						href={'https://www.facebook.com/profile.php?id=100057216799863'}
+					/>
 					<ButtonSocial
 						icon={<FaWhatsapp />}
-						href='https://wa.me/5544998692094'
+						href='https://wa.me/5546988158699'
 					/>
 				</div>
 			</div>
