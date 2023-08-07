@@ -1,4 +1,4 @@
-export default function InputBento({ bento, setBento }) {
+export default function InputBento({ bento, setBento, setPesoBolo }) {
 	return (
 		<div className={`flex items-center `}>
 			<label
@@ -16,6 +16,7 @@ export default function InputBento({ bento, setBento }) {
 				className={`appearance-none`}
 				onChange={() => {
 					setBento(!bento)
+					setPesoBolo(0.6)
 				}}
 			/>
 			<span

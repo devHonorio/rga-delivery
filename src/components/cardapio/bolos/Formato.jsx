@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 export default function Formato({ className, nav }) {
 	const [formato, setFormato] = useState('retangular')
+	const router = useRouter()
 	return (
-		<div className={`flex flex-col items-center gap-10  ${className}`}>
-			<h2 className='text-5xl'>Escolha um formato.</h2>
-			<ul>
+		<div
+			className={`flex flex-col gap-10  xl:w-7/12 w-10/12 m-auto ${className}`}>
+			<h2 className='text-4xl mt-5'>Escolha um formato.</h2>
+			<ul className='flex flex-col gap-2'>
 				<li className={`text-gray-800`}>
 					- Atenção, bolos redondos somente até <strong>3,5kg</strong>.
 				</li>
@@ -20,7 +23,7 @@ export default function Formato({ className, nav }) {
 				</li>
 			</ul>
 
-			<div className={`flex gap-8`}>
+			<div className={`flex gap-5`}>
 				<input
 					type='radio'
 					name='formato'
@@ -29,13 +32,13 @@ export default function Formato({ className, nav }) {
 				/>
 				<label htmlFor='retangular'>
 					<div
-						className={`h-36 w-36 border ${
+						className={`h-24 w-24 border ${
 							formato === 'retangular'
 								? 'bg-orange-500 border-white'
 								: 'border-orange-500 bg-white'
 						}  rounded-xl flex items-center justify-center`}>
 						<div
-							className={`h-14 w-28 border ${
+							className={`h-10 w-14 font-bold border ${
 								formato === 'retangular'
 									? 'border-white text-white'
 									: 'border-orange-500'
@@ -46,15 +49,21 @@ export default function Formato({ className, nav }) {
 				</label>
 				<input type='radio' name='formato' id='redondo' className={`hidden`} />
 				<label htmlFor='redondo'>
-					<div className='h-36 w-36 border border-orange-500 bg-white rounded-xl flex items-center justify-center'>
-						<div className='h-28 w-28 border border-orange-500 rounded-full flex justify-center items-center'>
+					<div className='h-24 w-24 border border-orange-500 bg-white rounded-xl flex items-center justify-center'>
+						<div className='h-16 w-16 font-bold border border-orange-500 rounded-full flex justify-center items-center'>
 							Redondo
 						</div>
 					</div>
 				</label>
 			</div>
 			<div className={`flex gap-5`}>
-				<Button content={'Voltar'} nav={() => nav('recheio')} />
+				<Button
+					content={'Voltar'}
+					nav={() => {
+						nav('recheio')
+						router.push('#header')
+					}}
+				/>
 				<Button content={'Adicionar ao carrinho'} />
 			</div>
 		</div>

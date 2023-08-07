@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-export default function InputBolos({ bento }) {
-	const [peso, setPeso] = useState(1.5)
+export default function InputBolos({ bento, pesoBolo, setPesoBolo }) {
 	return (
 		<div className={`flex flex-col w-full items-center gap-9`}>
 			<label
@@ -11,7 +10,9 @@ export default function InputBolos({ bento }) {
 			</label>
 			<label
 				htmlFor='peso'
-				className={`flex  rounded-3xl items-baseline shadow-md`}>
+				className={`flex h-14 w-full items-center rounded-2xl px-7 font-semibold shadow-sm ${
+					bento ? 'bg-gray-50' : 'bg-white'
+				}`}>
 				<input
 					type='number'
 					inputMode='numeric'
@@ -20,15 +21,15 @@ export default function InputBolos({ bento }) {
 					max={6}
 					id='peso'
 					placeholder={`1,5`}
-					className={` font-semibold peer pl-7 text-3xl w-full py-4 outline-none rounded-l-3xl disabled:bg-gray-100 disabled:cursor-not-allowed [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+					className={`text-2xl  flex-1 outline-none bg-transparent disabled:cursor-not-allowed [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
 					required
 					disabled={bento}
-					value={bento ? 0.6 : peso}
-					onChange={(e) => setPeso(e.target.value)}
+					value={pesoBolo}
+					onChange={(e) => {
+						setPesoBolo(e.target.value)
+					}}
 				/>
-				<div className=' font-semibold  text-2xl pr-7 pt-6 pb-[1.3rem] bg-white text-gray-500 rounded-r-3xl peer-disabled:bg-gray-100 '>
-					kg
-				</div>
+				<span className='peer-disabled:bg-gray-100 '>kg</span>
 			</label>
 		</div>
 	)

@@ -3,6 +3,7 @@ import ContainerCardapio from '../ContainerCardapio'
 
 import Button from './Button'
 import CardBolo from './CardBolo'
+import { useRouter } from 'next/router'
 
 export default function InputRecheio({ className, nav }) {
 	const listaRecheio = []
@@ -22,10 +23,10 @@ export default function InputRecheio({ className, nav }) {
 	function tamanho() {
 		return listaRecheio.length > 2 ? true : false
 	}
-
+	const router = useRouter()
 	return (
 		<div className={`flex flex-col items-center gap-5 ${className}`}>
-			<ContainerCardapio className={`grid`}>
+			<ContainerCardapio className={`grid`} id={'recheio'}>
 				{produtos.recheios.map((recheio, i) => {
 					return (
 						<CardBolo
@@ -44,8 +45,20 @@ export default function InputRecheio({ className, nav }) {
 				})}
 			</ContainerCardapio>
 			<div className={`flex gap-5`}>
-				<Button content={'Voltar'} nav={() => nav('peso')} />
-				<Button content={'Avançar'} nav={() => nav('formato')} />
+				<Button
+					content={'Voltar'}
+					nav={() => {
+						nav('peso')
+						router.push('#header')
+					}}
+				/>
+				<Button
+					content={'Avançar'}
+					nav={() => {
+						nav('formato')
+						router.push('#header')
+					}}
+				/>
 			</div>
 		</div>
 	)

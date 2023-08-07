@@ -9,7 +9,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
-		<header className='lg:py-10 py-5 flex justify-between'>
+		<header id='header' className='lg:py-10 py-5 flex justify-between'>
 			<Link href='/'>
 				<Image
 					src='/logo.png'
