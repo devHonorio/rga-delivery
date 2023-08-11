@@ -11,19 +11,19 @@ export default function Banner() {
 	const router = useRouter()
 
 	return (
-		<section className='grid lg:grid-cols-2 lg:py-10'>
-			<div className='flex flex-col justify-center xl:items-start'>
-				<h1 className='lg:text-5xl text-4xl font-medium animate-fade-right animate-once animate-duration-[900ms] animate-ease-in-out'>
+		<section className={styles.container}>
+			<div className={styles.containerTexto}>
+				<h1 className={styles.h1Texto}>
 					Faça seu
 					<br /> pedido
-					<span className='font-semibold text-orange-400'>favorito.</span>
+					<span className={styles.destaqueFavorito}> favorito.</span>
 				</h1>
-				<p className='mt-4 text-gray-600 text-sm animate-fade animate-once animate-duration-[2s] animate-ease-in-out animate-normal'>
+				<p className={styles.paragrafo}>
 					Aproveite nosso cardapio, escolha o que desejar e receba em sua casa
 					de forma rápida e segura
 				</p>
 
-				<div className='mt-8 flex gap-4'>
+				<div className={styles.containerButtons}>
 					<Button
 						content='Ver cardápio'
 						bgColor='orange-400'
@@ -43,7 +43,7 @@ export default function Banner() {
 						href={'tel:5544998692094'}
 					/>
 				</div>
-				<div className='flex gap-4 mt-8 justify-center'>
+				<div className={styles.containerSocial}>
 					<ButtonSocial
 						icon={<FaInstagram />}
 						href={'https://www.instagram.com/rga_doces_e_salgados/'}
@@ -67,8 +67,19 @@ export default function Banner() {
 					height={400}
 					className='animate-float anime w-full md:w-1/2 lg:w-full relative z-10'
 				/>
-				<div className='lg:w-60 lg:h-60 h-40 w-40 md:bg-orange-200 bg-orange-400 rounded-[4.5rem] absolute top-5 right-0 z-0'></div>
+				<div className={styles.elemento}></div>
 			</div>
 		</section>
 	)
+}
+
+const styles = {
+	container: `grid lg:grid-cols-2 lg:py-10`,
+	containerTexto: `flex flex-col justify-center xl:items-start`,
+	h1Texto: `lg:text-5xl text-4xl font-medium animate-fade-right animate-once animate-duration-[900ms] animate-ease-in-out`,
+	destaqueFavorito: `font-semibold text-orange-400`,
+	paragrafo: `mt-4 text-gray-600 text-sm animate-fade animate-once animate-duration-[2s] animate-ease-in-out animate-normal`,
+	containerButtons: `mt-8 flex gap-4`,
+	containerSocial: `flex gap-4 mt-8 justify-center`,
+	elemento: `lg:w-60 lg:h-60 h-40 w-40 md:bg-orange-200 bg-orange-400 rounded-[4.5rem] absolute top-5 right-0 z-0`,
 }

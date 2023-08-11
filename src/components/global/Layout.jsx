@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.min.css'
 export default function Layout({ children }) {
 	return (
 		<>
-			<div className='xl:w-7/12 w-10/12 m-auto'>
+			<div className={styles.container}>
 				<ToastContainer autoClose={500} />
 				<Header />
 
@@ -16,4 +16,8 @@ export default function Layout({ children }) {
 			<Footer />
 		</>
 	)
+}
+
+const styles = {
+	container: `xl:w-7/12 w-10/12 m-auto`,
 }

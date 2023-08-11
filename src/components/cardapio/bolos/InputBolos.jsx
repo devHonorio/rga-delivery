@@ -1,16 +1,14 @@
-import { useState } from 'react'
-
 export default function InputBolos({ bento, pesoBolo, setPesoBolo }) {
 	return (
-		<div className={`flex flex-col w-full items-center gap-9`}>
+		<div className={`flex flex-col  items-center gap-9`}>
 			<label
 				htmlFor='peso'
-				className='mt-10 text-center text-3xl font-semibold animate-fade-left animate-duration-[400ms] animate-ease-in animate-fill-forwards'>
+				className={styles.quantosQuilos}>
 				Quantos quilos(kg) gostaria ?
 			</label>
 			<label
 				htmlFor='peso'
-				className={`flex h-14 w-full items-center rounded-2xl px-7 font-semibold shadow-sm ${
+				className={`${styles.containerInput} ${
 					bento ? 'bg-gray-50' : 'bg-white'
 				}`}>
 				<input
@@ -21,7 +19,7 @@ export default function InputBolos({ bento, pesoBolo, setPesoBolo }) {
 					max={6}
 					id='peso'
 					placeholder={`1,5`}
-					className={`text-2xl  flex-1 outline-none bg-transparent disabled:cursor-not-allowed [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+					className={`${styles.input}`}
 					required
 					disabled={bento}
 					value={pesoBolo}
@@ -29,8 +27,14 @@ export default function InputBolos({ bento, pesoBolo, setPesoBolo }) {
 						setPesoBolo(e.target.value)
 					}}
 				/>
-				<span className='peer-disabled:bg-gray-100 '>kg</span>
+				<span className='ml-auto bg-white peer-disabled:bg-gray-100 '>kg</span>
 			</label>
 		</div>
 	)
+}
+
+const styles = {
+	containerInput: `flex h-16 items-center rounded-2xl shadow-sm px-5 font-semibold text-xl`,
+	input: `w-1/3 outline-none bg-transparent disabled:cursor-not-allowed [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`,
+	quantosQuilos: `mt-10 text-center text-3xl font-medium animate-fade-left animate-duration-[400ms] animate-ease-in animate-fill-forwards`
 }

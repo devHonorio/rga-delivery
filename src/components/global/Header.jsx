@@ -9,7 +9,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
-		<header id='header' className='lg:py-10 py-5 flex justify-between'>
+		<header id='header' className={styles.container}>
 			<Link href='/'>
 				<Image
 					src='/logo.png'
@@ -20,7 +20,7 @@ export default function Header() {
 				/>
 			</Link>
 			<Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
-			<div className='flex items-center gap-4'>
+			<div className={styles.containerMenuAndBag}>
 				<ButtonIcon
 					icon={<Bag strokeWidth={1.5} className={'h-5 w-5 '} />}
 					content='Meu pedido'
@@ -33,4 +33,9 @@ export default function Header() {
 			</div>
 		</header>
 	)
+}
+
+const styles = {
+	container: `lg:py-10 py-5 flex justify-between`,
+	containerMenuAndBag: `flex items-center gap-4`,
 }

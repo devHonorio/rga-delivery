@@ -6,8 +6,8 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 export default function Footer() {
 	return (
-		<footer className='py-16 bg-orange-100'>
-			<div className='flex flex-col justify-center items-center gap-4 mb-10'>
+		<footer className={styles.footer}>
+			<div className={styles.containerLogo}>
 				<Image
 					src='/logo.png'
 					alt='Logo'
@@ -16,11 +16,9 @@ export default function Footer() {
 					className=' w-16'
 				/>
 
-				<span className='lg:text-2xl text-lg font-medium'>
-					RGA Doces e Salgados
-				</span>
+				<span className={styles.titleLogo}>RGA Doces e Salgados</span>
 			</div>
-			<div className='flex lg:flex-row flex-col justify-around items-baseline lg:items-center  w-3/4 mx-auto gap-6'>
+			<div className={styles.containerInformacoes}>
 				<Informacoes
 					title='Endereço'
 					description='Rua Papa João Paulo - 570, Água verde, Ampére - PR'
@@ -40,7 +38,7 @@ export default function Footer() {
 				/>
 			</div>
 
-			<div className='flex items-center justify-center gap-4 mt-20'>
+			<div className={styles.containerSocial}>
 				<ButtonSocial
 					icon={<FaInstagram />}
 					href={'https://www.instagram.com/rga_doces_e_salgados/'}
@@ -56,4 +54,12 @@ export default function Footer() {
 			</div>
 		</footer>
 	)
+}
+
+const styles = {
+	footer: `py-16 bg-orange-100`,
+	containerLogo: `flex flex-col justify-center items-center gap-4 mb-10`,
+	titleLogo: `lg:text-2xl text-lg font-medium`,
+	containerInformacoes: `flex lg:flex-row flex-col justify-around items-baseline lg:items-center  w-3/4 mx-auto gap-6`,
+	containerSocial: `flex items-center justify-center gap-4 mt-20`,
 }

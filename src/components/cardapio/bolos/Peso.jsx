@@ -25,7 +25,8 @@ export default function Peso({ className, nav }) {
 		}
 	}
 	return (
-		<div className={`flex flex-col items-center gap-6 ${className}`}>
+		<div
+			className={`flex flex-col items-center gap-6 xl:w-7/12 w-10/12 m-auto ${className}`}>
 			<InputBolos bento={bento} pesoBolo={pesoBolo} setPesoBolo={setPesoBolo} />
 			<InputBento bento={bento} setBento={setBento} setPesoBolo={setPesoBolo} />
 			<Button
