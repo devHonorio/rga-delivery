@@ -67,7 +67,6 @@ export default function CardapioIndex() {
 					return (
 						<CardProduct
 							key={i}
-							id={r.id}
 							title={r.title}
 							price={r.price}
 							image={r.image}

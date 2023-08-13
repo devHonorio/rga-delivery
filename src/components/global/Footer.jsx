@@ -4,10 +4,12 @@ import Informacoes from '../comum/Informacoes'
 import ButtonSocial from '../comum/ButtonSocial'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
+import * as S from './styles'
+
 export default function Footer() {
 	return (
-		<footer className={styles.footer}>
-			<div className={styles.containerLogo}>
+		<S.Footer>
+			<S.ContainerLogo>
 				<Image
 					src='/logo.png'
 					alt='Logo'
@@ -16,9 +18,10 @@ export default function Footer() {
 					className=' w-16'
 				/>
 
-				<span className={styles.titleLogo}>RGA Doces e Salgados</span>
-			</div>
-			<div className={styles.containerInformacoes}>
+				<span>RGA Doces e Salgados</span>
+			</S.ContainerLogo>
+
+			<S.InformacoesContainer>
 				<Informacoes
 					title='Endereço'
 					description='Rua Papa João Paulo - 570, Água verde, Ampére - PR'
@@ -36,9 +39,9 @@ export default function Footer() {
 					description='@rga_doces_e_salgados'
 					href={'https://www.instagram.com/rga_doces_e_salgados/'}
 				/>
-			</div>
+			</S.InformacoesContainer>
 
-			<div className={styles.containerSocial}>
+			<S.ContainerSocial>
 				<ButtonSocial
 					icon={<FaInstagram />}
 					href={'https://www.instagram.com/rga_doces_e_salgados/'}
@@ -51,15 +54,7 @@ export default function Footer() {
 					icon={<FaWhatsapp />}
 					href={'https://wa.me/5546988158699'}
 				/>
-			</div>
-		</footer>
+			</S.ContainerSocial>
+		</S.Footer>
 	)
-}
-
-const styles = {
-	footer: `py-16 bg-orange-100`,
-	containerLogo: `flex flex-col justify-center items-center gap-4 mb-10`,
-	titleLogo: `lg:text-2xl text-lg font-medium`,
-	containerInformacoes: `flex lg:flex-row flex-col justify-around items-baseline lg:items-center  w-3/4 mx-auto gap-6`,
-	containerSocial: `flex items-center justify-center gap-4 mt-20`,
 }

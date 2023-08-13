@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 const className = {
 	label: ' font-medium group',
 	conatainer:
-		'bg-white p-2 rounded-3xl flex flex-col items-center gap-2 shadow-sm md:p-3 hover:bg-orange-400 transition-all animate-fade animate-once animate-duration-[1s] animate-ease-in-out animate-normal cursor-pointer ',
+		'bg-white p-2 rounded-3xl flex flex-col items-center gap-2 shadow-sm md:p-3 hover:bg-orange-400 transition-all animate-fade-up animate-once animate-duration-[1s] animate-ease-in-out animate-normal cursor-pointer ',
 }
 export default function CardBolo({
 	id,

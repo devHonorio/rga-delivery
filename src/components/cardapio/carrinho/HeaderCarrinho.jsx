@@ -17,11 +17,11 @@ export default function HeaderCarrinho() {
 				<p className='font-bold mt-6 text-xl'>Seu carrinho:</p>
 			</div>
 
-			<Link
-				href={'/'}
+			<button
+				onClick={() => history.back()}
 				className='flex items-center justify-center rounded-2xl font-semibold text-gray-600 shadow-md bg-white w-24 h-12'>
 				Fechar
-			</Link>
+			</button>
 		</div>
 	)
 }

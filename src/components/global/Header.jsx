@@ -5,11 +5,13 @@ import { Bag, Menu } from '../comum/Icons'
 import { useState } from 'react'
 import ButtonIcon from '../comum/ButtonIcon'
 
+import * as S from './styles'
+
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false)
 
 	return (
-		<header id='header' className={styles.container}>
+		<S.Header id='header'>
 			<Link href='/'>
 				<Image
 					src='/logo.png'
@@ -20,7 +22,7 @@ export default function Header() {
 				/>
 			</Link>
 			<Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
-			<div className={styles.containerMenuAndBag}>
+			<S.ContainerMenu>
 				<ButtonIcon
 					icon={<Bag strokeWidth={1.5} className={'h-5 w-5 '} />}
 					content='Meu pedido'
@@ -30,12 +32,7 @@ export default function Header() {
 				<button onClick={() => setIsOpen(!isOpen)} className='lg:hidden'>
 					<Menu className='h-6 w-6' />
 				</button>
-			</div>
-		</header>
+			</S.ContainerMenu>
+		</S.Header>
 	)
-}
-
-const styles = {
-	container: `lg:py-10 py-5 flex justify-between`,
-	containerMenuAndBag: `flex items-center gap-4`,
 }

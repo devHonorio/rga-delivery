@@ -1,57 +1,41 @@
 import Image from 'next/image'
-import { useState } from 'react'
-import { Check } from '../comum/Icons'
+import { useId, useState } from 'react'
+import { Bag } from '../comum/Icons'
 import { toast } from 'react-toastify'
 
-export default function CardProduct({ id, name, title, value, image, price }) {
-	const [checked, setChecked] = useState(false)
+import * as S from './styles'
+import AddMenus from './AddMenu'
+
+export default function CardProduct({ title, image, price }) {
+	const addForCarrinho = () => {
+		toast.success('Adicionado ao carrinho')
+	}
 
 	return (
-		<label className={styles.label} htmlFor={id}>
-			<input
-				type='checkbox'
-				name={name}
-				id={id}
-				checked={checked}
-				onChange={() => {
-					setChecked(!checked)
-					if (checked) {
-						toast.error('Recheio Removido')
-					} else {
-						toast.success('Recheio adicionado')
-					}
-				}}
-				className='peer hidden'
-				value={value}
+		<S.ContainerCard>
+			<Image
+				width={100}
+				height={100}
+				src={image}
+				alt={title}
+				className='w-full rounded-3xl'
 			/>
 
-			<div className={styles.conatainer + 'peer-checked:bg-amber-950'}>
-				<Image
-					width={100}
-					height={100}
-					src={image}
-					alt={title}
-					className='w-full rounded-3xl'
-				/>
+			<S.Title>{title}</S.Title>
+			<S.ContainerP>
+				<S.Price>{price}</S.Price>
+				<div className={`flex gap-2`}>
+					<S.ButtonsCard>
+						<AddMenus icon={'+'} left />
+						<S.Quantity placeholder='0' type='number' min={0} />
+						<AddMenus icon={'-'} />
+					</S.ButtonsCard>
 
-				<h2 className={`${styles.title}`}>{title}</h2>
-				<p className={`text-sm opacity-70`}>
-					<span className={`${checked && 'hidden'} lg:text-xl`}>{price}</span>
-
-					<span
-						className={`${
-							!checked && 'hidden'
-						} text-green-400 font-semibold flex items-center gap-1`}>
-						Selecionado <Check />
-					</span>
-				</p>
-			</div>
-		</label>
+					<S.BtnCarriho onClick={addForCarrinho}>
+						<Bag />
+					</S.BtnCarriho>
+				</div>
+			</S.ContainerP>
+		</S.ContainerCard>
 	)
-}
-const styles = {
-	label: ' font-medium group',
-	conatainer:
-		'bg-white p-2 rounded-3xl flex flex-col items-center gap-2 shadow-sm md:p-3 hover:bg-orange-400 transition-all animate-fade animate-once animate-duration-[1s] animate-ease-in-out animate-normal cursor-pointer ',
-	title: `text-xs text-orange-500 font-bold pl-2 lg:text-base group-checked:text-white group-hover:text-white`,
 }

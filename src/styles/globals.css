@@ -6,3 +6,7 @@ html,
 body {
 	background-color: rgba(255, 247, 237, 1);
 }
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
