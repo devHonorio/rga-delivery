@@ -26,9 +26,9 @@ export default function CardProduct({ title, image, price }) {
 				<S.Price>{price}</S.Price>
 				<div className={`flex gap-2`}>
 					<S.ButtonsCard>
-						<AddMenus icon={'+'} left />
+						<AddMenus icon={'-'} left />
 						<S.Quantity placeholder='0' type='number' min={0} />
-						<AddMenus icon={'-'} />
+						<AddMenus icon={'+'} />
 					</S.ButtonsCard>
 
 					<S.BtnCarriho onClick={addForCarrinho}>
