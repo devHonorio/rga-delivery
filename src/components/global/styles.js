@@ -25,3 +25,14 @@ export const Title = tw.span`lg:text-2xl text-lg font-medium`
 export const InformacoesContainer = tw.div`flex lg:flex-row flex-col justify-around items-baseline lg:items-center  w-3/4 mx-auto gap-6`
 
 export const ContainerSocial = tw.div`flex items-center justify-center gap-4 mt-20`
+
+export const FloatCarrinho = tw.div`
+h-16 w-16 bg-orange-400 rounded-3xl
+flex justify-center items-center
+`
+export const cont = tw.div`
+      p-2 rounded-full
+      bg-white
+      text-black text-xs font-semibold
+      absolute right-0 -top-3
+`

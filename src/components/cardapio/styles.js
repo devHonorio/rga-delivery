@@ -6,7 +6,7 @@ export const ContainerCard = tw.div`bg-white p-2 rounded-3xl flex flex-col items
 
 export const Title = tw.h2`text-xs text-orange-500 font-bold pl-2 lg:text-base group-checked:text-white group-hover:text-white`
 
-export const ContainerP = tw.p`text-sm opacity-70`
+export const ContainerP = tw.div`text-sm opacity-70`
 
 export const Price = tw.div`lg:text-xl group-hover:hidden h-8`
 
