@@ -19,7 +19,7 @@ md:w-8 font-bold
  ${({ left }) => (left ? 'rounded-l-xl' : 'rounded-r-xl')}
  `
 
-export const Quantity = tw.input`border-y-2 w-6 h-8 border-gray-900 text-center placeholder:text-gray-900 bg-transparent`
+export const Quantity = tw.input`border-y-2 w-6 h-8 border-gray-900 text-center placeholder:text-gray-900 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`
 
 export const BtnCarriho = tw.button`
 h-8 w-8 rounded-xl
