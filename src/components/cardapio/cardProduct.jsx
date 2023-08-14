@@ -27,7 +27,12 @@ export default function CardProduct({ title, image, price }) {
 				<div className={`flex gap-2`}>
 					<S.ButtonsCard>
 						<AddMenus icon={'-'} left />
-						<S.Quantity placeholder='0' type='number' min={0} />
+						<S.Quantity
+							placeholder='0'
+							type='number'
+							typeof='numeric'
+							min={0}
+						/>
 						<AddMenus icon={'+'} />
 					</S.ButtonsCard>
 
