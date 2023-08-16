@@ -12,7 +12,7 @@ export default function InputBolos({ bento, pesoBolo, setPesoBolo }) {
 				<input
 					type='number'
 					inputMode='numeric'
-					step={0.5}
+					step={0.1}
 					min={1.5}
 					max={6}
 					id='peso'

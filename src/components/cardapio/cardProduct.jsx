@@ -32,6 +32,7 @@ export default function CardProduct({ title, image, price }) {
 							type='number'
 							typeof='numeric'
 							min={0}
+							step={5}
 						/>
 						<AddMenus icon={'+'} />
 					</S.ButtonsCard>

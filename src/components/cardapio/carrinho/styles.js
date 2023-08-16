@@ -5,3 +5,21 @@ export const btnRemove = tw.button`
       flex justify-center items-center
       font-black text-white
 `
+
+export const Form = tw.form`
+      flex flex-col gap-5
+`
+
+export const Input = tw.input`
+      w-full px-5 py-4 rounded-2xl
+      shadow-md 
+      outline-none
+`
+
+export const Label = tw.label`
+      font-semibold text-gray-700
+`
+
+export const Button = tw.button`
+
+`

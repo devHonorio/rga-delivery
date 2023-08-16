@@ -5,7 +5,7 @@ import { Bag } from '../comum/Icons'
 export default function FloatCarrinho() {
 	return (
 		<Link href={'carrinho'}>
-			<div className='fixed right-8 bottom-10'>
+			<div className='fixed right-8 bottom-10 z-50'>
 				<S.cont>4</S.cont>
 				<S.FloatCarrinho>
 					<Bag className='h-8 w-8' />

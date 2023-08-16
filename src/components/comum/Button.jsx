@@ -5,9 +5,14 @@ export default function Button({
 	color = 'black',
 	content,
 	onClick,
+	type,
+	className,
 }) {
 	return (
-		<S.Button onClick={onClick} className={`bg-${bgColor} text-${color}`}>
+		<S.Button
+			onClick={onClick}
+			className={`bg-${bgColor} text-${color} ${className}`}
+			type={type}>
 			{content}
 		</S.Button>
 	)

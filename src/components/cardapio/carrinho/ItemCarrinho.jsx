@@ -18,7 +18,7 @@ export default function ItemCarrinho() {
 				<p className='font-semibold text-sm'>2kg Brigadeiro e amendoim</p>
 				<p className='text-lg font-bold text-orange-400'>R$60,00</p>
 			</div>
-			<div className='flex flex-col items-end justify-around'>
+			<div className='flex flex-col md:gap-4 md:flex-row-reverse md:items-center items-end justify-around'>
 				<S.btnRemove>
 					<Close strokeWidth={3} className='h-4 w-4' />
 				</S.btnRemove>

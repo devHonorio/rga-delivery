@@ -8,7 +8,7 @@ export default function Peso({ className, nav }) {
 	const [bento, setBento] = useState(false)
 	const router = useRouter()
 
-	const [pesoBolo, setPesoBolo] = useState(1.5)
+	const [pesoBolo, setPesoBolo] = useState()
 
 	function navPeso(peso) {
 		if (peso > 1.4 && peso < 6.1) {
