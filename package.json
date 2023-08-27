@@ -20,6 +20,8 @@
     "tailwindcss-animated": "^1.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-plugin-react": "^7.33.2",
     "tailwind-styled-components": "^2.2.0"
   }
 }

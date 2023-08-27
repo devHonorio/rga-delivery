@@ -62,7 +62,9 @@ export default function CardBolo({
 					{title}
 				</h2>
 				<p className={`text-sm opacity-70`}>
-					<span className={`${checked && 'hidden'} lg:text-xl`}>{price}</span>
+					<span className={`${checked && 'hidden'} lg:text-xl`}>
+						R$ {price.toFixed(2)}/kg
+					</span>
 
 					<span
 						className={`${

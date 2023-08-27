@@ -1,14 +1,35 @@
-module.exports = class Bolo {
+import Router from 'next/router'
+
+export default class Bolo {
 	#peso = 0
 	#recheios = []
 	#formato = ''
 	#price = 0
+	#cobertura = ''
+	#decoracao = ''
+	#avancar = false
+
+	removeRecheio(recheio) {
+		const recheios = this.#recheios
+		const index = recheios.findIndex((e) => e.id === recheio?.id)
+
+		if (index !== -1) {
+			recheios.splice(index, 1)
+			console.log('Recheio removido')
+		} else {
+			console.log('Recheio não encontrado')
+		}
+	}
 
 	set peso(peso) {
 		if (peso === 0.6 || (peso >= 1.5 && peso <= 6)) {
 			this.#peso = peso
+			Router.push('#header')
+			this.#avancar = true
+			console.log(this.peso)
 		} else {
-			console.log('Peso deve ser 600g ou estar entre 1,5kg e 6kg')
+			this.#avancar = false
+			alert('Peso deve ser 600g ou estar entre 1,5kg e 6kg')
 		}
 	}
 
@@ -17,7 +38,7 @@ module.exports = class Bolo {
 			const peso = this.peso
 
 			if ((peso === 0.6 || peso < 1.8) && this.#isMorango(recheio)) {
-				console.log('Esse recheio não é permitido para esse peso')
+				alert('Esse recheio não é permitido para esse peso')
 			} else if (
 				this.recheios.length > 0 &&
 				peso > 5.5 &&
@@ -58,17 +79,27 @@ module.exports = class Bolo {
 				console.log(
 					'ATENÇÃO, para esse recheio e peso o bolo precisa ser no formato retangular'
 				)
-				return 'retangular'
 			} else if (peso < 2.5 || (morango && peso < 3.5)) {
 				this.#formato = 'redondo'
 				console.log(
 					'ATENÇÃO, para esse recheio e peso o bolo precisa ser no formato redondo'
 				)
-				return 'redondo'
 			}
 		} else {
 			console.log('Primeiro deve escolher 2 recheios')
 		}
+	}
+
+	set cobertura(cobertura) {
+		this.#cobertura = cobertura
+	}
+
+	set decoracao(decoracao) {
+		this.#decoracao = decoracao
+	}
+
+	get avancar() {
+		return this.#avancar
 	}
 
 	get peso() {
@@ -86,6 +117,28 @@ module.exports = class Bolo {
 	get price() {
 		if (this.recheios.length === 2) return this.#price
 		else return 'Primeiro deve escolher dois recheios'
+	}
+
+	get cobertura() {
+		return this.#cobertura
+	}
+
+	get decoracao() {
+		return this.#decoracao
+	}
+
+	get templateBolo() {
+		const peso = this.peso
+		const formato = this.formato
+		const price = (this.price * peso).toFixed(2)
+		const cobertura = this.cobertura
+		const decoracao = this.decoracao
+		return `
+${peso === 0.6 ? 'Bento' : peso + 'kg'} ${this.recheios}  ${formato} ±R$${price}
+
+${cobertura} ${decoracao}
+
+`
 	}
 
 	#isMorango(recheio) {

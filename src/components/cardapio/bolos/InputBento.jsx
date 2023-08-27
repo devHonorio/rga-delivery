@@ -4,7 +4,11 @@ export default function InputBento({ bento, setBento, setPesoBolo }) {
 			htmlFor='bento'
 			className={`flex items-center gap-3 text-2xl font-semibold mr-4  cursor-pointer ${
 				bento ? 'text-black' : 'text-red-600'
-			}`}>
+			}`}
+			onClick={() => {
+				setBento(!bento)
+				setPesoBolo(0.6)
+			}}>
 			Bento cake 600g
 			<span
 				type='checkbox'
@@ -22,10 +26,6 @@ export default function InputBento({ bento, setBento, setPesoBolo }) {
 				id='bento'
 				checked={bento}
 				className={`appearance-none`}
-				onChange={() => {
-					setBento(!bento)
-					setPesoBolo(0.6)
-				}}
 			/>
 		</label>
 	)

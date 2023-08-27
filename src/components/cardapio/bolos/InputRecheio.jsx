@@ -5,12 +5,12 @@ import Button from './Button'
 import CardBolo from './CardBolo'
 import { useRouter } from 'next/router'
 
-export default function InputRecheio({ className, nav }) {
+export default function InputRecheio({ className, nav, bolo }) {
 	const listaRecheio = []
 
 	function addRecheio(recheio) {
-		listaRecheio.push(recheio)
-		console.log(listaRecheio)
+		bolo.recheio = recheio
+		console.log(bolo.peso)
 	}
 	function removeRecheio(recheio) {
 		listaRecheio.forEach((e, i) => {

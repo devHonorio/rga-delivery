@@ -1,4 +1,4 @@
-module.exports = class Endereco {
+export default class Endereco {
 	#rua = ''
 	#numero = ''
 	#bairro = ''

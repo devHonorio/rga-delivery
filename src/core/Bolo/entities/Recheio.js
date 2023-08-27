@@ -13,27 +13,27 @@ export default class Recheio {
 		this.#price = price
 	}
 
-	editName(name) {
+	set name(name) {
 		this.#name = name
 	}
 
-	editIngredients(descripition) {
+	set ingredients(descripition) {
 		this.#ingredients = descripition
 	}
 
-	editPrice(price) {
+	set price(price) {
 		this.#price = price
 	}
 
-	setBento(bolean) {
+	set bento(bolean) {
 		this.#bento = bolean
 	}
 
-	setMin(minPeso) {
+	set min(minPeso) {
 		this.#min = minPeso
 	}
 
-	addImage(src) {
+	set image(src) {
 		this.#image = src
 	}
 }

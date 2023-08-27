@@ -1,4 +1,4 @@
-module.exports = class Cliente {
+export default class Cliente {
 	#name = ''
 	#tel = ''
 	#endereco = []
