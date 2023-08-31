@@ -4,25 +4,21 @@ import ContainerCardapio from '../ContainerCardapio'
 import Button from './Button'
 import CardBolo from './CardBolo'
 import { useRouter } from 'next/router'
+import { useBolo } from '@/hooks/useBolo'
+import { useContext } from 'react'
+import { Contador } from '@/components/contexts/ContextContador'
+import { toast } from 'react-toastify'
 
 export default function InputRecheio({ className, nav, bolo }) {
-	const listaRecheio = []
+	const { cont } = useContext(Contador)
+	const { setRecheio, removeRecheio } = useBolo(cont)
 
 	function addRecheio(recheio) {
-		bolo.recheio = recheio
-		console.log(bolo.peso)
+		const check = setRecheio(recheio)
+		check && toast.success('Recheio adicionado')
+		return check
 	}
-	function removeRecheio(recheio) {
-		listaRecheio.forEach((e, i) => {
-			if (e.id === recheio.id) {
-				listaRecheio.splice(i, 1)
-			}
-		})
-		console.log(listaRecheio)
-	}
-	function tamanho() {
-		return listaRecheio.length > 2 ? true : false
-	}
+
 	const router = useRouter()
 	return (
 		<div className={`flex flex-col items-center gap-5 ${className}`}>
@@ -32,14 +28,13 @@ export default function InputRecheio({ className, nav, bolo }) {
 						<CardBolo
 							id={recheio.id}
 							name={recheio.title}
-							title={recheio.title}
+							title={recheio.name}
 							value={recheio}
 							price={recheio.price}
 							image={recheio.image}
 							key={i}
 							removeRecheio={removeRecheio}
 							addRecheio={addRecheio}
-							tamanho={tamanho}
 						/>
 					)
 				})}

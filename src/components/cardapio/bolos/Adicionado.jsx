@@ -1,9 +1,13 @@
 import { Router, useRouter } from 'next/router'
 import Button from './Button'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { BolosContext } from '@/pages/_app'
 
 export default function Adicionado({ nav, className }) {
 	const router = useRouter()
+	const bolo = useContext(BolosContext)
+	console.log(bolo)
 	return (
 		<div className={`${styles.container} ${className}`}>
 			<h1 className={`${styles.h1}`}>Pedido adicionado</h1>
@@ -17,7 +21,7 @@ export default function Adicionado({ nav, className }) {
 			<Button
 				content={'Pedir mais um bolo'}
 				nav={() => {
-					nav('peso')
+					nav('novo-bolo')
 					router.push('#header')
 				}}
 			/>

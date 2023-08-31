@@ -57,10 +57,10 @@ export default class Bolo {
 				this.#price += recheio.price / 2
 				console.log('Recheio pesado adicionado')
 			} else {
-				console.log('Primeiro é preciso que o peso seja adicionado')
+				alert('Primeiro é preciso que o peso seja adicionado')
 			}
 		} else {
-			console.log('É permitido apenas dois recheios')
+			alert('É permitido apenas dois recheios')
 		}
 	}
 
@@ -76,17 +76,17 @@ export default class Bolo {
 				this.#formato = formato
 			} else if ((peso > 3.5 && !morango) || (peso > 4 && morango)) {
 				this.#formato = 'retangular'
-				console.log(
+				alert(
 					'ATENÇÃO, para esse recheio e peso o bolo precisa ser no formato retangular'
 				)
 			} else if (peso < 2.5 || (morango && peso < 3.5)) {
 				this.#formato = 'redondo'
-				console.log(
+				alert(
 					'ATENÇÃO, para esse recheio e peso o bolo precisa ser no formato redondo'
 				)
 			}
 		} else {
-			console.log('Primeiro deve escolher 2 recheios')
+			alert('Primeiro deve escolher 2 recheios')
 		}
 	}
 
@@ -96,6 +96,10 @@ export default class Bolo {
 
 	set decoracao(decoracao) {
 		this.#decoracao = decoracao
+	}
+
+	set avancar(bolean) {
+		this.#avancar = bolean
 	}
 
 	get avancar() {

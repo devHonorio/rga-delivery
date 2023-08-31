@@ -5,7 +5,7 @@ export default function Button({ content, nav }) {
 			className={`bg-orange-400 rounded-2xl text-md py-2 px-5 `}
 			onClick={(e) => {
 				e.preventDefault()
-				nav()
+				nav && nav()
 			}}>
 			{content}
 		</button>

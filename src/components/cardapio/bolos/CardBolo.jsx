@@ -28,27 +28,20 @@ export default function CardBolo({
 				name={name}
 				id={id}
 				checked={checked}
-				onChange={() => {
-					setChecked(!checked)
-					if (checked) {
-						toast.error('Recheio Removido')
-						removeRecheio(value)
-					} else {
-						toast.success('Recheio adicionado')
-						addRecheio(value)
-						if (tamanho()) {
-							removeRecheio(value)
-							alert('Pode ser escolhido apenas 2 recheios')
-							setChecked(false)
-							toast.error('Recheio Removido')
-						}
-					}
-				}}
 				className='peer hidden'
 				value={value}
 			/>
 
-			<div className={className.conatainer + 'peer-checked:bg-amber-950'}>
+			<div
+				className={className.conatainer + 'peer-checked:bg-amber-950'}
+				onClick={() => {
+					!checked && addRecheio(value) && setChecked(true)
+					if (checked) {
+						removeRecheio(value)
+						setChecked(false)
+						toast.error('Recheio removido')
+					}
+				}}>
 				<Image
 					width={100}
 					height={100}

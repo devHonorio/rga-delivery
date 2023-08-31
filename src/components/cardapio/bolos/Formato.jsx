@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import Button from './Button'
 import { useRouter } from 'next/router'
 import Quadrado from './Quadrada'
 import Redondo from './Redondo'
+import { useBolo } from '@/hooks/useBolo'
+import { Contador } from '@/components/contexts/ContextContador'
 
 export default function Formato({ className, nav }) {
-	const [formato, setFormato] = useState('retangular')
 	const router = useRouter()
+	const { cont } = useContext(Contador)
+	const { setFormato, formato } = useBolo(cont)
+
 	return (
 		<div
 			className={`flex flex-col gap-10  xl:w-7/12 w-10/12 m-auto ${className}`}>

@@ -66,6 +66,7 @@ export default function Banner() {
 					width={400}
 					height={400}
 					className='animate-float anime w-full md:w-1/2 lg:w-full relative z-10'
+					priority
 				/>
 				<div className={styles.elemento}></div>
 			</div>

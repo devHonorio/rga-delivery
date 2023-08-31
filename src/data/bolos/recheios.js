@@ -2,7 +2,7 @@ export const produtos = {
 	recheios: [
 		{
 			id: 'recheio de briga',
-			title: 'Recheio de brigadeiro',
+			name: 'Recheio de brigadeiro',
 			type: 'recheio',
 			price: 30,
 			image: '/bolos/recheios/brigadeiro.jpg',
@@ -10,14 +10,14 @@ export const produtos = {
 		{
 			id: 'recheio de beijo',
 			type: 'recheio',
-			title: 'Recheio de beijinho',
+			name: 'Recheio de beijinho',
 			price: 30,
 			image: '/bolos/recheios/beijinho.jpg',
 		},
 		{
 			id: 'recheio de abacaxi',
 			type: 'recheio',
-			title: 'Recheio de abacaxi',
+			name: 'Recheio de abacaxi',
 			price: 30,
 			image: '/bolos/recheios/abacaxi.jpg',
 		},
@@ -25,7 +25,7 @@ export const produtos = {
 		{
 			id: 'recheio de pessego',
 			type: 'recheio',
-			title: 'Recheio de pessego',
+			name: 'Recheio de pessego',
 			price: 30,
 			image: '/bolos/recheios/pessego.jpg',
 		},
@@ -33,7 +33,7 @@ export const produtos = {
 		{
 			id: 'recheio de amendoim',
 			type: 'recheio',
-			title: 'Recheio de amendoim',
+			name: 'Recheio de amendoim',
 			price: 30,
 			image: '/bolos/recheios/amendoim.jpg',
 		},
@@ -41,7 +41,7 @@ export const produtos = {
 		{
 			id: 'recheio de baunilha',
 			type: 'recheio',
-			title: 'Recheio de baunilha',
+			name: 'Recheio de baunilha',
 			price: 30,
 			image: '/bolos/recheios/baunilha.jpg',
 		},
@@ -49,13 +49,13 @@ export const produtos = {
 		{
 			id: 'recheio de doce de leite',
 			type: 'recheio',
-			title: 'Recheio de doce de leite',
+			name: 'Recheio de doce de leite',
 			price: 30,
 			image: '/bolos/recheios/doceDeLeite.jpg',
 		},
 		{
 			id: 'morango',
-			title: 'Strogonoff de morango',
+			name: 'morango',
 			type: 'recheio',
 			price: 42,
 			image: '/bolos/recheios/brigadeiro.jpg',
