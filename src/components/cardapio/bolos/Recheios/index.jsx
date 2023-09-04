@@ -1,15 +1,15 @@
 import { produtos } from '@/data/bolos/recheios'
-import ContainerCardapio from '../ContainerCardapio'
 
-import Button from './Button'
-import CardBolo from './CardBolo'
+import CardBolo from './CardBolo/index.js.jsx'
 import { useRouter } from 'next/router'
 import { useBolo } from '@/hooks/useBolo'
 import { useContext } from 'react'
 import { Contador } from '@/components/contexts/ContextContador'
 import { toast } from 'react-toastify'
+import { SButton } from '@/components/@ui/Buton'
+import ContainerCardapio from '../../ContainerCardapio.jsx'
 
-export default function InputRecheio({ className, nav, bolo }) {
+export default function Recheios({ className, nav }) {
 	const { cont } = useContext(Contador)
 	const { setRecheio, removeRecheio } = useBolo(cont)
 
@@ -21,8 +21,8 @@ export default function InputRecheio({ className, nav, bolo }) {
 
 	const router = useRouter()
 	return (
-		<div className={`flex flex-col items-center gap-5 ${className}`}>
-			<ContainerCardapio className={`grid`} id={'recheio'}>
+		<>
+			<ContainerCardapio className={className} id={'recheio'}>
 				{produtos.recheios.map((recheio, i) => {
 					return (
 						<CardBolo
@@ -39,22 +39,22 @@ export default function InputRecheio({ className, nav, bolo }) {
 					)
 				})}
 			</ContainerCardapio>
-			<div className={`flex gap-5`}>
-				<Button
-					content={'Voltar'}
-					nav={() => {
+			<div className={`flex gap-5 justify-center ${className}`}>
+				<SButton
+					type='button'
+					onClick={() => {
 						nav('peso')
-						router.push('#header')
-					}}
-				/>
-				<Button
-					content={'Avançar'}
-					nav={() => {
+					}}>
+					Voltar
+				</SButton>
+				<SButton
+					type='button'
+					onClick={() => {
 						nav('formato')
-						router.push('#header')
-					}}
-				/>
+					}}>
+					Avançar
+				</SButton>
 			</div>
-		</div>
+		</>
 	)
 }

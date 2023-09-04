@@ -6,6 +6,7 @@ import ButtonSocial from '../comum/ButtonSocial'
 
 import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa'
 import { useRouter } from 'next/router'
+import { SButton } from '../@ui/Buton'
 
 export default function Banner() {
 	const router = useRouter()
@@ -24,12 +25,11 @@ export default function Banner() {
 				</p>
 
 				<div className={styles.containerButtons}>
-					<Button
-						content='Ver cardápio'
-						bgColor='orange-400'
-						color='white'
-						onClick={() => router.push('/Cardapio')}
-					/>
+					<SButton
+						className='bg-orange-400 text-white'
+						onClick={() => router.push('/Cardapio')}>
+						Ver cardápio
+					</SButton>
 
 					<ButtonIcon
 						icon={

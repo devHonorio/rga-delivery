@@ -1,12 +1,10 @@
-import { Router, useRouter } from 'next/router'
-import Button from './Button'
 import Image from 'next/image'
-import { useContext } from 'react'
-import { BolosContext } from '@/pages/_app'
+
+import { useContextBolos } from '@/components/contexts/ContextBolos'
+import { SButton } from '@/components/@ui/Buton'
 
 export default function Adicionado({ nav, className }) {
-	const router = useRouter()
-	const bolo = useContext(BolosContext)
+	const bolo = useContextBolos()
 	console.log(bolo)
 	return (
 		<div className={`${styles.container} ${className}`}>
@@ -18,13 +16,12 @@ export default function Adicionado({ nav, className }) {
 				src={'/sucesso.jpg'}
 				className='h-52 w-52 self-center border-2 border-orange-400 animate-jump animate-duration-[1s]'
 			/>
-			<Button
-				content={'Pedir mais um bolo'}
-				nav={() => {
+			<SButton
+				onClick={() => {
 					nav('novo-bolo')
-					router.push('#header')
-				}}
-			/>
+				}}>
+				Pedir mais um bolo
+			</SButton>
 		</div>
 	)
 }

@@ -1,8 +1,8 @@
-import { BolosContext } from '@/pages/_app'
-import { useContext, useState } from 'react'
+import { useContextBolos } from '@/components/contexts/ContextBolos'
+import { useState } from 'react'
 
 export const useBolo = (cont) => {
-	const bolos = useContext(BolosContext)
+	const bolos = useContextBolos()
 	const bolo = bolos[cont]
 	const [formato, setForm] = useState('')
 
@@ -55,11 +55,14 @@ export const useBolo = (cont) => {
 			} else if ((peso === 0.6 || peso >= 1.5) && !isMorango(recheio)) {
 				bolo.recheios.push(recheio)
 				bolo.price += recheio.price / 2
+				sessionStorage.setItem(recheio.id, true)
 				console.log('Recheio normal adicionado')
 				return true
 			} else if (peso >= 1.8 && isMorango(recheio)) {
 				bolo.recheios.push(recheio)
 				bolo.price += recheio.price / 2
+				sessionStorage.setItem(recheio.id, true)
+
 				console.log('Recheio pesado adicionado')
 				return true
 			} else {
@@ -78,6 +81,7 @@ export const useBolo = (cont) => {
 			if (e.id === recheio.id) {
 				bolo.recheios.splice(i, 1)
 				bolo.price -= recheio.price / 2
+				sessionStorage.clear()
 			}
 		})
 		console.log(bolo)

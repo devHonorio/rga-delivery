@@ -1,7 +1,7 @@
-import Bolo from '@/core/Bolo/entities/Bolo'
+import ProviderBolos from '@/components/contexts/ContextBolos'
+import ProviderCarrinho from '@/components/contexts/ContextCarrinho'
 import '@/styles/globals.css'
 import { Poppins } from 'next/font/google'
-import { createContext } from 'react'
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -27,14 +27,15 @@ const poppins = Poppins({
 		'900',
 	],
 })
-const bolos = []
-export const BolosContext = createContext(bolos)
+
 export default function App({ Component, pageProps }) {
 	return (
-		<BolosContext.Provider value={bolos}>
-			<main className={`${poppins.variable} font-sans`}>
-				<Component {...pageProps} />
-			</main>
-		</BolosContext.Provider>
+		<ProviderCarrinho>
+			<ProviderBolos>
+				<main className={`${poppins.variable} font-sans`}>
+					<Component {...pageProps} />
+				</main>
+			</ProviderBolos>
+		</ProviderCarrinho>
 	)
 }
