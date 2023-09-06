@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import LayoutCarrinho from './LayoutCarrinho'
-import Modal from './Modal'
+import LayoutCarrinho from './Layout'
+
 import Modal2 from './Modal2'
 import Modal3 from './Modal3'
+import Modal1 from './Modal1'
 
 export default function CarrinhoC() {
 	const [isActive, setIsActive] = useState(1)
 	return (
 		<LayoutCarrinho isActive={isActive}>
-			<Modal
+			<Modal1
 				className={`${isActive !== 1 && 'hidden'}`}
 				setIsActive={setIsActive}
 			/>

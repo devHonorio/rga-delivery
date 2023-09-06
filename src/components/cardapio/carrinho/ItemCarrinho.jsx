@@ -4,7 +4,7 @@ import AddMenus from '../AddMenu'
 import { Quantity } from '../styles'
 import { Close } from '@/components/comum/Icons'
 
-export default function ItemCarrinho() {
+export default function ItemCarrinho({ peso, title }) {
 	return (
 		<div className='bg-orange-50 flex gap-5 py-5 px-2'>
 			<Image
@@ -15,7 +15,9 @@ export default function ItemCarrinho() {
 				alt='Foto do produto'
 			/>
 			<div className='flex-1'>
-				<p className='font-semibold text-sm'>2kg Brigadeiro e amendoim</p>
+				<p className='font-semibold text-sm'>
+					{peso} {title}
+				</p>
 				<p className='text-lg font-bold text-orange-400'>R$60,00</p>
 			</div>
 			<div className='flex flex-col md:gap-4 md:flex-row-reverse md:items-center items-end justify-around'>

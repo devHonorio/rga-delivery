@@ -6,6 +6,7 @@ import { SInput, SLabelContainer, SSpan } from './styles'
 export default function Input() {
 	const { state, setState } = useContextState()
 	const { peso, bento } = state
+
 	return (
 		<SContainer>
 			<SLabel htmlFor='peso'>Quantos quilos(kg) gostaria ?</SLabel>

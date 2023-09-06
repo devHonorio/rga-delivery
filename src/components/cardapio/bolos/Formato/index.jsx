@@ -1,18 +1,14 @@
 import Quadrado from './Quadrada'
 import Redondo from './Redondo'
-import { useBolo } from '@/hooks/useBolo'
-import { useContextCont } from '@/components/contexts/ContextContador'
+
 import { SContainer, SLi, SUl } from './styles'
 import { SLabel } from '../styles'
 
 import { SButton } from '@/components/@ui/Buton'
+import { useContextState } from '@/components/contexts/ContextStatesBolo'
 
 export default function Formato({ className, nav }) {
-	const { cont } = useContextCont()
-	const { setFormato, formato } = useBolo(cont)
-
-	
-
+	const { state } = useContextState()
 	return (
 		<SContainer className={className}>
 			<SLabel className='text-start'>Escolha um formato.</SLabel>
@@ -31,19 +27,21 @@ export default function Formato({ className, nav }) {
 			</SUl>
 
 			<div className={`flex gap-5`}>
-				<Quadrado formato={formato} setFormato={setFormato} />
-				<Redondo formato={formato} setFormato={setFormato} />
+				<Quadrado />
+				<Redondo />
 			</div>
 			<div className={`flex gap-5`}>
 				<SButton
+					type='button'
 					onClick={() => {
-						nav('recheio')
+						nav('recheios')
 					}}>
 					Voltar
 				</SButton>
 				<SButton
+					type='button'
 					onClick={() => {
-						nav('adicionado')
+						console.log(state)
 					}}>
 					Adicionar ao carrinho
 				</SButton>

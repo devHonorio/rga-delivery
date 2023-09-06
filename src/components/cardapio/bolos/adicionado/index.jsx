@@ -1,11 +1,12 @@
 import Image from 'next/image'
 
-import { useContextBolos } from '@/components/contexts/ContextBolos'
+import { useContextBolo } from '@/components/contexts/ContextBolos'
 import { SButton } from '@/components/@ui/Buton'
+import { useContextState } from '@/components/contexts/ContextStatesBolo'
 
 export default function Adicionado({ nav, className }) {
-	const bolo = useContextBolos()
-	console.log(bolo)
+	const { setState } = useContextState()
+
 	return (
 		<div className={`${styles.container} ${className}`}>
 			<h1 className={`${styles.h1}`}>Pedido adicionado</h1>
@@ -17,7 +18,15 @@ export default function Adicionado({ nav, className }) {
 				className='h-52 w-52 self-center border-2 border-orange-400 animate-jump animate-duration-[1s]'
 			/>
 			<SButton
+				type='button'
 				onClick={() => {
+					setState({
+						peso: 0,
+						bento: false,
+						recheioCheckd: false,
+						formato: null,
+					})
+					sessionStorage.clear()
 					nav('novo-bolo')
 				}}>
 				Pedir mais um bolo

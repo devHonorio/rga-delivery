@@ -1,9 +1,10 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useState } from 'react'
 
-const Bolos = createContext()
+const Bolo = createContext()
 
-export default function ProviderBolos({ children }) {
-	return <Bolos.Provider value={[]}>{children}</Bolos.Provider>
+export default function ProviderBolo({ children }) {
+	const [bolo, setBolo] = useState({})
+	return <Bolo.Provider value={{ bolo, setBolo }}>{children}</Bolo.Provider>
 }
 
-export const useContextBolos = () => useContext(Bolos)
+export const useContextBolo = () => useContext(Bolo)

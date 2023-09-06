@@ -1,4 +1,9 @@
-export default function Quadrado({ formato, setFormato }) {
+import { useContextState } from '@/components/contexts/ContextStatesBolo'
+import { SContainerRetangular, SContentRetangular } from './styles'
+
+export default function Quadrado() {
+	const { state, setState } = useContextState()
+	const formato = state.formato
 	return (
 		<>
 			<input
@@ -9,24 +14,13 @@ export default function Quadrado({ formato, setFormato }) {
 				className={`hidden`}
 			/>
 			<label htmlFor='retangular'>
-				<div
-					onClick={() => {
-						setFormato('retangular')
-					}}
-					className={`h-24 w-24 border ${
-						formato === 'retangular'
-							? 'bg-orange-500 border-white'
-							: 'border-orange-500 bg-white'
-					}  rounded-xl flex items-center justify-center`}>
-					<div
-						className={`h-10 w-14 font-bold border ${
-							formato === 'retangular'
-								? 'border-white text-white'
-								: 'border-orange-500'
-						} rounded-lg flex justify-center items-center`}>
+				<SContainerRetangular data-formato={formato} onClick={() => {
+					setState({...state, formato: 'retangular'})
+				}}>
+					<SContentRetangular data-formato={formato}>
 						Retangular
-					</div>
-				</div>
+					</SContentRetangular>
+				</SContainerRetangular>
 			</label>
 		</>
 	)

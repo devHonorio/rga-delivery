@@ -1,28 +1,13 @@
 import { Check } from '@/components/comum/Icons'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
+import { useState } from 'react'
+
 import { SCheck, SContainer, SLabel, STitle } from './styles'
+import { useRecheios } from '@/hooks/useBolo'
 
-export default function CardBolo({
-	id,
-	name,
-	title,
-	value,
-	image,
-	price,
-	addRecheio,
-	removeRecheio,
-}) {
+export default function CardBolo({ id, name, title, value, image, price }) {
 	const [checked, setChecked] = useState(false)
-
-	useEffect(() => {
-		const storage = sessionStorage.getItem(id)
-
-		if (storage) {
-			setChecked(true)
-		}
-	}, [])
+	const { AddRecheio, removeRecheio } = useRecheios()
 
 	return (
 		<SLabel htmlFor={id}>
@@ -37,14 +22,8 @@ export default function CardBolo({
 
 			<SContainer
 				onClick={() => {
-					if (!checked) {
-						addRecheio(value) && setChecked(true)
-					} else if (checked) {
-						removeRecheio(value)
-						setChecked(false)
-						toast.error('Recheio removido')
-						sessionStorage.removeItem(id)
-					}
+					!checked && AddRecheio(value) && setChecked(true)
+					checked && removeRecheio(value) && setChecked(false)
 				}}>
 				<Image
 					width={100}

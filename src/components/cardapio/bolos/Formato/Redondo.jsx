@@ -1,32 +1,21 @@
-export default function Redondo({ formato, setFormato }) {
+import { useContextState } from '@/components/contexts/ContextStatesBolo'
+import { SContainerRedondo, SContentRedondo } from './styles'
+
+export default function Redondo() {
+	const { state, setState } = useContextState()
+	const formato = state.formato
 	return (
 		<div>
 			<input type='radio' name='formato' id='redondo' className={`hidden`} />
 			<label htmlFor='redondo'>
-				<div
+				<SContainerRedondo
+					data-formato={formato}
 					onClick={() => {
-						setFormato('redondo')
-					}}
-					className={`${styles.container} ${
-						formato === 'redondo'
-							? 'bg-orange-500 border-white'
-							: 'border-orange-500 bg-white'
-					}`}>
-					<div
-						className={`${styles.content} ${
-							formato === 'redondo'
-								? 'border-white text-white'
-								: 'border-orange-500'
-						}`}>
-						Redondo
-					</div>
-				</div>
+						setState({ ...state, formato: 'redondo' })
+					}}>
+					<SContentRedondo data-formato={formato}>Redondo</SContentRedondo>
+				</SContainerRedondo>
 			</label>
 		</div>
 	)
-}
-
-const styles = {
-	container: `h-24 w-24 border  rounded-xl flex items-center justify-center`,
-	content: `h-16 w-16 font-bold border border-orange-500 rounded-full flex justify-center items-center`,
 }

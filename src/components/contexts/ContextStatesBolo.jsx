@@ -1,22 +1,13 @@
 import { createContext, useContext, useState } from 'react'
-// const state = () => {
-// 	const [state, setState] = useState({
-// 		peso: 0,
-// 		bento: false,
-// 		recheioCheckd: false,
-// 		formato: null,
-// 	})
-
-// 	return { setState, state }
-// }
 
 export const States = createContext()
 
 export default function ContextStateBolos({ children }) {
 	const [state, setState] = useState({
+		price: 0,
 		peso: 0,
 		bento: false,
-		recheioCheckd: false,
+		recheios: [],
 		formato: null,
 	})
 	return (
