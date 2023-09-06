@@ -6,8 +6,9 @@ import {
 	SContainerPriceTitle,
 	SPrice,
 } from './styles'
+import Image from 'next/image'
 
-export default function ItemBolo({ peso, recheios }) {
+export default function ItemBolo({ peso, recheios, price }) {
 	return (
 		<SContainer>
 			<Image
@@ -20,9 +21,10 @@ export default function ItemBolo({ peso, recheios }) {
 
 			<div className='flex-1'>
 				<SContainerPriceTitle>
-					{peso} {recheios.map((e) => e.name + ' ')}
+					{peso == 0.6 ? 'Bento' : peso + 'kg'}{' '}
+					{recheios?.map((e) => e.name + ' ')}
 				</SContainerPriceTitle>
-				<SPrice>R$60,00</SPrice>
+				<SPrice>R${peso == 0.6 ? price : (price * peso).toFixed(2)}</SPrice>
 			</div>
 			<SContainerButtons>
 				<BtnRemove>

@@ -15,8 +15,8 @@ export const Selecionado = tw.span`text-green-400 font-semibold flex items-cente
 export const ButtonsCard = tw.div`items-center font-semibold hidden group-hover:flex`
 
 export const ButtonAddMenus = tw.div`border-2 w-6 h-8 flex justify-center items-center border-gray-900
-md:w-8 font-bold
- ${({ left }) => (left ? 'rounded-l-xl' : 'rounded-r-xl')}
+md:w-8 font-bold data-[left=true]:rounded-l-xl rounded-r-xl
+
  `
 
 export const Quantity = tw.input`border-y-2 w-6 h-8 border-gray-900 text-center placeholder:text-gray-900 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`
