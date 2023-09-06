@@ -7,7 +7,7 @@ import { useContextState } from '@/components/contexts/ContextStatesBolo.jsx'
 import { toast } from 'react-toastify'
 
 export default function Recheios({ className, nav }) {
-	const { state } = useContextState()
+	const { state, setState } = useContextState()
 
 	const typeRecheios = () => {
 		if (state.bento) {
@@ -53,8 +53,10 @@ export default function Recheios({ className, nav }) {
 				<SButton
 					type='button'
 					onClick={() => {
-						if (state.recheios.length === 2) nav('formato')
-						else toast.warn('Primeiro escolha dois recheios.')
+						if (state.recheios.length === 2) {
+							state.bento && setState({ ...state, price: 25 })
+							nav('formato')
+						} else toast.warn('Primeiro escolha dois recheios.')
 					}}>
 					Avançar
 				</SButton>

@@ -1,5 +1,3 @@
-import ProviderBolos from '@/components/contexts/ContextBolos'
-import ProviderCarrinho from '@/components/contexts/ContextCarrinho'
 import '@/styles/globals.css'
 import { Poppins } from 'next/font/google'
 
@@ -30,12 +28,8 @@ const poppins = Poppins({
 
 export default function App({ Component, pageProps }) {
 	return (
-		<ProviderCarrinho>
-			<ProviderBolos>
-				<main className={`${poppins.variable} font-sans`}>
-					<Component {...pageProps} />
-				</main>
-			</ProviderBolos>
-		</ProviderCarrinho>
+		<main className={`${poppins.variable} font-sans`}>
+			<Component {...pageProps} />
+		</main>
 	)
 }

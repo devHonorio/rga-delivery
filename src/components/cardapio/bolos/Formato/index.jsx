@@ -1,14 +1,16 @@
-import Quadrado from './Quadrada'
-import Redondo from './Redondo'
-
 import { SContainer, SLi, SUl } from './styles'
 import { SLabel } from '../styles'
 
 import { SButton } from '@/components/@ui/Buton'
 import { useContextState } from '@/components/contexts/ContextStatesBolo'
+import { useFormato } from '@/hooks/useBolo'
+import { toast } from 'react-toastify'
+import { useCarrinho } from '@/hooks/useStorage'
 
 export default function Formato({ className, nav }) {
-	const { state } = useContextState()
+	const { state, setState } = useContextState()
+	const { getStorage, setStorage } = useCarrinho()
+
 	return (
 		<SContainer className={className}>
 			<SLabel className='text-start'>Escolha um formato.</SLabel>
@@ -26,14 +28,12 @@ export default function Formato({ className, nav }) {
 				</SLi>
 			</SUl>
 
-			<div className={`flex gap-5`}>
-				<Quadrado />
-				<Redondo />
-			</div>
+			<div className={`flex gap-5`}>{useFormato()}</div>
 			<div className={`flex gap-5`}>
 				<SButton
 					type='button'
 					onClick={() => {
+						setState({ ...state, formato: null })
 						nav('recheios')
 					}}>
 					Voltar
@@ -41,7 +41,16 @@ export default function Formato({ className, nav }) {
 				<SButton
 					type='button'
 					onClick={() => {
-						console.log(state)
+						!state.formato && toast.warn('Primeiro escolha um formato.')
+						if (state.formato) {
+							const carrinho = getStorage()
+
+							setStorage({
+								...carrinho,
+								bolos: [...carrinho.bolos, state],
+							})
+							nav('adicionado')
+						}
 					}}>
 					Adicionar ao carrinho
 				</SButton>

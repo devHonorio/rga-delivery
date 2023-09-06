@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import { useContextBolo } from '@/components/contexts/ContextBolos'
 import { SButton } from '@/components/@ui/Buton'
 import { useContextState } from '@/components/contexts/ContextStatesBolo'
 
@@ -21,12 +20,14 @@ export default function Adicionado({ nav, className }) {
 				type='button'
 				onClick={() => {
 					setState({
+						price: 0,
 						peso: 0,
 						bento: false,
-						recheioCheckd: false,
+						recheios: [],
 						formato: null,
+						reset: true,
 					})
-					sessionStorage.clear()
+
 					nav('novo-bolo')
 				}}>
 				Pedir mais um bolo

@@ -7,7 +7,7 @@ export default function NewBolo({ className, nav }) {
 			<SLabel>Gostaria de pedir um bolo?</SLabel>
 
 			<SButton
-				type={'button'}
+				type={'reset'}
 				className={`text-xl font-medium bg-orange-400`}
 				onClick={() => {
 					nav('peso')

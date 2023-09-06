@@ -7,6 +7,7 @@ import { useRecheios } from '@/hooks/useBolo'
 
 export default function CardBolo({ id, name, title, value, image, price }) {
 	const [checked, setChecked] = useState(false)
+
 	const { AddRecheio, removeRecheio } = useRecheios()
 
 	return (
