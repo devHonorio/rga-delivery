@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useId, useState } from 'react'
 import { Bag } from '../comum/Icons'
 import { toast } from 'react-toastify'
 

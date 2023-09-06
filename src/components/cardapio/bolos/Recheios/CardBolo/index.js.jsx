@@ -16,12 +16,12 @@ export default function CardBolo({ id, name, title, value, image, price }) {
 				type='checkbox'
 				name={name}
 				id={id}
-				checked={checked}
 				className='peer hidden'
 				value={value}
 			/>
 
 			<SContainer
+				data-checked={checked}
 				onClick={() => {
 					!checked && AddRecheio(value) && setChecked(true)
 					checked && removeRecheio(value) && setChecked(false)
