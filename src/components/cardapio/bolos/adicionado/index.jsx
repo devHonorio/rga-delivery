@@ -29,7 +29,6 @@ export default function Adicionado({ nav, className }) {
 					})
 
 					nav('novo-bolo')
-					location.reload()
 				}}>
 				Pedir mais um bolo
 			</SButton>

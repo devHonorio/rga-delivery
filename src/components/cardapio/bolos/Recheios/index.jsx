@@ -46,6 +46,7 @@ export default function Recheios({ className, nav }) {
 				<SButton
 					type='button'
 					onClick={() => {
+						setState({ ...state, recheios: [] })
 						nav('peso')
 					}}>
 					Voltar

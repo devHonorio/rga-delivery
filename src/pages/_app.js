@@ -1,3 +1,4 @@
+import ContextStateBolos from '@/components/contexts/ContextStatesBolo'
 import '@/styles/globals.css'
 import { Poppins } from 'next/font/google'
 
@@ -28,8 +29,10 @@ const poppins = Poppins({
 
 export default function App({ Component, pageProps }) {
 	return (
-		<main className={`${poppins.variable} font-sans`}>
-			<Component {...pageProps} />
-		</main>
+		<ContextStateBolos>
+			<main className={`${poppins.variable} font-sans`}>
+				<Component {...pageProps} />
+			</main>
+		</ContextStateBolos>
 	)
 }

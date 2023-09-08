@@ -18,3 +18,9 @@ input[type='number'] {
 	-moz-appearance: textfield;
 	appearance: textfield;
 }
+::-webkit-scrollbar {
+	width: 0;
+}
+::-webkit-scrollbar-track {
+	width: 0;
+}

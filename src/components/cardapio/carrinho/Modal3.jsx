@@ -2,7 +2,8 @@ import { Map } from '@/components/comum/Icons'
 import tw from 'tailwind-styled-components'
 import Footer from './Footer'
 import ItensEtp2 from './ItensEtapa3'
-import Button from '@/components/comum/Button'
+import { SButton } from '@/components/@ui/Buton'
+import { useRouter } from 'next/router'
 const Container = tw.div`flex flex-col`
 const Title = tw.p`text-xl font-semibold`
 const ContainerRua = tw.address`flex items-center gap-4  py-5`
@@ -11,6 +12,7 @@ const Endereco = tw.p`text-lg font-semibold not-italic`
 const ContainerItens = tw.div`divide-y pt-3`
 
 export default function Modal3({ className, setIsActive }) {
+	const router = useRouter()
 	return (
 		<Container className={`${className}`}>
 			<Title>Itens do seu pedido:</Title>
@@ -33,8 +35,14 @@ export default function Modal3({ className, setIsActive }) {
 
 			<Footer />
 			<div className='flex justify-end gap-4 py-7'>
-				<Button content={'Voltar'} onClick={() => setIsActive(2)} />
-				<Button content={'Enviar pedido'} bgColor='orange-400' />
+				<SButton onClick={() => setIsActive(2)}>Voltar</SButton>
+				<SButton
+					onClick={() => {
+						localStorage.removeItem('carrinho')
+						router.push('/')
+					}}>
+					Enviar pedido
+				</SButton>
 			</div>
 		</Container>
 	)

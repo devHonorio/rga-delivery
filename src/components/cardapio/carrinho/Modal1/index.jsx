@@ -2,38 +2,39 @@ import Button from '@/components/comum/Button'
 import ItemCarrinho from '../ItemCarrinho'
 import Footer from '../Footer'
 
-import { useId } from 'react'
+import { useEffect, useId, useState } from 'react'
 import ItemBolo from './ItemBolo'
 import { useCarrinho } from '@/hooks/useStorage'
+import { SButton } from '@/components/@ui/Buton'
 
 export default function Modal1({ className, setIsActive }) {
-	const { getStorage } = useCarrinho()
-	const carrinho = getStorage()
+	const [carrinho, setCarrinho] = useState()
+	const getStorageCarrinho = () => {
+		const { getStorage } = useCarrinho()
+		setCarrinho({ ...getStorage() })
+	}
+	useEffect(getStorageCarrinho, [])
+
 	return (
 		<div className={`${className}`}>
 			<div className='flex flex-col divide-y-2 pb-4'>
-				{carrinho.bolos.map((e) => {
-					const id = useId()
-					return (
-						<ItemBolo
-							key={id}
-							recheios={e.recheios}
-							peso={e.peso}
-							price={e.price}
-						/>
-					)
-				})}
-				<ItemBolo />
+				{carrinho &&
+					carrinho.bolos?.map((e, i) => {
+						return (
+							<ItemBolo
+								key={i}
+								recheios={e.recheios}
+								peso={e.peso}
+								price={e.price}
+							/>
+						)
+					})}
 			</div>
 
 			<Footer />
 
 			<div className='flex justify-end pt-3 pb-7'>
-				<Button
-					content={'Avançar'}
-					bgColor='orange-400'
-					onClick={() => setIsActive(2)}
-				/>
+				<SButton onClick={() => setIsActive(2)}>Avançar</SButton>
 			</div>
 		</div>
 	)

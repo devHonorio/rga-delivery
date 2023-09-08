@@ -4,7 +4,7 @@ export const SContainer = tw.div`flex flex-col  items-center gap-9 ${({
 	className,
 }) => className}`
 
-export const SLabelContainer = tw.label`flex h-16 items-center rounded-2xl shadow-sm px-5 font-semibold text-xl w-full ${({
+export const SLabelContainer = tw.label`font-semibold text-xl bg-transparent${({
 	className,
 }) => className}`
 

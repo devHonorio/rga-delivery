@@ -1,7 +1,7 @@
-import Button from '@/components/comum/Button'
 import InputCarrinho from './Input'
 import * as S from './styles'
 import Footer from './Footer'
+import { SButton } from '@/components/@ui/Buton'
 
 export default function Modal2({ className, setIsActive }) {
 	const enviar = (e) => {
@@ -24,12 +24,13 @@ export default function Modal2({ className, setIsActive }) {
 			<InputCarrinho label={'Cidade:'} />
 			<Footer />
 			<div className='mt-5 mb-7 flex gap-4 justify-end '>
-				<Button
-					content='Voltar'
+				<SButton
+					className='bg-white'
 					onClick={() => setIsActive(1)}
-					type={'button'}
-				/>
-				<Button bgColor='orange-400' content='Avançar' type={'submit'} />
+					type={'button'}>
+					Voltar
+				</SButton>
+				<SButton type={'submit'}>Avançar</SButton>
 			</div>
 		</S.Form>
 	)
