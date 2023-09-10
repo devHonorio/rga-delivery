@@ -6,10 +6,12 @@ import { useContextState } from '@/components/contexts/ContextStatesBolo'
 import { useFormato } from '@/hooks/useBolo'
 import { toast } from 'react-toastify'
 import { useCarrinho } from '@/hooks/useStorage'
+import { useRouter } from 'next/router'
 
 export default function Formato({ className, nav }) {
 	const { state, setState } = useContextState()
 	const { getStorage, setStorage } = useCarrinho()
+	const router = useRouter()
 
 	return (
 		<SContainer className={className}>
@@ -34,6 +36,7 @@ export default function Formato({ className, nav }) {
 					type='button'
 					onClick={() => {
 						setState({ ...state, formato: null })
+						router.push('#header')
 						nav('recheios')
 					}}>
 					Voltar
@@ -49,6 +52,7 @@ export default function Formato({ className, nav }) {
 								...carrinho,
 								bolos: [...carrinho.bolos, state],
 							})
+
 							nav('adicionado')
 						}
 					}}>

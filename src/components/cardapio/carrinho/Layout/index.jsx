@@ -1,5 +1,6 @@
-import HeaderCarrinho from '../HeaderCarrinho'
-import { SContainer } from './styles'
+import FooterCarrinho from './FooterCarrinho'
+import HeaderCarrinho from './HeaderCarrinho'
+import { SContainer, SHmin } from './styles'
 
 export default function LayoutCarrinho({ children, className, isActive }) {
 	return (

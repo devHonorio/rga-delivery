@@ -24,7 +24,7 @@ export default function ItemBolo({ peso, recheios, price }) {
 					{peso == 0.6 ? 'Bento' : peso + 'kg'}{' '}
 					{recheios?.map((e) => e.name + ' ')}
 				</SContainerPriceTitle>
-				<SPrice>R${peso == 0.6 ? price : (price * peso).toFixed(2)}</SPrice>
+				<SPrice>R${price}</SPrice>
 			</div>
 			<SContainerButtons>
 				<BtnRemove>

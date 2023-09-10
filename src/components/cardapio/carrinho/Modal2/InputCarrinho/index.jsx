@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { Input, Label } from './styles'
+import { Input, Label } from '../../styles'
 
 export default function InputCarrinho({ label, type, typeOf, className }) {
 	const id = useId()

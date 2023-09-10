@@ -15,4 +15,7 @@ export default function ContextStateBolos({ children }) {
 	)
 }
 
-export const useContextState = () => useContext(States)
+export const useContextState = () => {
+	const { state, setState } = useContext(States)
+	return { state, setState }
+}

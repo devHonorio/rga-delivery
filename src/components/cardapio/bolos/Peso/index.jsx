@@ -7,13 +7,16 @@ import { useContextState } from '@/components/contexts/ContextStatesBolo'
 import { usePeso } from '@/hooks/useBolo'
 import Modal from './Input/modal'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Peso({ className, nav }) {
 	const { state } = useContextState()
 	const [active, setActive] = useState(false)
+	const router = useRouter()
 
 	function avancar() {
 		usePeso(state.peso) && nav('recheios')
+		router.push('#header')
 	}
 	return (
 		<SContainer className={className}>

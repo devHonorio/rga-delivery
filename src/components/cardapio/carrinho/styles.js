@@ -6,10 +6,6 @@ export const btnRemove = tw.button`
       font-black text-white
 `
 
-export const Form = tw.form`
-      flex flex-col gap-5
-`
-
 export const Input = tw.input`
       w-full px-5 py-4 rounded-2xl
       shadow-md 

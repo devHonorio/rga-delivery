@@ -10,9 +10,10 @@ export default function CarrinhoC() {
 	return (
 		<LayoutCarrinho isActive={isActive}>
 			<Modal1
-				className={`${isActive !== 1 && 'hidden'}`}
+				className={isActive !== 1 && 'hidden'}
 				setIsActive={setIsActive}
 			/>
+
 			<Modal2
 				className={`${isActive !== 2 && 'hidden'}`}
 				setIsActive={setIsActive}

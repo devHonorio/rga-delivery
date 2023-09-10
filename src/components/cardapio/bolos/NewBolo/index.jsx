@@ -1,7 +1,13 @@
 import { SButton } from '@/components/@ui/Buton'
 import { SLabel } from '../styles'
+import { useEffect } from 'react'
+import { useContextState } from '@/components/contexts/ContextStatesBolo'
+import { useRouter } from 'next/router'
 
 export default function NewBolo({ className, nav }) {
+	const { setState } = useContextState()
+	const router = useRouter()
+
 	return (
 		<div className={`flex flex-col items-center gap-6 py-10 ${className}`}>
 			<SLabel>Gostaria de pedir um bolo?</SLabel>
@@ -10,6 +16,16 @@ export default function NewBolo({ className, nav }) {
 				type={'reset'}
 				className={`text-xl font-medium bg-orange-400`}
 				onClick={() => {
+					setState({
+						price: 0,
+						peso: 0,
+						bento: false,
+						recheios: [],
+						formato: null,
+						reset: true,
+						priceBolo: 0,
+					})
+					router.push('#header')
 					nav('peso')
 				}}>
 				Novo bolo

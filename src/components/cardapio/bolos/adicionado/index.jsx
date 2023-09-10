@@ -1,11 +1,8 @@
 import Image from 'next/image'
 
 import { SButton } from '@/components/@ui/Buton'
-import { useContextState } from '@/components/contexts/ContextStatesBolo'
 
 export default function Adicionado({ nav, className }) {
-	const { setState } = useContextState()
-
 	return (
 		<div className={`${styles.container} ${className}`}>
 			<h1 className={`${styles.h1}`}>Pedido adicionado</h1>
@@ -19,15 +16,6 @@ export default function Adicionado({ nav, className }) {
 			<SButton
 				type='button'
 				onClick={() => {
-					setState({
-						price: 0,
-						peso: 0,
-						bento: false,
-						recheios: [],
-						formato: null,
-						reset: true,
-					})
-
 					nav('novo-bolo')
 				}}>
 				Pedir mais um bolo

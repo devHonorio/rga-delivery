@@ -5,9 +5,17 @@ import { SButton } from '@/components/@ui/Buton'
 import ContainerCardapio from '../../ContainerCardapio.jsx'
 import { useContextState } from '@/components/contexts/ContextStatesBolo.jsx'
 import { toast } from 'react-toastify'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router.js'
 
 export default function Recheios({ className, nav }) {
 	const { state, setState } = useContextState()
+	const router = useRouter()
+
+	useEffect(() => {
+		setState({ ...state, recheios: [] })
+		console.log('recheios')
+	}, [])
 
 	const typeRecheios = () => {
 		if (state.bento) {
@@ -46,7 +54,8 @@ export default function Recheios({ className, nav }) {
 				<SButton
 					type='button'
 					onClick={() => {
-						setState({ ...state, recheios: [] })
+						setState({ ...state, recheios: [], price: 0 })
+						router.push('#header')
 						nav('peso')
 					}}>
 					Voltar
@@ -55,7 +64,11 @@ export default function Recheios({ className, nav }) {
 					type='button'
 					onClick={() => {
 						if (state.recheios.length === 2) {
-							state.bento && setState({ ...state, price: 25 })
+							const priceBolo = state.price * state.peso
+
+							state.bento && setState({ ...state, price: 25, priceBolo: 25 })
+							!state.bento && setState({ ...state, priceBolo })
+							router.push('#header')
 							nav('formato')
 						} else toast.warn('Primeiro escolha dois recheios.')
 					}}>
