@@ -14,10 +14,10 @@ export default function CardapioIndex() {
 	const [navCardapio, setNavCardapio] = useState('Bolos')
 
 	return (
-		<main className='py-10'>
+		<main id='header' className='py-10'>
 			<nav className='flex gap-4 flex-wrap'>
 				<MiniButtonIcon
-					icon={<Bolo className='h-4 w-4' />}
+					icon={<Bolo className='h-3 w-3' />}
 					content='Bolos'
 					action={navCardapio}
 					onClick={setNavCardapio}

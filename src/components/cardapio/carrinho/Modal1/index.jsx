@@ -17,7 +17,7 @@ export default function Modal1({ className, setIsActive }) {
 	useEffect(getStorageCarrinho, [])
 
 	return (
-		<div className={`${className} h-full overflow-hidden overflow-y-scroll`}>
+		<div className={`${className} `}>
 			<SContainerContent>
 				{carrinho &&
 					carrinho.bolos?.map((e, i) => {
@@ -30,11 +30,10 @@ export default function Modal1({ className, setIsActive }) {
 							/>
 						)
 					})}
-				<div className='py-28'></div>
 			</SContainerContent>
 
 			<Footer>
-				<div className='flex justify-end pt-3 pb-7'>
+				<div className='flex justify-end pt-3 pb-7 '>
 					<SButton onClick={() => setIsActive(2)}>Avançar</SButton>
 				</div>
 			</Footer>

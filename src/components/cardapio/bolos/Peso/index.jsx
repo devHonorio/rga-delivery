@@ -27,7 +27,7 @@ export default function Peso({ className, nav }) {
 				}}
 			/>
 
-			<SButton type='button' className='bg-orange-400' onClick={avancar}>
+			<SButton type='button' onClick={avancar}>
 				Avançar
 			</SButton>
 		</SContainer>

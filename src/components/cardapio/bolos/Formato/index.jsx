@@ -16,19 +16,6 @@ export default function Formato({ className, nav }) {
 	return (
 		<SContainer className={className}>
 			<SLabel className='text-start'>Escolha um formato.</SLabel>
-			<SUl>
-				<SLi>
-					- Atenção, bolos redondos somente até <strong>3,5kg</strong>.
-				</SLi>
-				<SLi>
-					- Bolos retangular somente a partir de <strong>2,5kg</strong> e no
-					máximo a <strong>6kg</strong>.
-				</SLi>
-				<SLi>
-					- Recheios com morango retangular somete a partir de
-					<strong> 3,5kg</strong>.
-				</SLi>
-			</SUl>
 
 			<div className={`flex gap-5`}>{useFormato()}</div>
 			<div className={`flex gap-5`}>

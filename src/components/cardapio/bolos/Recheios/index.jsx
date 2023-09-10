@@ -7,6 +7,7 @@ import { useContextState } from '@/components/contexts/ContextStatesBolo.jsx'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router.js'
+import { SContainerNavButton } from './styles.js'
 
 export default function Recheios({ className, nav }) {
 	const { state, setState } = useContextState()
@@ -50,7 +51,7 @@ export default function Recheios({ className, nav }) {
 					)
 				})}
 			</ContainerCardapio>
-			<div className={`flex gap-5 justify-center ${className}`}>
+			<SContainerNavButton className={`flex gap-5 justify-center ${className}`}>
 				<SButton
 					type='button'
 					onClick={() => {
@@ -74,7 +75,7 @@ export default function Recheios({ className, nav }) {
 					}}>
 					Avançar
 				</SButton>
-			</div>
+			</SContainerNavButton>
 		</>
 	)
 }

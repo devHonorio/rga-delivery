@@ -22,7 +22,6 @@ export default function Modal2({ className, setIsActive }) {
 			</div>
 			<InputCarrinho label={'Bairro:'} />
 			<InputCarrinho label={'Cidade:'} />
-			<div className='py-28'></div>
 
 			<Footer>
 				<div className='mt-5 mb-7 flex gap-4 justify-end '>

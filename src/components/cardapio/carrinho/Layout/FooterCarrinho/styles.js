@@ -1,7 +1,6 @@
 import tw from 'tailwind-styled-components'
 
 export const SContainer = tw.div`
-fixed bottom-0 left-0 right-0
 flex flex-col items-end
 bg-orange-50
 `

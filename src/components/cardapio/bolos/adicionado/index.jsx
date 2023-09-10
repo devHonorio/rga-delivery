@@ -25,6 +25,6 @@ export default function Adicionado({ nav, className }) {
 }
 
 const styles = {
-	h1: 'text-5xl font-medium ',
+	h1: 'text-3xl font-medium md:text-5xl',
 	container: 'py-20 flex flex-col gap-5 items-center justify-center',
 }
