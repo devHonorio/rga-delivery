@@ -4,8 +4,8 @@ import { produtos } from '../../data/bolos/recheios'
 import { PiDropBold } from 'react-icons/pi'
 import { LuCupSoda } from 'react-icons/lu'
 import { RiCake3Line } from 'react-icons/ri'
-import CardProduct from './cardProduct'
-import ContainerCardapio from './ContainerCardapio'
+import CardProduct from './comuns/CardProduct'
+import ContainerCardapio from './comuns/ContainerCardapio'
 import { useState } from 'react'
 
 import Image from 'next/image'
@@ -71,6 +71,7 @@ export default function CardapioIndex() {
 							price={r.price}
 							image={r.image}
 							value={r}
+							category={r.category}
 						/>
 					)
 				})}

@@ -2,12 +2,12 @@ import { produtos } from '@/data/bolos/recheios'
 
 import CardBolo from './CardBolo/index.js.jsx'
 import { SButton } from '@/components/@ui/Buton'
-import ContainerCardapio from '../../ContainerCardapio.jsx'
 import { useContextState } from '@/components/contexts/ContextStatesBolo.jsx'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router.js'
 import { SContainerNavButton } from './styles.js'
+import ContainerCardapio from '../../comuns/ContainerCardapio/index.jsx'
 
 export default function Recheios({ className, nav }) {
 	const { state, setState } = useContextState()

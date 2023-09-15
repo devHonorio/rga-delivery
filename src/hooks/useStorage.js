@@ -1,14 +1,18 @@
+import { useEffect } from 'react'
+
 export const useCarrinho = () => {
-	const setStorage = (state) => {
-		const stateJson = JSON.stringify(state)
-		localStorage.setItem('carrinho', stateJson)
-	}
+	useEffect(() => {}, [])
+	if (typeof window !== 'undefined') {
+		const getStorage = () => {
+			const storage = localStorage.getItem('carrinho')
+			const storageJS = JSON.parse(storage)
+			return storageJS
+		}
+		const setStorage = (state) => {
+			const stateJson = JSON.stringify(state)
+			localStorage.setItem('carrinho', stateJson)
+		}
 
-	const getStorage = () => {
-		const storage = localStorage.getItem('carrinho')
-		const storageJS = JSON.parse(storage)
-		return storageJS
+		return { setStorage, getStorage }
 	}
-
-	return { setStorage, getStorage }
 }

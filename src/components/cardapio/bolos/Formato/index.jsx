@@ -5,8 +5,9 @@ import { SButton } from '@/components/@ui/Buton'
 import { useContextState } from '@/components/contexts/ContextStatesBolo'
 import { useFormato } from '@/hooks/useBolo'
 import { toast } from 'react-toastify'
-import { useCarrinho } from '@/hooks/useStorage'
+
 import { useRouter } from 'next/router'
+import { useCarrinho } from '@/hooks/useStorage'
 
 export default function Formato({ className, nav }) {
 	const { state, setState } = useContextState()

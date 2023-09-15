@@ -7,8 +7,25 @@ import {
 	SPrice,
 } from './styles'
 import Image from 'next/image'
+import { useCarrinho } from '@/hooks/useStorage'
 
-export default function ItemBolo({ peso, recheios, price }) {
+export default function ItemBolo({
+	peso,
+	recheios,
+	price,
+	id,
+	renderCarrinho,
+	setRenderCarrinho,
+}) {
+	const { getStorage, setStorage } = useCarrinho()
+	console.log(id)
+	function removeBolo() {
+		const carrinho = getStorage()
+		const listaNovaBolo = carrinho.bolos?.filter((e) => e.id != id)
+		setStorage({ ...carrinho, bolos: listaNovaBolo })
+		setRenderCarrinho(!renderCarrinho)
+	}
+
 	return (
 		<SContainer>
 			<Image
@@ -24,10 +41,15 @@ export default function ItemBolo({ peso, recheios, price }) {
 					{peso == 0.6 ? 'Bento' : peso + 'kg'}{' '}
 					{recheios?.map((e) => e.name + ' ')}
 				</SContainerPriceTitle>
-				<SPrice>R${price}</SPrice>
+				<SPrice>
+					{price?.toLocaleString('pt-BR', {
+						style: 'currency',
+						currency: 'BRL',
+					})}
+				</SPrice>
 			</div>
 			<SContainerButtons>
-				<BtnRemove>
+				<BtnRemove onClick={removeBolo}>
 					<Close strokeWidth={3} className='h-4 w-4' />
 				</BtnRemove>
 			</SContainerButtons>
