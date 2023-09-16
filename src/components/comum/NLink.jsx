@@ -2,24 +2,7 @@ import Link from 'next/link'
 
 export default function Nlink({ href, content, className }) {
 	return (
-		<Link
-			className={`${styles.link} ${className}`}
-			href={href}
-			onClick={() => {
-				if (!localStorage.getItem('carrinho')) {
-					localStorage.setItem(
-						'carrinho',
-						JSON.stringify({
-							bolos: [],
-							docesTradicionais: [],
-							docesGourmet: [],
-							docesFinos: [],
-							salgados: [],
-							bebidas: [],
-						})
-					)
-				}
-			}}>
+		<Link className={`${styles.link} ${className}`} href={href}>
 			{content}
 		</Link>
 	)

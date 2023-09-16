@@ -27,22 +27,7 @@ export default function Banner() {
 				<div className={styles.containerButtons}>
 					<SButton
 						className='bg-orange-400 text-white'
-						onClick={() => {
-							if (!localStorage.getItem('carrinho')) {
-								localStorage.setItem(
-									'carrinho',
-									JSON.stringify({
-										bolos: [],
-										docesTradicionais: [],
-										docesGourmet: [],
-										docesFinos: [],
-										salgados: [],
-										bebidas: [],
-									})
-								)
-							}
-							router.push('/Cardapio')
-						}}>
+						onClick={() => router.push('/Cardapio')}>
 						Ver cardápio
 					</SButton>
 

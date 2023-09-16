@@ -1,4 +1,4 @@
-import { SContainer, SLi, SUl } from './styles'
+import { SContainer } from './styles'
 import { SLabel } from '../styles'
 
 import { SButton } from '@/components/@ui/Buton'
@@ -11,7 +11,7 @@ import { useCarrinho } from '@/hooks/useStorage'
 
 export default function Formato({ className, nav }) {
 	const { state, setState } = useContextState()
-	const { getStorage, setStorage } = useCarrinho()
+	const { setStorage, getStorage } = useCarrinho()
 	const router = useRouter()
 
 	return (

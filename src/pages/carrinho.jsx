@@ -1,4 +1,4 @@
-import CarrinhoC from '@/components/cardapio/carrinho'
+import CarrinhoC from '@/components/carrinho'
 
 export default function Carrinho() {
 	return <CarrinhoC />

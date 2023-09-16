@@ -10,7 +10,19 @@ import { useEffect } from 'react'
 
 export default function Layout({ children }) {
 	useEffect(() => {
-		sessionStorage.clear()
+		if (!localStorage.getItem('carrinho')) {
+			localStorage.setItem(
+				'carrinho',
+				JSON.stringify({
+					bolos: [],
+					docesTradicionais: [],
+					docesGourmet: [],
+					docesFinos: [],
+					salgados: [],
+					bebidas: [],
+				})
+			)
+		}
 	}, [])
 	return (
 		<>
