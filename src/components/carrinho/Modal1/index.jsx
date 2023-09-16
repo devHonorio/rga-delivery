@@ -1,11 +1,10 @@
-import Button from '@/components/comum/Button'
 import ItemCarrinho from './ItemCarrinho'
 import Footer from '../Layout/FooterCarrinho'
 
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ItemBolo from './ItemBolo'
 import { SButton } from '@/components/@ui/Buton'
-import { SContainerContent } from './styles'
+import { SContainer, SContainerContent } from './styles'
 import { useCarrinho } from '@/hooks/useStorage'
 
 export default function Modal1({ className, setIsActive }) {
@@ -49,7 +48,7 @@ export default function Modal1({ className, setIsActive }) {
 		}
 	}
 	return (
-		<div className={`${className} `}>
+		<SContainer className={className}>
 			<SContainerContent>{renderItens()}</SContainerContent>
 
 			<Footer>
@@ -57,6 +56,6 @@ export default function Modal1({ className, setIsActive }) {
 					<SButton onClick={() => setIsActive(2)}>Avançar</SButton>
 				</div>
 			</Footer>
-		</div>
+		</SContainer>
 	)
 }
