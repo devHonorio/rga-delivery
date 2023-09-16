@@ -36,10 +36,14 @@ export default function Modal1({ className, setIsActive }) {
 				return (
 					<ItemCarrinho
 						key={i}
+						id={e.id}
 						name={e.title}
 						quantity={e.quantity}
 						price={e.price}
 						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
 					/>
 				)
 			})

@@ -18,7 +18,7 @@ export default function ItemBolo({
 	setRenderCarrinho,
 }) {
 	const { getStorage, setStorage } = useCarrinho()
-	console.log(id)
+
 	function removeBolo() {
 		const carrinho = getStorage()
 		const listaNovaBolo = carrinho.bolos?.filter((e) => e.id != id)

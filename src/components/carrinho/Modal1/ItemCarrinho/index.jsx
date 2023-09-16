@@ -2,13 +2,24 @@ import Image from 'next/image'
 import * as S from '../../styles'
 import { SContainer, SName, SPrice } from './styles'
 import { Close } from '@/components/comum/Icons'
+import { useCarrinho } from '@/hooks/useStorage'
 
 export default function ItemCarrinho({
 	name = '',
 	quantity = 0,
-	price,
 	priceTotal,
+	category,
+	id,
+	setRenderCarrinho,
+	renderCarrinho,
 }) {
+	const { getStorage, setStorage } = useCarrinho()
+	function removeItem() {
+		const carrinho = getStorage()
+		const listaNovaItens = carrinho[category]?.filter((e) => e.id != id)
+		setStorage({ ...carrinho, [category]: listaNovaItens })
+		setRenderCarrinho(!renderCarrinho)
+	}
 	return (
 		<SContainer>
 			<Image
@@ -30,7 +41,7 @@ export default function ItemCarrinho({
 				</SPrice>
 			</div>
 			<div className='flex flex-col md:gap-4 md:flex-row-reverse md:items-center items-end justify-around'>
-				<S.btnRemove>
+				<S.btnRemove onClick={removeItem}>
 					<Close strokeWidth={3} className='h-4 w-4' />
 				</S.btnRemove>
 			</div>
