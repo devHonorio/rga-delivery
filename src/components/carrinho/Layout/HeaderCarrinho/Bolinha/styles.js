@@ -6,7 +6,7 @@ flex items-center
 
 export const SCircle = tw.div`
 h-10 w-10 rounded-full flex justify-center items-center shadow-md bg-white
-data-[isActive=true]:bg-orange-400
+data-[isactive=true]:bg-orange-400
 `
 
 export const SContent = tw.div`

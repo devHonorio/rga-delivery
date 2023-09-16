@@ -1,10 +1,10 @@
 import { useContextState } from '@/components/contexts/ContextStatesBolo'
 import { SContainer, SOpemModalPeso } from '../styles'
 import { SLabel } from '../../styles'
-import { SInput, SLabelContainer, SSpan } from './styles'
+import { SLabelContainer } from './styles'
 
-export default function Input({ onClick, peso = '1.5' }) {
-	const { state, setState } = useContextState()
+export default function Input({ onClick }) {
+	const { state } = useContextState()
 	const { bento } = state
 
 	return (
