@@ -35,6 +35,7 @@ export default function ButtonAddAndRemove({ category, value }) {
 				<SButtons onClick={() => quantity >= 5 && setQuantity(quantity - 5)}>
 					-
 				</SButtons>
+
 				<SQuantity
 					placeholder='0'
 					type='number'
@@ -44,6 +45,7 @@ export default function ButtonAddAndRemove({ category, value }) {
 					value={quantity}
 					onChange={(e) => setQuantity(+e.target.value)}
 				/>
+
 				<SButtons onClick={() => setQuantity(quantity + 5)}>+</SButtons>
 			</SContainer>
 

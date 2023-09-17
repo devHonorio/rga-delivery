@@ -28,5 +28,11 @@ module.exports = {
 			},
 		}, //animation: float 2s linear 0s infinite alternate both;
 	},
-	plugins: [require('tailwindcss-animated')],
+	plugins: [
+		require('tailwindcss-animated'),
+		require('@tailwindcss/forms')({
+			strategy: 'base', // only generate global styles
+			// strategy: 'class', // only generate classes
+		}),
+	],
 }

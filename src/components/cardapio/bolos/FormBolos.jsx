@@ -7,6 +7,7 @@ import NewBolo from './NewBolo'
 
 import Recheios from './Recheios'
 import Formato from './Formato'
+import Informacao from './Informacao'
 
 export default function FormBolos({ className }) {
 	const [nav, setNav] = useState('novo-bolo')
@@ -21,10 +22,9 @@ export default function FormBolos({ className }) {
 
 			<Formato className={nav !== 'formato' && 'hidden'} nav={setNav} />
 
-			<Adicionado
-				className={`${nav !== 'adicionado' && 'hidden'}`}
-				nav={setNav}
-			/>
+			<Informacao className={nav !== 'informações' && 'hidden'} nav={setNav} />
+
+			<Adicionado className={nav !== 'adicionado' && 'hidden'} nav={setNav} />
 		</form>
 	)
 }

@@ -35,15 +35,15 @@ export default function FooterCarrinho({ children }) {
 					currency: 'BRL',
 				})}
 			</SSubtotal>
-			<SEntregaContainer>
+			{/* <SEntregaContainer>
 				<Truck className='text-gray-500 h-4 w-4' />
 				<SEntrega>Entrega: + R$ 5,00</SEntrega>
-			</SEntregaContainer>
+			</SEntregaContainer> */}
 
 			<STotal>
 				Total:{' '}
 				<SValor>
-					{(renderTotal() + 5)?.toLocaleString('pt-BR', {
+					{renderTotal()?.toLocaleString('pt-BR', {
 						style: 'currency',
 						currency: 'BRL',
 					})}

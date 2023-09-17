@@ -12,6 +12,7 @@ export default function ItemCarrinho({
 	id,
 	setRenderCarrinho,
 	renderCarrinho,
+	image,
 }) {
 	const { getStorage, setStorage } = useCarrinho()
 	function removeItem() {
@@ -23,11 +24,11 @@ export default function ItemCarrinho({
 	return (
 		<SContainer>
 			<Image
-				src={`/bolos/recheios/brigadeiro.jpg`}
+				src={image}
 				width={100}
 				height={100}
 				className='h-16 w-16 rounded-lg'
-				alt='Foto do produto'
+				alt={id}
 			/>
 			<div className='flex-1'>
 				<SName>

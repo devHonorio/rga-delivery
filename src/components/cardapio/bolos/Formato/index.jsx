@@ -41,10 +41,10 @@ export default function Formato({ className, nav }) {
 								bolos: [...carrinho.bolos, state],
 							})
 
-							nav('adicionado')
+							nav('informações')
 						}
 					}}>
-					Adicionar ao carrinho
+					Avançar
 				</SButton>
 			</div>
 		</SContainer>

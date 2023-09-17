@@ -6,22 +6,35 @@ const Title = tw.p`text-md font-semibold `
 const Price = tw.p`text-md font-bold text-orange-400`
 const Quantity = tw.p`font-bold text-xl`
 
-export default function ItensEtp2() {
+export default function ItensEtp2({
+	image,
+	id,
+	name,
+	priceTotal,
+	quantity,
+	setRenderCarrinho,
+	renderCarrinho,
+}) {
 	return (
 		<Container>
 			<Image
-				src={'/sucesso.jpg'}
-				alt='Comida escolhida'
+				src={image}
+				alt={id}
 				width={100}
 				height={100}
 				className='w-16 h-16 rounded-xl'
 			/>
 			<div className='flex-1'>
-				<Title>Bobom de Morango</Title>
-				<Price>R$ 24,00</Price>
+				<Title>{name}</Title>
+				<Price>
+					{priceTotal?.toLocaleString('pt-BR', {
+						style: 'currency',
+						currency: 'BRL',
+					})}
+				</Price>
 			</div>
 
-			<Quantity>x12</Quantity>
+			<Quantity>x{quantity}</Quantity>
 		</Container>
 	)
 }

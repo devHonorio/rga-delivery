@@ -44,6 +44,7 @@ export default function Modal1({ className, setIsActive }) {
 						category={e.category}
 						setRenderCarrinho={setRenderCarrinho}
 						renderCarrinho={renderCarrinho}
+						image={e.image}
 					/>
 				)
 			})
