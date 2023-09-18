@@ -1,16 +1,16 @@
-import { useCarrinho } from '@/hooks/useStorage'
 import HeaderCarrinho from './HeaderCarrinho'
 import { SContainer } from './styles'
+import { useEffect, useState } from 'react'
 
 export default function LayoutCarrinho({ children, className, isActive }) {
-	const { getStorage } = useCarrinho()
-	const carrinho = getStorage()
-
+	const [init, setInit] = useState(false)
+	useEffect(() => {
+		setInit(true)
+	}, [])
 	return (
 		<SContainer className={className}>
 			<HeaderCarrinho isActive={isActive} />
-			{!carrinho && 'Não á itens no carrinho'}
-			{carrinho && children}
+			{init && children}
 		</SContainer>
 	)
 }

@@ -12,6 +12,7 @@ import { useCarrinho } from '@/hooks/useStorage'
 
 export default function FooterCarrinho({ children }) {
 	const { getStorage } = useCarrinho()
+
 	const carrinho = getStorage()
 
 	const totalBolos = carrinho.bolos?.reduce(

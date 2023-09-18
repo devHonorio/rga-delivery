@@ -4,9 +4,13 @@ import LayoutCarrinho from './Layout'
 import Modal2 from './Modal2'
 import Modal3 from './Modal3'
 import Modal1 from './Modal1'
+import { useCarrinho } from '@/hooks/useStorage'
 
 export default function CarrinhoC() {
 	const [isActive, setIsActive] = useState(1)
+
+	const { getStorage } = useCarrinho()
+	const carrinho = getStorage()
 	return (
 		<LayoutCarrinho isActive={isActive}>
 			<Modal1

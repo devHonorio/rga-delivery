@@ -27,19 +27,30 @@ ${e.formato.toUpperCase()} \n\n\n`)
 		docesTradicionaisPrice += e.priceTotal
 	})
 
-	const message = `${name} ${date}
+	const entrega = !carrinho.entrega
+		? 'Retirada no local'
+		: `${carrinho.entrega.rua} - ${carrinho.entrega.number}, ${carrinho.entrega.bairro}, ${carrinho.entrega.cidade}`
+	const message = `*${name} ${date?.split('-').reverse().join('/')}*
 
 
 ${bolos}
       
 ${
 	docesTradicionais +
-	'Total..........' +
+	'*Subtotal..............' +
 	docesTradicionaisPrice?.toLocaleString('pt-BR', {
 		style: 'currency',
 		currency: 'BRL',
-	})
+	}) +
+	'*'
 }
+
+${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*' : ''}
+
+${carrinho.observacoes ? '*' + carrinho.observacoes + '*' : ''}
+
+*${entrega}* 
       `
-	return encodeURI(message)
+	return message
+	// encodeURI(message)
 }

@@ -79,12 +79,12 @@ export default function Modal3({ className, setIsActive }) {
 					<SButton onClick={() => setIsActive(2)}>Voltar</SButton>
 					<SButton
 						$as='a'
-						href={`https://api.whatsapp.com/send?phone=44998692094&text=${mensage}`}
+						href={`https://api.whatsapp.com/send?phone=46988158699&text=${mensage}`}
 						target='_blank'
 						onClick={() => {
 							console.log(mensage)
-							// localStorage.removeItem('carrinho')
-							// router.push('/')
+							localStorage.removeItem('carrinho')
+							router.push('/')
 						}}>
 						Enviar pedido
 					</SButton>
