@@ -51,6 +51,6 @@ ${carrinho.observacoes ? '*' + carrinho.observacoes + '*' : ''}
 
 *${entrega}* 
       `
-	return message
-	// encodeURI(message)
+	return encodeURI(message)
+	//
 }
