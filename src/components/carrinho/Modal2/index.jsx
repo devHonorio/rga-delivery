@@ -1,10 +1,9 @@
-import Footer from '../Layout/FooterCarrinho'
 import { SButton } from '@/components/@ui/Buton'
 import { SForm } from './styles'
 
 import { useRef, useState } from 'react'
 import { SInputCheckBox } from '@/components/@ui/InputCheckBox'
-import { SInputData } from '@/components/@ui/InputData'
+
 import { useCarrinho } from '@/hooks/useStorage'
 import { InputCarrinho } from './InputCarrinho'
 import { TextArea } from './TextArea'
