@@ -20,6 +20,7 @@ export default function Layout({ children }) {
 					docesFinos: [],
 					salgados: [],
 					bebidas: [],
+					vazio: true,
 				})
 			)
 		}

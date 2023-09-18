@@ -39,6 +39,7 @@ export default function Formato({ className, nav }) {
 							setStorage({
 								...carrinho,
 								bolos: [...carrinho.bolos, state],
+								vazio: false,
 							})
 
 							nav('informações')

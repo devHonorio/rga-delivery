@@ -29,10 +29,10 @@ export default function ItemBolo({
 	return (
 		<SContainer>
 			<Image
-				src={`/bolos/recheios/brigadeiro.jpg`}
+				src={`/bolo-generico.jpg`}
 				width={100}
 				height={100}
-				className='h-16 w-16 rounded-lg'
+				className='h-16 w-16 rounded-lg object-cover'
 				alt='Foto do produto'
 			/>
 

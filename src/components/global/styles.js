@@ -27,12 +27,6 @@ export const InformacoesContainer = tw.div`flex lg:flex-row flex-col justify-aro
 export const ContainerSocial = tw.div`flex items-center justify-center gap-4 mt-20`
 
 export const FloatCarrinho = tw.div`
-h-14 w-14 bg-orange-400 rounded-3xl
+h-10 w-10 bg-orange-400 rounded-2xl
 flex justify-center items-center
-`
-export const cont = tw.div`
-      p-2 rounded-full
-      bg-white
-      text-black text-xs font-semibold
-      absolute right-0 -top-3
 `

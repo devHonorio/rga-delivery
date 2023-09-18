@@ -114,9 +114,7 @@ export default function Modal2({ className, setIsActive }) {
 					type={'button'}>
 					Voltar
 				</SButton>
-				<SButton type={'submit'} onSubmit={() => console.log(refName)}>
-					Avançar
-				</SButton>
+				<SButton type={'submit'}>Avançar</SButton>
 			</div>
 		</SForm>
 	)

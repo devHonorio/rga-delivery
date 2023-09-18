@@ -10,9 +10,8 @@ export default function FloatCarrinho() {
 				sessionStorage.clear()
 			}}>
 			<div className='fixed right-8 bottom-10 z-50'>
-				<S.cont>4</S.cont>
 				<S.FloatCarrinho>
-					<Bag className='h-8 w-8' />
+					<Bag className='h-5 w-5' />
 				</S.FloatCarrinho>
 			</div>
 		</Link>

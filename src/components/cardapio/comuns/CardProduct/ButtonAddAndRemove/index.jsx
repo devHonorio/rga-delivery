@@ -15,14 +15,14 @@ export default function ButtonAddAndRemove({ category, value }) {
 			let exist = carrinho[category].findIndex((e) => e.id == value.id)
 			if (exist > -1) {
 				carrinho[category][exist].quantity = quantity
-				setStorage({ ...carrinho })
+				setStorage({ ...carrinho, vazio: false })
 				toast.info('Quantidade alterada.')
 			} else {
 				const produto = value
 				produto.quantity = quantity
 				produto.priceTotal = quantity * value.price
 				carrinho[category].push(produto)
-				setStorage({ ...carrinho })
+				setStorage({ ...carrinho, vazio: false })
 				toast.success('Adicionado ao carrinho')
 			}
 		} else {

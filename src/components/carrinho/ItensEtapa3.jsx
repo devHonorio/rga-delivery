@@ -6,15 +6,7 @@ const Title = tw.p`text-md font-semibold `
 const Price = tw.p`text-md font-bold text-orange-400`
 const Quantity = tw.p`font-bold text-xl`
 
-export default function ItensEtp2({
-	image,
-	id,
-	name,
-	priceTotal,
-	quantity,
-	setRenderCarrinho,
-	renderCarrinho,
-}) {
+export default function ItensEtp2({ image, id, name, priceTotal, quantity }) {
 	return (
 		<Container>
 			<Image
