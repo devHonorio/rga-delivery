@@ -79,7 +79,7 @@ export default function Modal3({ className, setIsActive }) {
 					<SButton onClick={() => setIsActive(2)}>Voltar</SButton>
 					<SButton
 						$as='a'
-						href={`https://api.whatsapp.com/send?phone=4698815869&text=${mensage}`}
+						href={`https://api.whatsapp.com/send?phone=46988158699&text=${mensage}`}
 						target='_blank'
 						onClick={() => {
 							console.log(mensage)
