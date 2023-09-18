@@ -30,16 +30,16 @@ ${e.formato.toUpperCase()} \n\n\n`)
 	const message = `${name} ${date}
 
 
-      ${bolos}
+${bolos}
       
-      ${
-				docesTradicionais +
-				'Total..........' +
-				docesTradicionaisPrice?.toLocaleString('pt-BR', {
-					style: 'currency',
-					currency: 'BRL',
-				})
-			}
+${
+	docesTradicionais +
+	'Total..........' +
+	docesTradicionaisPrice?.toLocaleString('pt-BR', {
+		style: 'currency',
+		currency: 'BRL',
+	})
+}
       `
 	return encodeURI(message)
 }
