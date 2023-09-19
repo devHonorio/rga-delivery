@@ -11,9 +11,9 @@ export const useMensage = () => {
 	let bolosPrice = 0
 	carrinho.bolos?.forEach((e) => {
 		bolosPrice += +e.priceBolo
-		bolos += `${e.bento ? 'Bento' : e.peso + 'kg'} ${e.recheios.map((e) => {
-			' ' + e.name
-		})} ${e.priceBolo?.toLocaleString('pt-BR', {
+		bolos += `${e.bento ? 'Bento' : e.peso + 'kg'} ${e.recheios.map(
+			(e) => ' ' + e.name
+		)} ${e.priceBolo?.toLocaleString('pt-BR', {
 			style: 'currency',
 			currency: 'BRL',
 		})}
