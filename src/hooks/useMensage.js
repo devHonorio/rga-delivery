@@ -1,3 +1,4 @@
+import { useFormatToRealBRL } from './useFormatRealBRL'
 import { useCarrinho } from './useStorage'
 
 export const useMensage = () => {
@@ -13,11 +14,10 @@ export const useMensage = () => {
 		bolosPrice += +e.priceBolo
 		bolos += `${e.bento ? 'Bento' : e.peso + 'kg'} ${e.recheios.map(
 			(e) => ' ' + e.name
-		)} ${e.priceBolo?.toLocaleString('pt-BR', {
-			style: 'currency',
-			currency: 'BRL',
-		})}
-${e.formato.toUpperCase()} \n\n\n`
+		)} ${useFormatToRealBRL(e.priceBolo)}
+${e.formato.toUpperCase()}
+
+*Observações:* ${e.observacoesBolo ? e.observacoesBolo : 'Nenhuma'} \n\n\n`
 	})
 
 	let docesTradicionais = ''
@@ -31,6 +31,8 @@ ${e.formato.toUpperCase()} \n\n\n`
 		? 'Retirada no local'
 		: `${carrinho.entrega.rua} - ${carrinho.entrega.number}, ${carrinho.entrega.bairro}, ${carrinho.entrega.cidade}`
 	let taxa = carrinho.entrega ? 5 : 0
+	const time = carrinho.time
+
 	const message = `*${name} ${date?.split('-').reverse().join('/')}*
 
 
@@ -39,10 +41,7 @@ ${bolos}
 ${
 	docesTradicionais +
 	'*Doces tradicionais..............' +
-	docesTradicionaisPrice?.toLocaleString('pt-BR', {
-		style: 'currency',
-		currency: 'BRL',
-	}) +
+	useFormatToRealBRL(docesTradicionaisPrice) +
 	'*'
 }
 
@@ -50,9 +49,11 @@ ${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*' : ''}
 
 ${carrinho.observacoes ? '*' + carrinho.observacoes + '*' : ''}
 
-*Total...............${bolosPrice + docesTradicionaisPrice + taxa}
+*Total...............${useFormatToRealBRL(
+		bolosPrice + docesTradicionaisPrice + taxa
+	)}*
 
-*${entrega}* `
+*${entrega}*  _*${time}*_`
 
 	console.log(message)
 	return encodeURI(message)
