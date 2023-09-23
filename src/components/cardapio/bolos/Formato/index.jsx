@@ -34,14 +34,6 @@ export default function Formato({ className, nav }) {
 					onClick={() => {
 						!state.formato && toast.warn('Primeiro escolha um formato.')
 						if (state.formato) {
-							const carrinho = getStorage()
-
-							setStorage({
-								...carrinho,
-								bolos: [...carrinho.bolos, state],
-								vazio: false,
-							})
-
 							nav('informações')
 						}
 					}}>
