@@ -26,7 +26,8 @@ export const useRecheios = () => {
 	let { peso, price, recheios } = state
 
 	const AddRecheio = (recheio) => {
-		const recheiosLength = state.recheios.length
+		let recheiosLength = state.recheios.length
+
 		function isMorango() {
 			if (
 				recheio.id === 'morango' ||
@@ -48,6 +49,33 @@ export const useRecheios = () => {
 					'Para chegar ao peso escolhido o recheio precisa conter morango ou ameixa'
 				)
 				return false
+			} else if (recheiosLength == 0 && recheio.id == 'bolo-da-casa') {
+				console.log(recheiosLength)
+				setState({
+					...state,
+					recheios: [
+						recheio,
+						{ name: ': crocante de nozes com suspiro e strogonoff de morango' },
+					],
+					price: recheio.price,
+				})
+				toast.success('Recheio adicionado.')
+				return true
+			} else if (recheiosLength == 0 && recheio.id == 'marta-rocha') {
+				console.log(recheiosLength)
+				setState({
+					...state,
+					recheios: [recheio, { name: '' }],
+					price: recheio.price,
+				})
+				toast.success('Recheio adicionado.')
+				return true
+			} else if (
+				recheiosLength != 0 &&
+				(recheio.id == 'bolo-da-casa' || recheio.id == 'marta-rocha')
+			) {
+				toast.warn('Esse é um bolo completo.')
+				return false
 			} else {
 				setState({
 					...state,
@@ -58,16 +86,27 @@ export const useRecheios = () => {
 				return true
 			}
 		} else {
-			toast.warn('É permitido apenas dois recheios')
-			return false
+			if (recheios[0].id == 'bolo-da-casa') {
+				toast.warn('Bolo na casa já é um bolo completo.')
+
+				return false
+			} else {
+				toast.warn('É permitido apenas dois recheios')
+				return false
+			}
 		}
 	}
 
 	function removeRecheio(recheio) {
 		recheios.forEach((e, i) => {
 			if (e.id === recheio.id) {
-				recheios.splice(i, 1)
-				price -= recheio.price / 2
+				if (e.id == 'bolo-da-casa' || e.id == 'marta-rocha') {
+					recheios.splice(0, 2)
+					price = 0
+				} else {
+					recheios.splice(i, 1)
+					price -= recheio.price / 2
+				}
 
 				setState({ ...state, recheios: recheios, price: price })
 				toast.error('Recheio removido.')
