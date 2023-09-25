@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { SContainerCard, SPrice, STitle } from './styles'
 import ButtonAddAndRemove from './ButtonAddAndRemove'
+import { useFormatToRealBRL } from '@/hooks/useFormatRealBRL'
 
 export default function CardProduct({ title, image, price, category, value }) {
 	return (
@@ -16,12 +17,7 @@ export default function CardProduct({ title, image, price, category, value }) {
 
 			<STitle>{title}</STitle>
 
-			<SPrice>
-				{price.toLocaleString('pt-BR', {
-					style: 'currency',
-					currency: 'BRL',
-				})}
-			</SPrice>
+			<SPrice>{useFormatToRealBRL(price)}</SPrice>
 
 			<ButtonAddAndRemove category={category} value={value} />
 		</SContainerCard>

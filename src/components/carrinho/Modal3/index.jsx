@@ -46,7 +46,20 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			return [bolos, docesTradicionais]
+			const salgados = carrinho.salgados?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
+			return [bolos, docesTradicionais, salgados]
 		}
 	}
 

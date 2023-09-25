@@ -8,6 +8,7 @@ import {
 } from './styles'
 import Image from 'next/image'
 import { useCarrinho } from '@/hooks/useStorage'
+import { useFormatToRealBRL } from '@/hooks/useFormatRealBRL'
 
 export default function ItemBolo({
 	peso,
@@ -28,25 +29,28 @@ export default function ItemBolo({
 
 	return (
 		<SContainer>
-			<Image
-				src={`/bolo-generico.jpg`}
-				width={100}
-				height={100}
-				className='h-16 w-16 rounded-lg object-cover'
-				alt='Foto do produto'
-			/>
+			<div className='flex flex-col gap-4'>
+				{recheios?.map((e) =>
+					e.image ? (
+						<Image
+							src={e.image}
+							width={100}
+							height={100}
+							className='h-16 w-16 rounded-lg object-cover'
+							alt='Foto do produto'
+						/>
+					) : (
+						''
+					)
+				)}
+			</div>
 
 			<div className='flex-1'>
 				<SContainerPriceTitle>
 					{peso == 0.6 ? 'Bento' : peso + 'kg'}{' '}
 					{recheios?.map((e) => e.name + ' ')}
 				</SContainerPriceTitle>
-				<SPrice>
-					{price?.toLocaleString('pt-BR', {
-						style: 'currency',
-						currency: 'BRL',
-					})}
-				</SPrice>
+				<SPrice>{useFormatToRealBRL(price)}</SPrice>
 			</div>
 			<SContainerButtons>
 				<BtnRemove onClick={removeBolo}>

@@ -27,6 +27,13 @@ ${e.formato.toUpperCase()}
 		docesTradicionaisPrice += e.priceTotal
 	})
 
+	let salgados = ''
+	let salgadosPrice = 0
+	carrinho.salgados?.forEach((e) => {
+		salgados += `${e.quantity} ${e.title} \n`
+		salgadosPrice += e.priceTotal
+	})
+
 	const entrega = !carrinho.entrega
 		? 'Retirada no local'
 		: `${carrinho.entrega.rua} - ${carrinho.entrega.number}, ${carrinho.entrega.bairro}, ${carrinho.entrega.cidade}`
@@ -39,10 +46,16 @@ ${e.formato.toUpperCase()}
 ${bolos}
       
 ${
+	docesTradicionais &&
 	docesTradicionais +
-	'*Doces tradicionais..............' +
-	useFormatToRealBRL(docesTradicionaisPrice) +
-	'*'
+		'*Doces tradicionais..............' +
+		useFormatToRealBRL(docesTradicionaisPrice) +
+		'*'
+}
+
+${
+	salgados &&
+	salgados + '*Salgados..............' + useFormatToRealBRL(salgadosPrice) + '*'
 }
 
 ${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*' : ''}
@@ -50,7 +63,7 @@ ${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*' : ''}
 ${carrinho.observacoes ? '*' + carrinho.observacoes + '*' : ''}
 
 *Total...............${useFormatToRealBRL(
-		bolosPrice + docesTradicionaisPrice + taxa
+		bolosPrice + docesTradicionaisPrice + salgadosPrice + taxa
 	)}*
 
 *${entrega}*  _*${time}*_`

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { SButtons, SContainer, SQuantity } from './styles'
 import { SButton } from '@/components/@ui/Buton'
 import { Bag } from '@/components/comum/Icons'
@@ -13,14 +13,19 @@ export default function ButtonAddAndRemove({ category, value }) {
 	const addForCarrinho = () => {
 		if (quantity) {
 			let exist = carrinho[category].findIndex((e) => e.id == value.id)
+
+			const produto = value
+			produto.quantity = quantity
+			produto.priceTotal = quantity * value.price
+
 			if (exist > -1) {
 				carrinho[category][exist].quantity = quantity
+				carrinho[category][exist].priceTotal = produto.priceTotal
+
 				setStorage({ ...carrinho, vazio: false })
 				toast.info('Quantidade alterada.')
+				console.log(produto.priceTotal)
 			} else {
-				const produto = value
-				produto.quantity = quantity
-				produto.priceTotal = quantity * value.price
 				carrinho[category].push(produto)
 				setStorage({ ...carrinho, vazio: false })
 				toast.success('Adicionado ao carrinho')

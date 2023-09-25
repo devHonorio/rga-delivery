@@ -1,3 +1,4 @@
+import { useFormatToRealBRL } from '@/hooks/useFormatRealBRL'
 import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 
@@ -18,12 +19,7 @@ export default function ItensEtp2({ image, id, name, priceTotal, quantity }) {
 			/>
 			<div className='flex-1'>
 				<Title>{name}</Title>
-				<Price>
-					{priceTotal?.toLocaleString('pt-BR', {
-						style: 'currency',
-						currency: 'BRL',
-					})}
-				</Price>
+				<Price>{useFormatToRealBRL(priceTotal)}</Price>
 			</div>
 
 			<Quantity>x{quantity}</Quantity>
