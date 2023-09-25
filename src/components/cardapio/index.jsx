@@ -59,7 +59,18 @@ export default function CardapioIndex() {
 			<FormBolos className={navCardapio !== 'Bolos' && 'hidden'} />
 
 			<ContainerCardapio className={navCardapio !== 'Salgados' && 'hidden'}>
-				<h1>Salgados</h1>
+				{produtos.salgados.map((r, i) => {
+					return (
+						<CardProduct
+							key={i}
+							title={r.title}
+							price={r.price}
+							image={r.image}
+							value={r}
+							category={r.category}
+						/>
+					)
+				})}
 			</ContainerCardapio>
 
 			<ContainerCardapio className={navCardapio !== 'Doces' && 'hidden'}>

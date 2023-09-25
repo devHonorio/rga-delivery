@@ -44,6 +44,7 @@ export default function ButtonAddAndRemove({ category, value }) {
 					step={5}
 					value={quantity}
 					onChange={(e) => setQuantity(+e.target.value)}
+					onClick={(e) => e.currentTarget.select()}
 				/>
 
 				<SButtons onClick={() => setQuantity(quantity + 5)}>+</SButtons>

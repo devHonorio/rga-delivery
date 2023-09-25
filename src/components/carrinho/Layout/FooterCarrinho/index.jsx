@@ -24,8 +24,13 @@ export default function FooterCarrinho({ children }) {
 		0
 	)
 
+	const salgados = carrinho.salgados?.reduce(
+		(ac, salgado) => ac + salgado.priceTotal,
+		0
+	)
+
 	function renderTotal() {
-		return totalBolos + totalDocesTradicionais
+		return totalBolos + totalDocesTradicionais + salgados
 	}
 	return (
 		<SContainer>
