@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { SButtons, SContainer, SQuantity } from './styles'
 import { SButton } from '@/components/@ui/Buton'
 import { Bag } from '@/components/comum/Icons'
@@ -6,61 +6,61 @@ import { toast } from 'react-toastify'
 import { useCarrinho } from '@/hooks/useStorage'
 
 export default function ButtonAddAndRemove({ category, value }) {
-	const [quantity, setQuantity] = useState(0)
+	// const [quantity, setQuantity] = useState(0)
 	const { getStorage, setStorage } = useCarrinho()
 
+	const refQuantity = useRef()
+
+	const adicione = () => {
+		refQuantity.current.value = +refQuantity.current.value + 5
+		togleToCarrinho()
+	}
+	const subtrai = () => {
+		if (+refQuantity.current.value >= 5) {
+			refQuantity.current.value = refQuantity.current.value - 5
+			togleToCarrinho()
+		}
+	}
+
 	const carrinho = getStorage()
-	const addForCarrinho = () => {
-		if (quantity) {
-			let exist = carrinho[category].findIndex((e) => e.id == value.id)
+	const togleToCarrinho = () => {
+		const quantity = +refQuantity.current.value
+		const produto = value
+		produto.quantity = quantity
+		produto.priceTotal = quantity * value.price
 
-			const produto = value
-			produto.quantity = quantity
-			produto.priceTotal = quantity * value.price
+		let exist = carrinho[category].findIndex((e) => e.id == value.id)
 
-			if (exist > -1) {
-				carrinho[category][exist].quantity = quantity
-				carrinho[category][exist].priceTotal = produto.priceTotal
-
-				setStorage({ ...carrinho, vazio: false })
-				toast.info('Quantidade alterada.')
-				console.log(produto.priceTotal)
-			} else {
-				carrinho[category].push(produto)
-				setStorage({ ...carrinho, vazio: false })
-				toast.success('Adicionado ao carrinho')
-			}
+		if (exist > -1) {
+			carrinho[category][exist].quantity = quantity
+			carrinho[category][exist].priceTotal = produto.priceTotal
+			setStorage({ ...carrinho })
 		} else {
-			toast.warn('A quantidade minima é de 5 unidades.')
+			carrinho[category].push(produto)
+			setStorage({ ...carrinho })
+			toast.success('Adicionado ao carrinho')
 		}
 	}
 	return (
 		<>
 			<SContainer>
-				<SButtons onClick={() => quantity >= 5 && setQuantity(quantity - 5)}>
-					-
-				</SButtons>
+				<SButtons onClick={subtrai}>-</SButtons>
 
 				<SQuantity
 					placeholder='0'
+					onKeyDown={(e) => e.key == 'Enter'}
 					type='number'
 					typeof='numeric'
+					ref={refQuantity}
+					onChange={togleToCarrinho}
+					defaultValue={0}
 					min={0}
 					step={5}
-					value={quantity}
-					onChange={(e) => setQuantity(+e.target.value)}
 					onClick={(e) => e.currentTarget.select()}
 				/>
 
-				<SButtons onClick={() => setQuantity(quantity + 5)}>+</SButtons>
+				<SButtons onClick={adicione}>+</SButtons>
 			</SContainer>
-
-			<SButton
-				onClick={addForCarrinho}
-				className='group-hover:flex gap-2 items-center text-xs px-2 py-1 bg-orange-200 hidden md:text-sm md:py-2 md:px-3 '>
-				Adicionar
-				<Bag className='h-3 w-3 md:h-4 md:w-4' />
-			</SButton>
 		</>
 	)
 }

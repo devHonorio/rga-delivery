@@ -46,6 +46,32 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
+			const docesGourmet = carrinho.docesGourmet?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
+			const docesFinos = carrinho.docesFinos?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
 			const salgados = carrinho.salgados?.map((e, i) => {
 				return (
 					<ItensEtp2
@@ -59,7 +85,7 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			return [bolos, docesTradicionais, salgados]
+			return [bolos, docesTradicionais, docesGourmet, docesFinos, salgados]
 		}
 	}
 

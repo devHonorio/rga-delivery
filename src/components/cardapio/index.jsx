@@ -74,7 +74,7 @@ export default function CardapioIndex() {
 			</ContainerCardapio>
 
 			<ContainerCardapio className={navCardapio !== 'Doces' && 'hidden'}>
-				{produtos.doces.tradicionais.map((r, i) => {
+				{produtos.doces.map((r, i) => {
 					return (
 						<CardProduct
 							key={i}

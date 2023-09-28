@@ -23,6 +23,15 @@ export default function FooterCarrinho({ children }) {
 		(ac, doce) => ac + doce.priceTotal,
 		0
 	)
+	const totalDocesGourmet = carrinho.docesGourmet?.reduce(
+		(ac, doce) => ac + doce.priceTotal,
+		0
+	)
+
+	const totalDocesFinos = carrinho.docesFinos?.reduce(
+		(ac, doce) => ac + doce.priceTotal,
+		0
+	)
 
 	const salgados = carrinho.salgados?.reduce(
 		(ac, salgado) => ac + salgado.priceTotal,
@@ -30,7 +39,13 @@ export default function FooterCarrinho({ children }) {
 	)
 
 	function renderTotal() {
-		return totalBolos + totalDocesTradicionais + salgados
+		return (
+			totalBolos +
+			totalDocesTradicionais +
+			totalDocesGourmet +
+			totalDocesFinos +
+			salgados
+		)
 	}
 	return (
 		<SContainer>

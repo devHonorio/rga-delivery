@@ -49,6 +49,40 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
+			const docesGourmet = carrinho.docesGourmet?.map((e, i) => {
+				return (
+					<ItemCarrinho
+						key={i}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						price={e.price}
+						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
+						image={e.image}
+					/>
+				)
+			})
+
+			const docesFinos = carrinho.docesFinos?.map((e, i) => {
+				return (
+					<ItemCarrinho
+						key={i}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						price={e.price}
+						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
+						image={e.image}
+					/>
+				)
+			})
+
 			const salgados = carrinho.salgados?.map((e, i) => {
 				return (
 					<ItemCarrinho
@@ -66,7 +100,7 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			return [bolos, docesTradicionais, salgados]
+			return [bolos, docesTradicionais, docesGourmet, docesFinos, salgados]
 		}
 	}
 	return (
