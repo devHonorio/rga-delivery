@@ -55,9 +55,9 @@ export const produtos = {
 			min: 1.5,
 		},
 		{
-			id: 'pessego',
+			id: 'pêssego',
 			type: 'recheio',
-			name: 'Pessego',
+			name: 'Pêssego',
 			price: 30,
 			image: '/bolos/recheios/pessego.jpg',
 			bento: false,
@@ -171,11 +171,49 @@ export const produtos = {
 			bento: true,
 			min: 1.8,
 		},
+		{
+			id: 'sencacao-de-maracuja',
+			name: 'Sencação de maracujá',
+			type: 'recheio',
+			price: 42,
+			image: '/bolos/recheios/sonho-de-valsa.png',
+			bento: true,
+			min: 1.5,
+		},
+	],
+	bolosDeForma: [
+		{
+			id: 'nega-maluca',
+			title: 'Nega maluca',
+			price: 45,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bolosDeForma',
+		},
+		{
+			id: 'toalha-felpuda',
+			title: 'Toalha felpuda',
+			price: 45,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bolosDeForma',
+		},
+		{
+			id: 'bolo-de-cenoura',
+			title: 'Bolo de cenoura',
+			price: 45,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bolosDeForma',
+		},
+		{
+			id: 'nega-maluca-recheada',
+			title: 'Nega maluca recheada',
+			price: 55,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bolosDeForma',
+		},
 	],
 	doces: [
 		{
 			id: 'brigadeiro',
-			type: 'doce tradicional',
 			title: 'Brigadeiro',
 			price: 0.7,
 			image: '/doces/tradicionais/brigadeiro.png',
@@ -183,31 +221,27 @@ export const produtos = {
 		},
 		{
 			id: 'beijinho',
-			type: 'doce tradicional',
 			title: 'Beijinho',
 			price: 0.7,
 			image: '/doces/tradicionais/beijinho.png',
 			category: 'docesTradicionais',
 		},
 		{
-			id: 'coco queimado',
-			type: 'doce tradicional',
+			id: 'coco-queimado',
 			title: 'Coco queimado',
 			price: 0.7,
 			image: '/doces/tradicionais/cocoQueimado.png',
 			category: 'docesTradicionais',
 		},
 		{
-			id: 'doce de ninho',
-			type: 'doce tradicional',
+			id: 'leite-ninho',
 			title: 'Leite ninho',
 			price: 0.7,
 			image: '/doces/tradicionais/ninho.png',
 			category: 'docesTradicionais',
 		},
 		{
-			id: 'dois amores',
-			type: 'doce tradicional',
+			id: 'dois-amores',
 			title: 'Dois Amores',
 			price: 0.7,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -216,7 +250,6 @@ export const produtos = {
 
 		{
 			id: 'leite-ninho-com-nutella',
-			type: 'doce tradicional',
 			title: 'Leite ninho com nutella',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -224,7 +257,6 @@ export const produtos = {
 		},
 		{
 			id: 'olho-de-sogra',
-			type: 'doce tradicional',
 			title: 'Olho de sogra',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -232,7 +264,6 @@ export const produtos = {
 		},
 		{
 			id: 'brigadeiro-de-cafe',
-			type: 'doce tradicional',
 			title: 'Brigadeiro de café',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -240,7 +271,6 @@ export const produtos = {
 		},
 		{
 			id: 'brigadeiro-de-confete',
-			type: 'doce tradicional',
 			title: 'Brigadeiro de confete',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -248,7 +278,6 @@ export const produtos = {
 		},
 		{
 			id: 'tortinha-de-morango',
-			type: 'doce tradicional',
 			title: 'Tortinha de morango',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -256,7 +285,6 @@ export const produtos = {
 		},
 		{
 			id: 'tortinha-de-maracuja',
-			type: 'doce tradicional',
 			title: 'Tortinha de maracujá',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -264,7 +292,6 @@ export const produtos = {
 		},
 		{
 			id: 'brigadeiro-branco-com-micanga-azul',
-			type: 'doce tradicional',
 			title: 'Brigadeiro branco com miçanga azul',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -272,7 +299,6 @@ export const produtos = {
 		},
 		{
 			id: 'brigadeiro-branco-com-micanga-rosa',
-			type: 'doce tradicional',
 			title: 'Brigadeiro branco com miçanga rosa',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -280,7 +306,6 @@ export const produtos = {
 		},
 		{
 			id: 'brigadeiro-charge-com-doce-de-leite',
-			type: 'doce tradicional',
 			title: 'Brigadeiro charge com doce de leite',
 			price: 0.8,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -289,7 +314,6 @@ export const produtos = {
 
 		{
 			id: 'bombom-de-uva',
-			type: 'doce tradicional',
 			title: 'Bombom de uva',
 			price: 1.5,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -297,7 +321,6 @@ export const produtos = {
 		},
 		{
 			id: 'camafeu',
-			type: 'doce tradicional',
 			title: 'Camafeu',
 			price: 1.5,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -305,7 +328,6 @@ export const produtos = {
 		},
 		{
 			id: 'rafaello',
-			type: 'doce tradicional',
 			title: 'Rafaello',
 			price: 1.5,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -313,7 +335,6 @@ export const produtos = {
 		},
 		{
 			id: 'bombom-de-morango',
-			type: 'doce tradicional',
 			title: 'Bombom de morango',
 			price: 2,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -321,7 +342,6 @@ export const produtos = {
 		},
 		{
 			id: 'bombom-de-damasco',
-			type: 'doce tradicional',
 			title: 'Bombom de damasco',
 			price: 2,
 			image: '/doces/tradicionais/doisAmores.png',
@@ -426,6 +446,80 @@ export const produtos = {
 			price: 0.65,
 			image: '/salgados/trouxinha-de-ricota.png',
 			category: 'salgados',
+		},
+	],
+	frios: [
+		{
+			id: 'canudo-de-salpicao',
+			title: 'Canudo de salpicão',
+			price: 0.8,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'frios',
+		},
+		{
+			id: 'sanduiche-normal',
+			title: 'Sanduíche normal',
+			price: 1,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'frios',
+		},
+		{
+			id: 'sanduiche-de-salpicao',
+			title: 'Sanduíche de salpicão',
+			price: 1,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'frios',
+		},
+	],
+	bebidas: [
+		{
+			id: 'coca-cola-2l',
+			title: 'Coca cola 2L',
+			price: 12,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'sprite-2l',
+			title: 'Sprite 2L',
+			price: 9,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'fanta-guarana-2l',
+			title: 'Fanta guaraná 2L',
+			price: 9,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'agua-500ml',
+			title: 'Água 500ml',
+			price: 2,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'suco-uva-dell-vale-1L',
+			title: 'Suco uva Dell Vale 1L',
+			price: 6,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'suco-laranja-dell-vale-1L',
+			title: 'Suco laranja Dell Vale 1L',
+			price: 6,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
+		},
+		{
+			id: 'coca-lata-350ml',
+			title: 'Coca lata 350ml',
+			price: 3.5,
+			image: '/doces/tradicionais/brigadeiro.png',
+			category: 'bebidas',
 		},
 	],
 }
