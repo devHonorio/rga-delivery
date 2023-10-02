@@ -61,6 +61,20 @@ export const useRecheios = () => {
 				})
 				toast.success('Recheio adicionado.')
 				return true
+			} else if (recheiosLength == 0 && recheio.id == 'sencacao-de-maracuja') {
+				console.log(recheiosLength)
+				setState({
+					...state,
+					recheios: [
+						recheio,
+						{
+							name: ': creme de maracujá caseiro e avelã batido, cobertura avelã batido com ninho escorrido.',
+						},
+					],
+					price: recheio.price,
+				})
+				toast.success('Recheio adicionado.')
+				return true
 			} else if (recheiosLength == 0 && recheio.id == 'marta-rocha') {
 				console.log(recheiosLength)
 				setState({
@@ -100,7 +114,11 @@ export const useRecheios = () => {
 	function removeRecheio(recheio) {
 		recheios.forEach((e, i) => {
 			if (e.id === recheio.id) {
-				if (e.id == 'bolo-da-casa' || e.id == 'marta-rocha') {
+				if (
+					e.id == 'bolo-da-casa' ||
+					e.id == 'marta-rocha' ||
+					e.id == 'sencacao-de-maracuja'
+				) {
 					recheios.splice(0, 2)
 					price = 0
 				} else {
