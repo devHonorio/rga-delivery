@@ -86,7 +86,9 @@ export const useRecheios = () => {
 				return true
 			} else if (
 				recheiosLength != 0 &&
-				(recheio.id == 'bolo-da-casa' || recheio.id == 'marta-rocha')
+				(recheio.id == 'bolo-da-casa' ||
+					recheio.id == 'marta-rocha' ||
+					recheio.id == 'sencacao-de-maracuja')
 			) {
 				toast.warn('Esse é um bolo completo.')
 				return false
