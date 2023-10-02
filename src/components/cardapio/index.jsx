@@ -29,6 +29,12 @@ export default function CardapioIndex() {
 					onClick={setNavCardapio}
 				/>
 				<MiniButtonIcon
+					icon={<PiDropBold />}
+					content='Frios'
+					action={navCardapio}
+					onClick={setNavCardapio}
+				/>
+				<MiniButtonIcon
 					icon={<RiCake3Line />}
 					content='Doces'
 					action={navCardapio}
@@ -59,10 +65,25 @@ export default function CardapioIndex() {
 			<FormBolos className={navCardapio !== 'Bolos' && 'hidden'} />
 
 			<ContainerCardapio className={navCardapio !== 'Salgados' && 'hidden'}>
-				{produtos.salgados.map((r, i) => {
+				{produtos.salgados.map((r) => {
 					return (
 						<CardProduct
-							key={i}
+							key={r.id}
+							title={r.title}
+							price={r.price}
+							image={r.image}
+							value={r}
+							category={r.category}
+						/>
+					)
+				})}
+			</ContainerCardapio>
+
+			<ContainerCardapio className={navCardapio !== 'Frios' && 'hidden'}>
+				{produtos.frios.map((r) => {
+					return (
+						<CardProduct
+							key={r.id}
 							title={r.title}
 							price={r.price}
 							image={r.image}
@@ -74,10 +95,10 @@ export default function CardapioIndex() {
 			</ContainerCardapio>
 
 			<ContainerCardapio className={navCardapio !== 'Doces' && 'hidden'}>
-				{produtos.doces.map((r, i) => {
+				{produtos.doces.map((r) => {
 					return (
 						<CardProduct
-							key={i}
+							key={r.id}
 							title={r.title}
 							price={r.price}
 							image={r.image}
@@ -89,12 +110,36 @@ export default function CardapioIndex() {
 			</ContainerCardapio>
 
 			<ContainerCardapio className={navCardapio !== 'Bebidas' && 'hidden'}>
-				<h1>Bebidas</h1>
+				{produtos.bebidas.map((r) => {
+					return (
+						<CardProduct
+							key={r.id}
+							title={r.title}
+							price={r.price}
+							image={r.image}
+							value={r}
+							category={r.category}
+							step={1}
+						/>
+					)
+				})}
 			</ContainerCardapio>
 
 			<ContainerCardapio
 				className={navCardapio !== 'Bolo de forma' && 'hidden'}>
-				<h1>Bolo de forma</h1>
+				{produtos.bolosDeForma.map((r) => {
+					return (
+						<CardProduct
+							key={r.id}
+							title={r.title}
+							price={r.price}
+							image={r.image}
+							value={r}
+							category={r.category}
+							step={1}
+						/>
+					)
+				})}
 			</ContainerCardapio>
 		</main>
 	)

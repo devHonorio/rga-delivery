@@ -4,7 +4,14 @@ import { SContainerCard, SPrice, STitle } from './styles'
 import ButtonAddAndRemove from './ButtonAddAndRemove'
 import { useFormatToRealBRL } from '@/hooks/useFormatRealBRL'
 
-export default function CardProduct({ title, image, price, category, value }) {
+export default function CardProduct({
+	title,
+	image,
+	price,
+	category,
+	value,
+	step = 5,
+}) {
 	return (
 		<SContainerCard>
 			<Image
@@ -19,7 +26,7 @@ export default function CardProduct({ title, image, price, category, value }) {
 
 			<SPrice>{useFormatToRealBRL(price)}</SPrice>
 
-			<ButtonAddAndRemove category={category} value={value} />
+			<ButtonAddAndRemove step={step} category={category} value={value} />
 		</SContainerCard>
 	)
 }

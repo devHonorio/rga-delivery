@@ -15,10 +15,12 @@ export default function Layout({ children }) {
 				'carrinho',
 				JSON.stringify({
 					bolos: [],
+					bolosDeForma: [],
 					docesTradicionais: [],
 					docesGourmet: [],
 					docesFinos: [],
 					salgados: [],
+					frios: [],
 					bebidas: [],
 					vazio: true,
 				})

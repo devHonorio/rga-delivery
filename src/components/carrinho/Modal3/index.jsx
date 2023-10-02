@@ -33,6 +33,18 @@ export default function Modal3({ className, setIsActive }) {
 					/>
 				)
 			})
+			const bolosDeForma = carrinho.bolosDeForma?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
 			const docesTradicionais = carrinho.docesTradicionais?.map((e, i) => {
 				return (
 					<ItensEtp2
@@ -72,6 +84,19 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
+			const frios = carrinho.frios?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
 			const salgados = carrinho.salgados?.map((e, i) => {
 				return (
 					<ItensEtp2
@@ -85,7 +110,29 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			return [bolos, docesTradicionais, docesGourmet, docesFinos, salgados]
+			const bebidas = carrinho.bebidas?.map((e, i) => {
+				return (
+					<ItensEtp2
+						key={i}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
+			return [
+				bolos,
+				bolosDeForma,
+				docesTradicionais,
+				docesGourmet,
+				docesFinos,
+				frios,
+				salgados,
+				bebidas,
+			]
 		}
 	}
 

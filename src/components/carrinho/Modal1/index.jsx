@@ -18,10 +18,10 @@ export default function Modal1({ className, setIsActive }) {
 
 	function renderItens() {
 		if (carrinho) {
-			const bolos = carrinho.bolos?.map((e, i) => {
+			const bolos = carrinho.bolos?.map((e) => {
 				return (
 					<ItemBolo
-						key={i}
+						key={e.id}
 						recheios={e.recheios}
 						peso={e.peso}
 						price={e.priceBolo}
@@ -32,10 +32,10 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			const docesTradicionais = carrinho.docesTradicionais?.map((e, i) => {
+			const bolosDeForma = carrinho.bolosDeForma?.map((e) => {
 				return (
 					<ItemCarrinho
-						key={i}
+						key={e.id}
 						id={e.id}
 						name={e.title}
 						quantity={e.quantity}
@@ -49,10 +49,10 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			const docesGourmet = carrinho.docesGourmet?.map((e, i) => {
+			const docesTradicionais = carrinho.docesTradicionais?.map((e) => {
 				return (
 					<ItemCarrinho
-						key={i}
+						key={e.id}
 						id={e.id}
 						name={e.title}
 						quantity={e.quantity}
@@ -66,10 +66,10 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			const docesFinos = carrinho.docesFinos?.map((e, i) => {
+			const docesGourmet = carrinho.docesGourmet?.map((e) => {
 				return (
 					<ItemCarrinho
-						key={i}
+						key={e.id}
 						id={e.id}
 						name={e.title}
 						quantity={e.quantity}
@@ -83,10 +83,10 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			const salgados = carrinho.salgados?.map((e, i) => {
+			const docesFinos = carrinho.docesFinos?.map((e) => {
 				return (
 					<ItemCarrinho
-						key={i}
+						key={e.id}
 						id={e.id}
 						name={e.title}
 						quantity={e.quantity}
@@ -100,7 +100,67 @@ export default function Modal1({ className, setIsActive }) {
 				)
 			})
 
-			return [bolos, docesTradicionais, docesGourmet, docesFinos, salgados]
+			const salgados = carrinho.salgados?.map((e) => {
+				return (
+					<ItemCarrinho
+						key={e.id}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						price={e.price}
+						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
+						image={e.image}
+					/>
+				)
+			})
+
+			const frios = carrinho.frios?.map((e) => {
+				return (
+					<ItemCarrinho
+						key={e.id}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						price={e.price}
+						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
+						image={e.image}
+					/>
+				)
+			})
+
+			const bebidas = carrinho.bebidas?.map((e) => {
+				return (
+					<ItemCarrinho
+						key={e.id}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						price={e.price}
+						priceTotal={e.priceTotal}
+						category={e.category}
+						setRenderCarrinho={setRenderCarrinho}
+						renderCarrinho={renderCarrinho}
+						image={e.image}
+					/>
+				)
+			})
+
+			return [
+				bolos,
+				bolosDeForma,
+				docesTradicionais,
+				docesGourmet,
+				docesFinos,
+				salgados,
+				frios,
+				bebidas,
+			]
 		}
 	}
 	return (

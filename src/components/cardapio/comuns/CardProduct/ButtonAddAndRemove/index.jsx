@@ -1,29 +1,27 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { SButtons, SContainer, SQuantity } from './styles'
-import { SButton } from '@/components/@ui/Buton'
-import { Bag } from '@/components/comum/Icons'
 import { toast } from 'react-toastify'
 import { useCarrinho } from '@/hooks/useStorage'
 
-export default function ButtonAddAndRemove({ category, value }) {
+export default function ButtonAddAndRemove({ category, value, step = 5 }) {
 	// const [quantity, setQuantity] = useState(0)
 	const { getStorage, setStorage } = useCarrinho()
 
 	const refQuantity = useRef()
 
 	const adicione = () => {
-		refQuantity.current.value = +refQuantity.current.value + 5
-		togleToCarrinho()
+		refQuantity.current.value = +refQuantity.current.value + step
+		toggleToCarrinho()
 	}
 	const subtrai = () => {
-		if (+refQuantity.current.value >= 5) {
-			refQuantity.current.value = refQuantity.current.value - 5
-			togleToCarrinho()
+		if (+refQuantity.current.value >= step) {
+			refQuantity.current.value = refQuantity.current.value - step
+			toggleToCarrinho()
 		}
 	}
 
-	const carrinho = getStorage()
-	const togleToCarrinho = () => {
+	const toggleToCarrinho = () => {
+		const carrinho = getStorage()
 		const quantity = +refQuantity.current.value
 		const produto = value
 		produto.quantity = quantity
@@ -52,10 +50,10 @@ export default function ButtonAddAndRemove({ category, value }) {
 					type='number'
 					typeof='numeric'
 					ref={refQuantity}
-					onChange={togleToCarrinho}
+					onChange={toggleToCarrinho}
 					defaultValue={0}
 					min={0}
-					step={5}
+					step={step}
 					onClick={(e) => e.currentTarget.select()}
 				/>
 
