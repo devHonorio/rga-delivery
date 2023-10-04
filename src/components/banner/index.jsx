@@ -20,8 +20,8 @@ export default function Banner() {
 					<span className={styles.destaqueFavorito}> favorito.</span>
 				</h1>
 				<p className={styles.paragrafo}>
-					Aproveite nosso cardapio, escolha o que desejar e receba em sua casa
-					de forma rápida e segura
+					Aproveite nosso cardápio, escolha sem tempo de espera, de forma rápida
+					e segura
 				</p>
 
 				<div className={styles.containerButtons}>
@@ -61,7 +61,7 @@ export default function Banner() {
 
 			<div className='relative'>
 				<Image
-					src='/bolos/png/bolofofo.png'
+					src='/bolofofo.png'
 					alt='Bolo decorado bolo fofos'
 					width={400}
 					height={400}
