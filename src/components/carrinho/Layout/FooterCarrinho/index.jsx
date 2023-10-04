@@ -19,6 +19,10 @@ export default function FooterCarrinho({ children }) {
 		(ac, bolo) => ac + bolo.priceBolo,
 		0
 	)
+	const totalBolosDeForma = carrinho.bolosDeForma?.reduce(
+		(ac, bolo) => ac + bolo.priceTotal,
+		0
+	)
 	const totalDocesTradicionais = carrinho.docesTradicionais?.reduce(
 		(ac, doce) => ac + doce.priceTotal,
 		0
@@ -37,14 +41,25 @@ export default function FooterCarrinho({ children }) {
 		(ac, salgado) => ac + salgado.priceTotal,
 		0
 	)
+	const frios = carrinho.frios?.reduce(
+		(ac, salgado) => ac + salgado.priceTotal,
+		0
+	)
+	const bebidas = carrinho.bebidas?.reduce(
+		(ac, salgado) => ac + salgado.priceTotal,
+		0
+	)
 
 	function renderTotal() {
 		return (
 			totalBolos +
+			totalBolosDeForma +
 			totalDocesTradicionais +
 			totalDocesGourmet +
 			totalDocesFinos +
-			salgados
+			salgados +
+			frios +
+			bebidas
 		)
 	}
 	return (

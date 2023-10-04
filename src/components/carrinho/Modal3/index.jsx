@@ -22,21 +22,22 @@ export default function Modal3({ className, setIsActive }) {
 
 	function renderItens() {
 		if (carrinho) {
-			const bolos = carrinho.bolos?.map((e, i) => {
+			const bolos = carrinho.bolos?.map((e) => {
 				return (
 					<Bolos
-						key={i}
+						key={e.id}
 						id={e.id}
 						peso={e.peso}
 						recheios={e.recheios}
 						price={e.priceBolo}
+						image={e.image}
 					/>
 				)
 			})
-			const bolosDeForma = carrinho.bolosDeForma?.map((e, i) => {
+			const bolosDeForma = carrinho.bolosDeForma?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}
@@ -45,23 +46,10 @@ export default function Modal3({ className, setIsActive }) {
 					/>
 				)
 			})
-			const docesTradicionais = carrinho.docesTradicionais?.map((e, i) => {
+			const docesTradicionais = carrinho.docesTradicionais?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
-						image={e.image}
-						id={e.id}
-						name={e.title}
-						quantity={e.quantity}
-						priceTotal={e.priceTotal}
-					/>
-				)
-			})
-
-			const docesGourmet = carrinho.docesGourmet?.map((e, i) => {
-				return (
-					<ItensEtp2
-						key={i}
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}
@@ -71,10 +59,10 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			const docesFinos = carrinho.docesFinos?.map((e, i) => {
+			const docesGourmet = carrinho.docesGourmet?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}
@@ -84,10 +72,10 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			const frios = carrinho.frios?.map((e, i) => {
+			const docesFinos = carrinho.docesFinos?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}
@@ -97,10 +85,10 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			const salgados = carrinho.salgados?.map((e, i) => {
+			const frios = carrinho.frios?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}
@@ -110,10 +98,23 @@ export default function Modal3({ className, setIsActive }) {
 				)
 			})
 
-			const bebidas = carrinho.bebidas?.map((e, i) => {
+			const salgados = carrinho.salgados?.map((e) => {
 				return (
 					<ItensEtp2
-						key={i}
+						key={e.id}
+						image={e.image}
+						id={e.id}
+						name={e.title}
+						quantity={e.quantity}
+						priceTotal={e.priceTotal}
+					/>
+				)
+			})
+
+			const bebidas = carrinho.bebidas?.map((e) => {
+				return (
+					<ItensEtp2
+						key={e.id}
 						image={e.image}
 						id={e.id}
 						name={e.title}

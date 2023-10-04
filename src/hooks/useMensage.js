@@ -5,8 +5,8 @@ export const useMensage = () => {
 	const { getStorage } = useCarrinho()
 	const carrinho = getStorage()
 
-	const name = `${carrinho.name}`
-	const date = `${carrinho.date}`
+	const name = carrinho.name
+	const date = carrinho.date
 
 	let bolos = ''
 	let bolosPrice = 0
@@ -20,18 +20,18 @@ export const useMensage = () => {
 		bolos += `${boloPeso} ${boloRecheios} ${boloPrice} \n${boloFormato} \nObservações: ${boloObservacoes} \n\n\n`
 	})
 
-	let docesTradicionais = ''
-	let docesTradicionaisPrice = 0
-	carrinho.docesTradicionais?.forEach((e) => {
-		docesTradicionais += `${e.quantity} ${e.title} \n`
-		docesTradicionaisPrice += e.priceTotal
-	})
-
 	let bolosDeForma = ''
 	let bolosDeFormaPrice = 0
 	carrinho.bolosDeForma?.forEach((e) => {
 		bolosDeForma += `${e.quantity} ${e.title} \n`
 		bolosDeFormaPrice += e.priceTotal
+	})
+
+	let docesTradicionais = ''
+	let docesTradicionaisPrice = 0
+	carrinho.docesTradicionais?.forEach((e) => {
+		docesTradicionais += `${e.quantity} ${e.title} \n`
+		docesTradicionaisPrice += e.priceTotal
 	})
 
 	let docesGourmet = ''
@@ -78,50 +78,48 @@ export const useMensage = () => {
 	const message = `*${name} ${date?.split('-').reverse().join('/')}*
 
 
-${bolos}
-      
-${
-	docesTradicionais &&
-	docesTradicionais +
-		'*Doces tradicionais..............' +
-		useFormatToRealBRL(docesTradicionaisPrice) +
-		'*'
-}
-
-${
-	docesGourmet &&
-	docesGourmet +
-		'*Doces gourmet..............' +
-		useFormatToRealBRL(docesGourmetPrice) +
-		'*'
-}
-
-${
-	docesFinos &&
-	docesFinos +
-		'*Doces finos..............' +
-		useFormatToRealBRL(docesFinosPrice) +
-		'*'
-}
-
-${
-	salgados &&
-	salgados + '*Salgados..............' + useFormatToRealBRL(salgadosPrice) + '*'
-}
-
-${
-	frios && frios + '*Frios..............' + useFormatToRealBRL(friosPrice) + '*'
-}
-
-${
-	bebidas &&
-	bebidas + '*Bebidas..............' + useFormatToRealBRL(bebidasPrice) + '*'
-}
-
-${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*' : ''}
-
-${carrinho.observacoes ? '*' + carrinho.observacoes + '*' : ''}
-
+${bolos}${
+		bolosDeForma &&
+		bolosDeForma +
+			'*Bolos de forma..............' +
+			useFormatToRealBRL(bolosDeFormaPrice) +
+			'*\n\n'
+	}${
+		docesTradicionais &&
+		docesTradicionais +
+			'*Doces tradicionais..............' +
+			useFormatToRealBRL(docesTradicionaisPrice) +
+			'*\n\n'
+	}${
+		docesGourmet &&
+		docesGourmet +
+			'*Doces gourmet..............' +
+			useFormatToRealBRL(docesGourmetPrice) +
+			'*\n\n'
+	}${
+		docesFinos &&
+		docesFinos +
+			'*Doces finos..............' +
+			useFormatToRealBRL(docesFinosPrice) +
+			'*\n\n'
+	}${
+		salgados &&
+		salgados +
+			'*Salgados..............' +
+			useFormatToRealBRL(salgadosPrice) +
+			'*\n\n'
+	}${
+		frios &&
+		frios + '*Frios..............' + useFormatToRealBRL(friosPrice) + '*\n\n'
+	}${
+		bebidas &&
+		bebidas +
+			'*Bebidas..............' +
+			useFormatToRealBRL(bebidasPrice) +
+			'*\n\n'
+	}${carrinho.entrega ? '*Taxa de entrega..............R$ 5,00*\n\n' : ''}${
+		carrinho.observacoes ? '*' + carrinho.observacoes + '*\n\n' : ''
+	}
 *Total...............${useFormatToRealBRL(
 		bolosPrice +
 			bolosDeFormaPrice +

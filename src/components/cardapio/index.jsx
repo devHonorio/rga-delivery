@@ -1,7 +1,7 @@
 import { Bolo } from '../comum/Icons'
 import MiniButtonIcon from '../comum/MiniButtonIcon'
 import { produtos } from '../../data/bolos/recheios'
-import { PiDropBold } from 'react-icons/pi'
+import { PiDropBold, PiHamburgerLight } from 'react-icons/pi'
 import { LuCupSoda } from 'react-icons/lu'
 import { RiCake3Line } from 'react-icons/ri'
 import CardProduct from './comuns/CardProduct'
@@ -29,7 +29,7 @@ export default function CardapioIndex() {
 					onClick={setNavCardapio}
 				/>
 				<MiniButtonIcon
-					icon={<PiDropBold />}
+					icon={<PiHamburgerLight strokeWidth={2} />}
 					content='Frios'
 					action={navCardapio}
 					onClick={setNavCardapio}

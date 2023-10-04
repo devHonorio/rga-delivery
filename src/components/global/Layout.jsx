@@ -10,7 +10,10 @@ import { useEffect } from 'react'
 
 export default function Layout({ children }) {
 	useEffect(() => {
-		if (!localStorage.getItem('carrinho')) {
+		if (
+			!localStorage.getItem('carrinho') ||
+			!JSON.parse(localStorage.getItem('carrinho')).bolosDeForma
+		) {
 			localStorage.setItem(
 				'carrinho',
 				JSON.stringify({
