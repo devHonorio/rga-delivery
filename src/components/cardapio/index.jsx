@@ -89,6 +89,7 @@ export default function CardapioIndex() {
 							image={r.image}
 							value={r}
 							category={r.category}
+							minInit={15}
 						/>
 					)
 				})}
@@ -120,6 +121,7 @@ export default function CardapioIndex() {
 							value={r}
 							category={r.category}
 							step={1}
+							minInit={1}
 						/>
 					)
 				})}
@@ -137,6 +139,7 @@ export default function CardapioIndex() {
 							value={r}
 							category={r.category}
 							step={1}
+							minInit={1}
 						/>
 					)
 				})}

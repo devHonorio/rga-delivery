@@ -11,6 +11,7 @@ export default function CardProduct({
 	category,
 	value,
 	step = 5,
+	minInit = 20,
 }) {
 	return (
 		<SContainerCard>
@@ -26,7 +27,12 @@ export default function CardProduct({
 
 			<SPrice>{useFormatToRealBRL(price)}</SPrice>
 
-			<ButtonAddAndRemove step={step} category={category} value={value} />
+			<ButtonAddAndRemove
+				step={step}
+				category={category}
+				value={value}
+				minInit={minInit}
+			/>
 		</SContainerCard>
 	)
 }

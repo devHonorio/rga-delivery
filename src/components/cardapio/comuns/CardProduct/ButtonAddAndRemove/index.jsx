@@ -3,19 +3,25 @@ import { SButtons, SContainer, SQuantity } from './styles'
 import { toast } from 'react-toastify'
 import { useCarrinho } from '@/hooks/useStorage'
 
-export default function ButtonAddAndRemove({ category, value, step = 5 }) {
+export default function ButtonAddAndRemove({ category, value, step, minInit }) {
 	// const [quantity, setQuantity] = useState(0)
 	const { getStorage, setStorage } = useCarrinho()
 
 	const refQuantity = useRef()
 
 	const adicione = () => {
-		refQuantity.current.value = +refQuantity.current.value + step
+		refQuantity.current.value =
+			+refQuantity.current.value == 0
+				? +refQuantity.current.value + minInit
+				: +refQuantity.current.value + step
 		toggleToCarrinho()
 	}
 	const subtrai = () => {
 		if (+refQuantity.current.value >= step) {
-			refQuantity.current.value = refQuantity.current.value - step
+			refQuantity.current.value =
+				+refQuantity.current.value == minInit
+					? +refQuantity.current.value - minInit
+					: +refQuantity.current.value - step
 			toggleToCarrinho()
 		}
 	}
@@ -32,6 +38,9 @@ export default function ButtonAddAndRemove({ category, value, step = 5 }) {
 		if (exist > -1) {
 			carrinho[category][exist].quantity = quantity
 			carrinho[category][exist].priceTotal = produto.priceTotal
+			if (carrinho[category][exist].quantity == 0) {
+				carrinho[category].splice(exist, 1)
+			}
 			setStorage({ ...carrinho })
 		} else {
 			carrinho[category].push(produto)

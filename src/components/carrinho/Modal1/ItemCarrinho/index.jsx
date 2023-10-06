@@ -1,8 +1,16 @@
 import Image from 'next/image'
 import * as S from '../../styles'
-import { SContainer, SName, SPrice } from './styles'
+import {
+	SButtonsQuantity,
+	SContQuantity,
+	SContainer,
+	SContainerButtonsQuantity,
+	SName,
+	SPrice,
+} from './styles'
 import { Close } from '@/components/comum/Icons'
 import { useCarrinho } from '@/hooks/useStorage'
+import { useFormatToRealBRL } from '@/hooks/useFormatRealBRL'
 
 export default function ItemCarrinho({
 	name = '',
@@ -15,8 +23,9 @@ export default function ItemCarrinho({
 	image,
 }) {
 	const { getStorage, setStorage } = useCarrinho()
+	const carrinho = getStorage()
+
 	function removeItem() {
-		const carrinho = getStorage()
 		const listaNovaItens = carrinho[category]?.filter((e) => e.id != id)
 		setStorage({ ...carrinho, [category]: listaNovaItens })
 		setRenderCarrinho(!renderCarrinho)
@@ -34,12 +43,7 @@ export default function ItemCarrinho({
 				<SName>
 					{quantity} {name}
 				</SName>
-				<SPrice>
-					{priceTotal?.toLocaleString('pt-BR', {
-						style: 'currency',
-						currency: 'BRL',
-					})}
-				</SPrice>
+				<SPrice>{useFormatToRealBRL(priceTotal)}</SPrice>
 			</div>
 			<div className='flex flex-col md:gap-4 md:flex-row-reverse md:items-center items-end justify-around'>
 				<S.btnRemove onClick={removeItem}>

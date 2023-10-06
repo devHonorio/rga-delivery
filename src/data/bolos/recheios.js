@@ -213,6 +213,13 @@ export const produtos = {
 	],
 	doces: [
 		{
+			id: 'doces-mistos',
+			title: 'Doces mistos',
+			price: 0.7,
+			image: '/cardapio/doces/tradicionais/doces-mistos.jpeg',
+			category: 'docesTradicionais',
+		},
+		{
 			id: 'brigadeiro',
 			title: 'Brigadeiro',
 			price: 0.7,
@@ -247,7 +254,13 @@ export const produtos = {
 			image: '/cardapio/doces/tradicionais/dois-amores.png',
 			category: 'docesTradicionais',
 		},
-
+		{
+			id: 'doces-gourmet-misto',
+			title: 'Doces gourmet misto',
+			price: 0.8,
+			image: '/cardapio/doces/gourmet/doces-gourmet-mistos.jpeg',
+			category: 'docesGourmet',
+		},
 		{
 			id: 'leite-ninho-com-nutella',
 			title: 'Leite ninho com nutella',
@@ -349,6 +362,13 @@ export const produtos = {
 		},
 	],
 	salgados: [
+		{
+			id: 'salgados-mito',
+			title: 'Salgados misto',
+			price: 0.65,
+			image: '/cardapio/salgados/salgados-mistos.jpeg',
+			category: 'salgados',
+		},
 		{
 			id: 'bolinha-de-carne-com-queijo',
 			title: 'Bolinha de carne com queijo',
