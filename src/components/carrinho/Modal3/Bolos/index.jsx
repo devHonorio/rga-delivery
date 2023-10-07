@@ -6,16 +6,22 @@ const Title = tw.p`text-md font-semibold `
 const Price = tw.p`text-md font-bold text-orange-400`
 const Quantity = tw.p`font-bold text-xl`
 
-export default function Bolos({ image, id, peso, recheios, price }) {
+export default function Bolos({ id, peso, recheios, price }) {
 	return (
 		<Container>
-			<Image
-				src={image}
-				alt={id}
-				width={100}
-				height={100}
-				className='w-16 h-16 rounded-xl object-cover'
-			/>
+			{recheios.map((e) => {
+				return (
+					<Image
+						key={e.id}
+						src={e.image}
+						alt={e.name}
+						width={100}
+						height={100}
+						className='w-16 h-16 rounded-xl object-cover'
+					/>
+				)
+			})}
+
 			<div className='flex-1'>
 				<Title>
 					{peso}kg {recheios?.map((e) => e.name + ' ')}

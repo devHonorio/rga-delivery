@@ -4,7 +4,6 @@ import { toast } from 'react-toastify'
 import { useCarrinho } from '@/hooks/useStorage'
 
 export default function ButtonAddAndRemove({ category, value, step, minInit }) {
-	// const [quantity, setQuantity] = useState(0)
 	const { getStorage, setStorage } = useCarrinho()
 
 	const refQuantity = useRef()

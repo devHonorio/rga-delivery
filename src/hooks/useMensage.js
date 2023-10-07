@@ -27,32 +27,40 @@ export const useMensage = () => {
 		bolosDeFormaPrice += e.priceTotal
 	})
 
+	let totalDocesTradicionais = 0
 	let docesTradicionais = ''
 	let docesTradicionaisPrice = 0
 	carrinho.docesTradicionais?.forEach((e) => {
 		docesTradicionais += `${e.quantity} ${e.title} \n`
 		docesTradicionaisPrice += e.priceTotal
+		totalDocesTradicionais += e.quantity
 	})
 
+	let totalDocesGourmet = 0
 	let docesGourmet = ''
 	let docesGourmetPrice = 0
 	carrinho.docesGourmet?.forEach((e) => {
 		docesGourmet += `${e.quantity} ${e.title} \n`
 		docesGourmetPrice += e.priceTotal
+		totalDocesGourmet += e.quantity
 	})
 
+	let totalDocesFinos = 0
 	let docesFinos = ''
 	let docesFinosPrice = 0
 	carrinho.docesFinos?.forEach((e) => {
 		docesFinos += `${e.quantity} ${e.title} \n`
 		docesFinosPrice += e.priceTotal
+		totalDocesFinos += e.quantity
 	})
 
+	let totalSalgados = 0
 	let salgados = ''
 	let salgadosPrice = 0
 	carrinho.salgados?.forEach((e) => {
 		salgados += `${e.quantity} ${e.title} \n`
 		salgadosPrice += e.priceTotal
+		totalSalgados += e.quantity
 	})
 
 	let frios = ''
@@ -87,25 +95,25 @@ ${bolos}${
 	}${
 		docesTradicionais &&
 		docesTradicionais +
-			'*Doces tradicionais..............' +
+			`*-----${totalDocesTradicionais}-----*\n*Doces tradicionais..............` +
 			useFormatToRealBRL(docesTradicionaisPrice) +
 			'*\n\n'
 	}${
 		docesGourmet &&
 		docesGourmet +
-			'*Doces gourmet..............' +
+			`*-----${totalDocesGourmet}-----*\n*Doces gourmet..............` +
 			useFormatToRealBRL(docesGourmetPrice) +
 			'*\n\n'
 	}${
 		docesFinos &&
 		docesFinos +
-			'*Doces finos..............' +
+			`*-----${totalDocesFinos}-----*\n*Doces finos..............` +
 			useFormatToRealBRL(docesFinosPrice) +
 			'*\n\n'
 	}${
 		salgados &&
 		salgados +
-			'*Salgados..............' +
+			`*-----${totalSalgados}-----*\n*Salgados..............` +
 			useFormatToRealBRL(salgadosPrice) +
 			'*\n\n'
 	}${
