@@ -30,7 +30,7 @@ export default function Footer() {
 
 				<Informacoes
 					title='Contato'
-					description='(44) 9 9869204'
+					description='(46) 9 88158699'
 					href={'tel:5546988158699'}
 				/>
 

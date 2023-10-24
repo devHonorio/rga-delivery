@@ -39,8 +39,8 @@ export default function Banner() {
 								aling='flex-row-reverse'
 							/>
 						}
-						content='(44) 9 9869204'
-						href={'tel:5544998692094'}
+						content='(44) 9 88158699'
+						href={'tel:5546988158699'}
 					/>
 				</div>
 				<div className={styles.containerSocial}>
