@@ -176,7 +176,7 @@ export default function Modal3({ className, setIsActive }) {
               localStorage.removeItem('carrinho')
               router.push('/')
             }}>
-            <div className='flex gap-4 items-center'>
+            <div className='flex gap-2 items-center'>
               Enviar no whatsapp
               <FaWhatsapp className='h-6 w-6' />
             </div>
