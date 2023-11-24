@@ -4,23 +4,23 @@
 
 html,
 body {
-	background-color: rgba(255, 247, 237, 1);
+  background-color: rgba(255, 247, 237, 1);
 }
 
 * {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-input[type='number']::-webkit-inner-spin-button {
-	-webkit-appearance: none;
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
-input[type='number'] {
-	-moz-appearance: textfield;
-	appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 ::-webkit-scrollbar {
-	width: 0;
+  width: 0;
 }
 ::-webkit-scrollbar-track {
-	width: 0;
+  width: 0;
 }

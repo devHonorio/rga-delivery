@@ -1,5 +1,5 @@
-import CarrinhoC from '@/components/carrinho'
+import CarrinhoC from "@/components/carrinho";
 
 export default function Carrinho() {
-	return <CarrinhoC />
+  return <CarrinhoC />;
 }

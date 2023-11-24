@@ -1,10 +1,10 @@
-import Banner from '@/components/banner'
-import Layout from '@/components/global/Layout'
+import Banner from "@/components/banner";
+import Layout from "@/components/global/Layout";
 
 export default function Home() {
-	return (
-		<Layout>
-			<Banner />
-		</Layout>
-	)
+  return (
+    <Layout>
+      <Banner />
+    </Layout>
+  );
 }

@@ -1,25 +1,25 @@
-import { Map } from '@/components/comum/Icons'
-import tw from 'tailwind-styled-components'
-import Footer from '../Layout/FooterCarrinho'
-import ItensEtp2 from '../ItensEtapa3'
-import { SButton } from '@/components/@ui/Buton'
-import { useRouter } from 'next/router'
-import { useCarrinho } from '@/hooks/useStorage'
-import Bolos from './Bolos'
-import { useMensage } from '@/hooks/useMensage'
-import { FaWhatsapp } from 'react-icons/fa'
+import { Map } from "@/components/comum/Icons";
+import tw from "tailwind-styled-components";
+import Footer from "../Layout/FooterCarrinho";
+import ItensEtp2 from "../ItensEtapa3";
+import { SButton } from "@/components/@ui/Buton";
+import { useRouter } from "next/router";
+import { useCarrinho } from "@/hooks/useStorage";
+import Bolos from "./Bolos";
+import { useMensage } from "@/hooks/useMensage";
+import { FaWhatsapp } from "react-icons/fa";
 
-const Container = tw.div`flex flex-col `
-const Title = tw.p`text-xl font-semibold`
-const ContainerRua = tw.address`flex items-center gap-4  py-5`
-const DivIcon = tw.div`flex justify-center items-center h-10 w-10 bg-orange-200 rounded-xl`
-const Endereco = tw.p`text-lg font-semibold not-italic`
-const ContainerItens = tw.div`divide-y pt-3`
+const Container = tw.div`flex flex-col `;
+const Title = tw.p`text-xl font-semibold`;
+const ContainerRua = tw.address`flex items-center gap-4  py-5`;
+const DivIcon = tw.div`flex justify-center items-center h-10 w-10 bg-orange-200 rounded-xl`;
+const Endereco = tw.p`text-lg font-semibold not-italic`;
+const ContainerItens = tw.div`divide-y pt-3`;
 
 export default function Modal3({ className, setIsActive }) {
-  const { getStorage } = useCarrinho()
+  const { getStorage } = useCarrinho();
 
-  let carrinho = getStorage()
+  let carrinho = getStorage();
 
   function renderItens() {
     if (carrinho) {
@@ -33,8 +33,8 @@ export default function Modal3({ className, setIsActive }) {
             price={e.priceBolo}
             image={e.image}
           />
-        )
-      })
+        );
+      });
       const bolosDeForma = carrinho.bolosDeForma?.map((e) => {
         return (
           <ItensEtp2
@@ -45,8 +45,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
       const docesTradicionais = carrinho.docesTradicionais?.map((e) => {
         return (
           <ItensEtp2
@@ -57,8 +57,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       const docesGourmet = carrinho.docesGourmet?.map((e) => {
         return (
@@ -70,8 +70,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       const docesFinos = carrinho.docesFinos?.map((e) => {
         return (
@@ -83,8 +83,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       const frios = carrinho.frios?.map((e) => {
         return (
@@ -96,8 +96,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       const salgados = carrinho.salgados?.map((e) => {
         return (
@@ -109,8 +109,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       const bebidas = carrinho.bebidas?.map((e) => {
         return (
@@ -122,8 +122,8 @@ export default function Modal3({ className, setIsActive }) {
             quantity={e.quantity}
             priceTotal={e.priceTotal}
           />
-        )
-      })
+        );
+      });
 
       return [
         bolos,
@@ -134,13 +134,13 @@ export default function Modal3({ className, setIsActive }) {
         frios,
         salgados,
         bebidas,
-      ]
+      ];
     }
   }
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const mensage = useMensage()
+  const mensage = useMensage();
 
   return (
     <Container className={className}>
@@ -155,7 +155,7 @@ export default function Modal3({ className, setIsActive }) {
             </DivIcon>
 
             <Endereco>
-              {carrinho.entrega.rua} - {carrinho.entrega.number},{' '}
+              {carrinho.entrega.rua} - {carrinho.entrega.number},{" "}
               {carrinho.entrega.bairro}, {carrinho.entrega.cidade}
             </Endereco>
           </ContainerRua>
@@ -163,26 +163,27 @@ export default function Modal3({ className, setIsActive }) {
       )}
 
       <Footer>
-        <div className='flex justify-end gap-4 py-7'>
-          <SButton onClick={() => setIsActive(2)} className='bg-white'>
+        <div className="flex justify-end gap-4 py-7">
+          <SButton onClick={() => setIsActive(2)} className="bg-white">
             Voltar
           </SButton>
           <SButton
-            $as='a'
+            $as="a"
             href={`https://api.whatsapp.com/send?phone=46988158699&text=${mensage}`}
-            target='_blank'
+            target="_blank"
             onClick={() => {
-              console.log(mensage)
-              localStorage.removeItem('carrinho')
-              router.push('/')
-            }}>
-            <div className='flex gap-2 items-center'>
+              console.log(mensage);
+              localStorage.removeItem("carrinho");
+              router.push("/");
+            }}
+          >
+            <div className="flex gap-2 items-center">
               Enviar no whatsapp
-              <FaWhatsapp className='h-6 w-6' />
+              <FaWhatsapp className="h-6 w-6" />
             </div>
           </SButton>
         </div>
       </Footer>
     </Container>
-  )
+  );
 }
