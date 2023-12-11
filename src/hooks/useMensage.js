@@ -19,7 +19,7 @@ export const useMensage = () => {
     const boloFormato = e.formato.toUpperCase();
     const boloObservacoes = e.observacoesBolo ? e.observacoesBolo : "Nenhuma";
     bolosPrice += +e.priceBolo;
-    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n\n\n`;
+    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n\n`;
   });
 
   let bolosDeForma = "";
@@ -92,49 +92,49 @@ export const useMensage = () => {
 
 ${bolos}${
     bolosDeForma &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       bolosDeForma +
       "*Bolos de forma..........." +
       useFormatToRealBRL(bolosDeFormaPrice) +
       "*\n\n"
   }${
     docesTradicionais &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       docesTradicionais +
       `*${totalDocesTradicionais} doces tradicionais....` +
       useFormatToRealBRL(docesTradicionaisPrice) +
       "*\n\n"
   }${
     docesGourmet &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       docesGourmet +
       `*${totalDocesGourmet} doces gourmet.........` +
       useFormatToRealBRL(docesGourmetPrice) +
       "*\n\n"
   }${
     docesFinos &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       docesFinos +
       `*${totalDocesFinos} doces finos...........` +
       useFormatToRealBRL(docesFinosPrice) +
       "*\n\n"
   }${
     salgados &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       salgados +
       `*${totalSalgados} salgados..............` +
       useFormatToRealBRL(salgadosPrice) +
       "*\n\n"
   }${
     frios &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       frios +
       "*Frios....................." +
       useFormatToRealBRL(friosPrice) +
       "*\n\n"
   }${
     bebidas &&
-    "\n\n\n\n" +
+    "\n\n\n" +
       bebidas +
       "*Bebidas..................." +
       useFormatToRealBRL(bebidasPrice) +
@@ -153,7 +153,7 @@ ${bolos}${
       bebidasPrice +
       taxa
   )}*
-\n\n\n\n\n
+\n\n\n\n
 *${entrega}*  _*${time}*_`;
 
   console.log(message);
