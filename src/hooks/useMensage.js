@@ -19,7 +19,7 @@ export const useMensage = () => {
     const boloFormato = e.formato.toUpperCase();
     const boloObservacoes = e.observacoesBolo ? e.observacoesBolo : "Nenhuma";
     bolosPrice += +e.priceBolo;
-    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n\n`;
+    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n`;
   });
 
   let bolosDeForma = "";
