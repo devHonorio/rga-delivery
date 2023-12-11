@@ -1,4 +1,4 @@
-import { produtos } from "@/data/bolos/recheios";
+import { produtos } from "@/data/produtos/index.js";
 
 import CardBolo from "./CardBolo/index.js.jsx";
 import { SButton } from "@/components/@ui/Buton";

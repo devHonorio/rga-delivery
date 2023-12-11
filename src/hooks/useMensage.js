@@ -5,11 +5,13 @@ export const useMensage = () => {
   const { getStorage } = useCarrinho();
   const carrinho = getStorage();
 
+  const whatsapp = carrinho.whatsapp;
   const name = carrinho.name;
   const date = carrinho.date;
 
-  let bolos = "";
+  let bolos = "\n\n\n";
   let bolosPrice = 0;
+
   carrinho.bolos?.forEach((e) => {
     const boloPeso = e.bento ? "Bento" : e.peso + "kg";
     const boloRecheios = e.recheios.map((e) => " " + e.name);
@@ -17,7 +19,7 @@ export const useMensage = () => {
     const boloFormato = e.formato.toUpperCase();
     const boloObservacoes = e.observacoesBolo ? e.observacoesBolo : "Nenhuma";
     bolosPrice += +e.priceBolo;
-    bolos += `${boloPeso} ${boloRecheios} ${boloPrice} \n${boloFormato} \nObservações: ${boloObservacoes} \n\n\n`;
+    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n\n\n`;
   });
 
   let bolosDeForma = "";
@@ -83,52 +85,64 @@ export const useMensage = () => {
   let taxa = carrinho.entrega ? 5 : 0;
   const time = carrinho.time;
 
-  const message = `*${name} ${date?.split("-").reverse().join("/")}*
+  const message = `${whatsapp}
+  
+*${name} ${date?.split("-").reverse().join("/")}*
 
 
 ${bolos}${
     bolosDeForma &&
-    bolosDeForma +
-      "*Bolos de forma.............." +
+    "\n\n\n\n" +
+      bolosDeForma +
+      "*Bolos de forma..........." +
       useFormatToRealBRL(bolosDeFormaPrice) +
       "*\n\n"
   }${
     docesTradicionais &&
-    docesTradicionais +
-      `*-----${totalDocesTradicionais}-----*\n*Doces tradicionais..............` +
+    "\n\n\n\n" +
+      docesTradicionais +
+      `*${totalDocesTradicionais} doces tradicionais....` +
       useFormatToRealBRL(docesTradicionaisPrice) +
       "*\n\n"
   }${
     docesGourmet &&
-    docesGourmet +
-      `*-----${totalDocesGourmet}-----*\n*Doces gourmet..............` +
+    "\n\n\n\n" +
+      docesGourmet +
+      `*${totalDocesGourmet} doces gourmet.........` +
       useFormatToRealBRL(docesGourmetPrice) +
       "*\n\n"
   }${
     docesFinos &&
-    docesFinos +
-      `*-----${totalDocesFinos}-----*\n*Doces finos..............` +
+    "\n\n\n\n" +
+      docesFinos +
+      `*${totalDocesFinos} doces finos...........` +
       useFormatToRealBRL(docesFinosPrice) +
       "*\n\n"
   }${
     salgados &&
-    salgados +
-      `*-----${totalSalgados}-----*\n*Salgados..............` +
+    "\n\n\n\n" +
+      salgados +
+      `*${totalSalgados} salgados..............` +
       useFormatToRealBRL(salgadosPrice) +
       "*\n\n"
   }${
     frios &&
-    frios + "*Frios.............." + useFormatToRealBRL(friosPrice) + "*\n\n"
+    "\n\n\n\n" +
+      frios +
+      "*Frios....................." +
+      useFormatToRealBRL(friosPrice) +
+      "*\n\n"
   }${
     bebidas &&
-    bebidas +
-      "*Bebidas.............." +
+    "\n\n\n\n" +
+      bebidas +
+      "*Bebidas..................." +
       useFormatToRealBRL(bebidasPrice) +
       "*\n\n"
-  }${carrinho.entrega ? "*Taxa de entrega..............R$ 5,00*\n\n" : ""}${
+  }${carrinho.entrega ? "*Taxa de entrega...........R$ 5,00*\n\n" : ""}${
     carrinho.observacoes ? "*" + carrinho.observacoes + "*\n\n" : ""
   }
-*Total...............${useFormatToRealBRL(
+\n*Total.....................${useFormatToRealBRL(
     bolosPrice +
       bolosDeFormaPrice +
       docesTradicionaisPrice +
@@ -137,9 +151,9 @@ ${bolos}${
       salgadosPrice +
       friosPrice +
       bebidasPrice +
-      taxa,
+      taxa
   )}*
-
+\n\n\n\n\n
 *${entrega}*  _*${time}*_`;
 
   console.log(message);

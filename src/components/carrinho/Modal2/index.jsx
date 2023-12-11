@@ -10,6 +10,7 @@ import { TextArea } from "./TextArea";
 
 export default function Modal2({ className, setIsActive }) {
   const [entrega, setEntrega] = useState(false);
+  const refWhatsapp = useRef();
   const refName = useRef();
   const refData = useRef();
   const reftime = useRef();
@@ -38,6 +39,7 @@ export default function Modal2({ className, setIsActive }) {
 
     setStorage({
       ...getStorage(),
+      whatsapp: refWhatsapp.current.value,
       name: refName.current.value,
       date: refData.current.value,
       time: reftime.current.value,
@@ -49,6 +51,13 @@ export default function Modal2({ className, setIsActive }) {
   };
   return (
     <SForm className={`${className}`} onSubmit={enviar}>
+      <InputCarrinho
+        label={"Whatsapp:"}
+        ref={refWhatsapp}
+        type="tel"
+        required
+      />
+
       <InputCarrinho label={"Nome completo:"} ref={refName} />
 
       <div className="flex flex-col gap-5 md:flex-row">

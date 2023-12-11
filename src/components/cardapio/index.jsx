@@ -1,6 +1,6 @@
 import { Bolo } from "../comum/Icons";
 import MiniButtonIcon from "../comum/MiniButtonIcon";
-import { produtos } from "../../data/bolos/recheios";
+import { produtos } from "../../data/produtos";
 import { PiDropBold, PiHamburgerLight } from "react-icons/pi";
 import { LuCupSoda } from "react-icons/lu";
 import { RiCake3Line } from "react-icons/ri";
