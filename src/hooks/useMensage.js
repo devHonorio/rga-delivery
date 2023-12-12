@@ -9,7 +9,7 @@ export const useMensage = () => {
   const name = carrinho.name;
   const date = carrinho.date;
 
-  let bolos = "\n\n\n";
+  let bolos = "";
   let bolosPrice = 0;
 
   carrinho.bolos?.forEach((e) => {
