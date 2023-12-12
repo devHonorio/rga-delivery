@@ -19,7 +19,7 @@ export const useMensage = () => {
     const boloFormato = e.formato.toUpperCase();
     const boloObservacoes = e.observacoesBolo ? e.observacoesBolo : "Nenhuma";
     bolosPrice += +e.priceBolo;
-    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n`;
+    bolos += `${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n`;
   });
 
   let bolosDeForma = "";
@@ -88,8 +88,6 @@ export const useMensage = () => {
   const message = `${whatsapp}
   
 *${name} ${date?.split("-").reverse().join("/")}*
-
-
 ${bolos}${
     bolosDeForma &&
     "\n\n\n" +
