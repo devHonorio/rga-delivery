@@ -152,8 +152,6 @@ ${bolos}${
       taxa
   )}*
 \n\n\n\n
-*100 unidadades..R$ 100,00*
-*Entrega.........R$ 5,00
 *${entrega}*  _*${time}*_`;
 
   console.log(message);
