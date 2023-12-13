@@ -19,7 +19,7 @@ export const useMensage = () => {
     const boloFormato = e.formato.toUpperCase();
     const boloObservacoes = e.observacoesBolo ? e.observacoesBolo : "Nenhuma";
     bolosPrice += +e.priceBolo;
-    bolos += `\n\n\n${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*+/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n`;
+    bolos += `\n\n\n${boloPeso} ${boloRecheios} \n\n${boloFormato} ............*. +/-${boloPrice}* \nObservações: ${boloObservacoes} \n\n`;
   });
 
   let bolosDeForma = "";
@@ -92,55 +92,55 @@ ${bolos}${
     bolosDeForma &&
     "\n\n\n" +
       bolosDeForma +
-      "*Bolos de forma..........." +
+      "*Bolos de forma.." +
       useFormatToRealBRL(bolosDeFormaPrice) +
       "*\n\n"
   }${
     docesTradicionais &&
     "\n\n\n" +
       docesTradicionais +
-      `*${totalDocesTradicionais} doces tradicionais....` +
+      `*${totalDocesTradicionais} unidadades..` +
       useFormatToRealBRL(docesTradicionaisPrice) +
       "*\n\n"
   }${
     docesGourmet &&
     "\n\n\n" +
       docesGourmet +
-      `*${totalDocesGourmet} doces gourmet.........` +
+      `*${totalDocesGourmet} unidadades..` +
       useFormatToRealBRL(docesGourmetPrice) +
       "*\n\n"
   }${
     docesFinos &&
     "\n\n\n" +
       docesFinos +
-      `*${totalDocesFinos} doces finos...........` +
+      `*${totalDocesFinos} unidadades..` +
       useFormatToRealBRL(docesFinosPrice) +
       "*\n\n"
   }${
     salgados &&
     "\n\n\n" +
       salgados +
-      `*${totalSalgados} salgados..............` +
+      `*${totalSalgados} unidadades..` +
       useFormatToRealBRL(salgadosPrice) +
       "*\n\n"
   }${
     frios &&
     "\n\n\n" +
       frios +
-      "*Frios....................." +
+      "*Frios..........." +
       useFormatToRealBRL(friosPrice) +
       "*\n\n"
   }${
     bebidas &&
     "\n\n\n" +
       bebidas +
-      "*Bebidas..................." +
+      "*Bebidas........." +
       useFormatToRealBRL(bebidasPrice) +
       "*\n\n"
-  }${carrinho.entrega ? "*Taxa de entrega...........R$ 5,00*\n\n" : ""}${
+  }${carrinho.entrega ? "*Entrega.........R$ 5,00*\n\n" : ""}${
     carrinho.observacoes ? "*" + carrinho.observacoes + "*\n\n" : ""
   }
-\n*Total.....................${useFormatToRealBRL(
+\n*Total...........${useFormatToRealBRL(
     bolosPrice +
       bolosDeFormaPrice +
       docesTradicionaisPrice +
@@ -152,6 +152,8 @@ ${bolos}${
       taxa
   )}*
 \n\n\n\n
+*100 unidadades..R$ 100,00*
+*Entrega.........R$ 5,00
 *${entrega}*  _*${time}*_`;
 
   console.log(message);
