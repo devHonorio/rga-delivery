@@ -406,13 +406,6 @@ export const produtos = {
       category: "salgados",
     },
     {
-      id: "espetinho",
-      title: "Espetinho de frango",
-      price: 1,
-      image: "/cardapio/salgados/espetinho.jpeg",
-      category: "salgados",
-    },
-    {
       id: "bolinha-de-carne-com-queijo",
       title: "Bolinha de carne com queijo",
       price: 0.65,
