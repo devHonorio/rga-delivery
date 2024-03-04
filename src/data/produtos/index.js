@@ -7,7 +7,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/abacaxi.jpg",
       bento: false,
-      pesado: false
+      pesado: false,
     },
     {
       id: "abacaxi-com-quatro-leite",
@@ -16,7 +16,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/abacaxi-com-quatro-leite.jpg",
       bento: false,
-      pesado: false
+      pesado: false,
     },
     {
       id: "abacaxi-com-leite-ninho",
@@ -25,7 +25,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/abacaxi-com-leite-ninho.jpg",
       bento: false,
-      pesado: false
+      pesado: false,
     },
     {
       id: "amendoim",
@@ -34,7 +34,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/amendoim.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "baunilha",
@@ -43,7 +43,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/baunilha.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "beijinho",
@@ -52,7 +52,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/beijinho.png",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "brigadeiro",
@@ -61,7 +61,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/brigadeiro.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "doce-de-leite",
@@ -70,7 +70,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/doce-de-leite.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "pêssego",
@@ -79,7 +79,7 @@ export const produtos = {
       price: 30,
       image: "/cardapio/bolos/recheios/pessego.jpg",
       bento: false,
-      pesado: false
+      pesado: false,
     },
     {
       id: "alpino",
@@ -88,7 +88,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/alpino.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "avela",
@@ -97,7 +97,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/avela.png",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "baba-de-moca",
@@ -106,7 +106,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/baba-de-moca.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "leite-ninho",
@@ -115,7 +115,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/leite-ninho.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "nozes",
@@ -124,7 +124,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/nozes.jpg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "prestigio",
@@ -133,7 +133,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/prestigio.png",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "quatro-leite",
@@ -142,7 +142,7 @@ export const produtos = {
       price: 38,
       image: "/cardapio/bolos/recheios/quatro-leite.png",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "bolo-da-casa",
@@ -151,7 +151,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/bolo-da-casa.jpg",
       bento: false,
-      pesado: true
+      pesado: true,
     },
     {
       id: "marta-rocha",
@@ -160,7 +160,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/marta-rocha.png",
       bento: false,
-      pesado: true
+      pesado: true,
     },
     {
       id: "morango",
@@ -169,7 +169,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/morango.png",
       bento: false,
-      pesado: true
+      pesado: true,
     },
     {
       id: "morango-com-quatro-leite",
@@ -178,7 +178,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/morango-quatro-leite.jpg",
       bento: false,
-      pesado: true
+      pesado: true,
     },
     {
       id: "morango-com-leite-ninho",
@@ -187,7 +187,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/morango-leite-ninho.jpg",
       bento: false,
-      pesado: true
+      pesado: true,
     },
     {
       id: "ouro-branco",
@@ -196,7 +196,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/ouro-branco.png",
       bento: true,
-      pesado: false
+      pesado: false,
     },
     {
       id: "sonho-de-valsa",
@@ -205,7 +205,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/sonho-de-valsa.png",
       bento: true,
-      pesado: true
+      pesado: true,
     },
     {
       id: "sencacao-de-maracuja",
@@ -214,7 +214,7 @@ export const produtos = {
       price: 42,
       image: "/cardapio/bolos/recheios/sensacao-de-maracuja.jpeg",
       bento: true,
-      pesado: false
+      pesado: false,
     },
   ],
   bolosDeForma: [
@@ -224,7 +224,7 @@ export const produtos = {
       price: 45,
       image: "/cardapio/bolos/bolos-de-forma/nega-maluca.jpeg",
       category: "bolosDeForma",
-      min: 1
+      min: 1,
     },
     {
       id: "toalha-felpuda",
@@ -232,7 +232,7 @@ export const produtos = {
       price: 45,
       image: "/cardapio/bolos/bolos-de-forma/toalha-felpuda.png",
       category: "bolosDeForma",
-      min: 1
+      min: 1,
     },
     {
       id: "bolo-de-cenoura",
@@ -240,7 +240,7 @@ export const produtos = {
       price: 45,
       image: "/cardapio/bolos/bolos-de-forma/bolo-de-cenoura.jpeg",
       category: "bolosDeForma",
-      min: 1
+      min: 1,
     },
     {
       id: "nega-maluca-recheada",
@@ -248,7 +248,7 @@ export const produtos = {
       price: 55,
       image: "/cardapio/bolos/bolos-de-forma/nega-maluca-recheada.jpeg",
       category: "bolosDeForma",
-      min: 1
+      min: 1,
     },
   ],
   doces: [
@@ -258,7 +258,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/doces-mistos.jpeg",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "brigadeiro",
@@ -266,7 +266,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/brigadeiro.png",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "beijinho",
@@ -274,7 +274,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/beijinho.png",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "coco-queimado",
@@ -282,7 +282,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/coco-queimado.png",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "leite-ninho",
@@ -290,7 +290,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/ninho.png",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "dois-amores",
@@ -298,7 +298,7 @@ export const produtos = {
       price: 0.75,
       image: "/cardapio/doces/tradicionais/dois-amores.png",
       category: "docesTradicionais",
-      min: 10
+      min: 10,
     },
     {
       id: "doces-gourmet-misto",
@@ -306,7 +306,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/doces-gourmet-mistos.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "leite-ninho-com-nutella",
@@ -314,7 +314,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/ninho-com-nutella.png",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "olho-de-sogra",
@@ -322,7 +322,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/olho-de-sogra.png",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "brigadeiro-de-cafe",
@@ -330,7 +330,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/brigadeiro-de-cafe.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "brigadeiro-de-confete",
@@ -338,7 +338,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/brigadeiro-confete.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "tortinha-de-morango",
@@ -346,7 +346,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/tortinha-de-morango.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "tortinha-de-maracuja",
@@ -354,7 +354,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/tortinha-de-maracuja.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "brigadeiro-branco-com-micanga-azul",
@@ -362,7 +362,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/brigadeiro-micanga-azul.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "brigadeiro-branco-com-micanga-rosa",
@@ -370,7 +370,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/brigadeiro-micanga-rosa.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
     {
       id: "brigadeiro-charge-com-doce-de-leite",
@@ -378,7 +378,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/doces/gourmet/brigadeiro-charge.jpeg",
       category: "docesGourmet",
-      min:10
+      min: 10,
     },
 
     {
@@ -387,7 +387,7 @@ export const produtos = {
       price: 1.5,
       image: "/cardapio/doces/finos/bombom-de-uva.jpeg",
       category: "docesFinos",
-      min: 10
+      min: 10,
     },
     {
       id: "camafeu",
@@ -395,7 +395,7 @@ export const produtos = {
       price: 1.5,
       image: "/cardapio/doces/finos/camafeu.jpeg",
       category: "docesFinos",
-      min: 10
+      min: 10,
     },
     {
       id: "rafaello",
@@ -403,7 +403,7 @@ export const produtos = {
       price: 1.5,
       image: "/cardapio/doces/finos/rafaello.jpeg",
       category: "docesFinos",
-      min: 10
+      min: 10,
     },
     {
       id: "bombom-de-morango",
@@ -411,7 +411,7 @@ export const produtos = {
       price: 2,
       image: "/cardapio/doces/finos/bombom-de-morango.jpeg",
       category: "docesFinos",
-      min: 10
+      min: 10,
     },
     {
       id: "bombom-de-damasco",
@@ -419,129 +419,129 @@ export const produtos = {
       price: 2,
       image: "/cardapio/doces/finos/bobom-de-damasco.jpeg",
       category: "docesFinos",
-      min: 10
+      min: 10,
     },
   ],
   salgados: [
     {
       id: "salgados-mito",
       title: "Salgados misto",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/salgados-mistos.jpeg",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "bolinha-de-carne-com-queijo",
       title: "Bolinha de carne com queijo",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/bolinha-de-carne-com-queijo.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "coxinha-de-frango",
       title: "Coxinha de frango",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/coxinha-de-frango.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "croquete",
       title: "Croquete",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/croquete.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "enrroladinho-de-salsicha",
       title: "Enrroladinho de salsicha",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/enrroladinho-de-salsicha.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "mini-churros",
       title: "Mini churros",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/mini-churros.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "pastel-de-carne",
       title: "Pastel de carne",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/pastel-de-carne.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "pastel-de-frango",
       title: "Pastel de frango",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/pastel-de-frango-com-catupiry.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "perola-de-queijo",
       title: "Perola de queijo",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/perola-de-queijo.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "risoles-de-carne",
       title: "Risoles de carne",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/risoles-de-carne.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "risoles-de-frango",
       title: "Risoles de frango",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/risoles-de-frango.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "risoles-de-palmito",
       title: "Risoles de palmito",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/risoles-de-palmito.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "risoles-de-pizza",
       title: "Risoles de pizza",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/risoles-de-pizza.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "travesseirinho-de-calabresa",
       title: "Travesseirinho de calabresa",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/travesseirinho-de-calabresa.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
     {
       id: "trouxinha-de-ricota",
       title: "Trouxinha de ricota",
-      price: 0.70,
+      price: 0.7,
       image: "/cardapio/salgados/trouxinha-de-ricota.png",
       category: "salgados",
-      min: 10
+      min: 10,
     },
   ],
   frios: [
@@ -551,7 +551,7 @@ export const produtos = {
       price: 0.85,
       image: "/cardapio/frios/canudo-de-salpicao.png",
       category: "frios",
-      min: 20
+      min: 20,
     },
     {
       id: "sanduiche-normal",
@@ -559,7 +559,7 @@ export const produtos = {
       price: 1,
       image: "/cardapio/frios/sanduiche-normal.jpeg",
       category: "frios",
-      min: 20
+      min: 20,
     },
     {
       id: "sanduiche-de-salpicao",
@@ -567,15 +567,15 @@ export const produtos = {
       price: 1,
       image: "/cardapio/frios/sanduiche-de-salpicao.jpeg",
       category: "frios",
-      min: 20
+      min: 20,
     },
     {
-      id: "sanduiche-de-misto",
-      title: "Sanduíches de mistos",
+      id: "sanduiche-misto",
+      title: "Sanduíches mistos",
       price: 1,
-      image: "/cardapio/frios/sanduiche-de-salpicao.jpeg",
+      image: "/cardapio/frios/sanduiches-mistos.jpeg",
       category: "frios",
-      min: 20
+      min: 20,
     },
   ],
   bebidas: [
@@ -585,7 +585,7 @@ export const produtos = {
       price: 12,
       image: "/cardapio/bebidas/coca-2l.jpg",
       category: "bebidas",
-      min: 1
+      min: 1,
     },
     {
       id: "sprite-2l",
@@ -593,7 +593,7 @@ export const produtos = {
       price: 9,
       image: "/cardapio/bebidas/sprite-2l.jpg",
       category: "bebidas",
-      min: 1
+      min: 1,
     },
     {
       id: "kuat-2l",
@@ -601,7 +601,7 @@ export const produtos = {
       price: 9,
       image: "/cardapio/bebidas/kuat-2l.png",
       category: "bebidas",
-      min: 1
+      min: 1,
     },
     {
       id: "agua-500ml",
@@ -609,7 +609,7 @@ export const produtos = {
       price: 2,
       image: "/cardapio/bebidas/agua-250ml.jpg",
       category: "bebidas",
-      min: 1
+      min: 1,
     },
     {
       id: "coca-lata-350ml",
@@ -617,7 +617,7 @@ export const produtos = {
       price: 3.5,
       image: "/cardapio/bebidas/coca-lata-350ml.jpg",
       category: "bebidas",
-      min: 1
+      min: 1,
     },
   ],
 };

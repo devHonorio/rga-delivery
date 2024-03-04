@@ -74,6 +74,7 @@ export default function CardapioIndex() {
               image={r.image}
               value={r}
               category={r.category}
+              minInit={r.min}
             />
           );
         })}
@@ -89,7 +90,7 @@ export default function CardapioIndex() {
               image={r.image}
               value={r}
               category={r.category}
-              minInit={15}
+              minInit={r.min}
             />
           );
         })}
@@ -105,6 +106,7 @@ export default function CardapioIndex() {
               image={r.image}
               value={r}
               category={r.category}
+              minInit={r.min}
             />
           );
         })}
@@ -120,8 +122,8 @@ export default function CardapioIndex() {
               image={r.image}
               value={r}
               category={r.category}
+              minInit={r.min}
               step={1}
-              minInit={1}
             />
           );
         })}
@@ -139,8 +141,8 @@ export default function CardapioIndex() {
               image={r.image}
               value={r}
               category={r.category}
+              minInit={r.min}
               step={1}
-              minInit={1}
             />
           );
         })}
