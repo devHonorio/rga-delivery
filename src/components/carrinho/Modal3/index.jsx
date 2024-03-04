@@ -145,6 +145,10 @@ export default function Modal3({ className, setIsActive }) {
   return (
     <Container className={className}>
       <Title>Itens do seu pedido:</Title>
+      <p>
+        Atenção o valor do frete final ainda pode estar sendo alterado conforme
+        o pedido e destino
+      </p>
       <ContainerItens>{renderItens()}</ContainerItens>
       {carrinho.entrega && (
         <>
