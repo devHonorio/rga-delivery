@@ -13,10 +13,10 @@ function temMorango(recheios) {
 }
 
 export const usePeso = (peso) => {
-  if (peso == 0.6 || (peso >= 1.5 && peso <= 6)) {
+  if (peso == 0.6 || (peso >= 1 && peso <= 6)) {
     return true;
   } else {
-    toast.warn("Peso deve ser 600g ou estar entre 1,5kg e 6kg.");
+    toast.warn("Peso deve ser 600g ou estar entre 1kg e 6kg.");
     return false;
   }
 };
