@@ -23,11 +23,12 @@ export default function Recheios({ className, nav }) {
       return produtos.recheios.filter((e) => {
         return e.bento;
       });
-    } else if (state.peso < 1.8 && state.peso >= 1.5) {
+    } else if (state.peso === 1) {
       return produtos.recheios.filter((e) => {
         return !e.pesado;
       });
-    } else {
+    }
+    else {
       return produtos.recheios;
     }
   };
