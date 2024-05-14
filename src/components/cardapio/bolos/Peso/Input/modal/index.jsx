@@ -8,6 +8,9 @@ export default function Modal({ active, setActive }) {
         <ItemModal setActive={setActive} peso={0.6}>
           Bento cake 600g
         </ItemModal>
+        <ItemModal setActive={setActive} peso={1}>
+          1kg
+        </ItemModal>
         <ItemModal setActive={setActive} peso={1.5}>
           1,5kg
         </ItemModal>
