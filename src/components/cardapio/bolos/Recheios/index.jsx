@@ -25,7 +25,7 @@ export default function Recheios({ className, nav }) {
       });
     } else if (state.peso < 1.8 && state.peso >= 1.5) {
       return produtos.recheios.filter((e) => {
-        return e.min == 1.5;
+        return !e.pesado;
       });
     } else {
       return produtos.recheios;
