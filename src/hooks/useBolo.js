@@ -4,12 +4,10 @@ import { useContextState } from "@/components/contexts/ContextStatesBolo";
 import { toast } from "react-toastify";
 
 function temMorango(recheios) {
-  const recheiosStr = recheios?.map((e) => e.id);
-  const tem = recheiosStr?.includes(
-    "morango" || "marta-rocha" || "bolo-da-casa",
-  );
+  const recheioPesado = recheios?.find((e) => e.pesado === true);
+  
 
-  return tem;
+  return recheioPesado === 'undefined' ? false : true;
 }
 
 export const usePeso = (peso) => {
@@ -30,9 +28,7 @@ export const useRecheios = () => {
 
     function isMorango() {
       if (
-        recheio.id === "morango" ||
-        recheio.id === "marta-rocha" ||
-        recheio.id === "bolo-da-casa"
+        recheio.pesado
       ) {
         return true;
       }
