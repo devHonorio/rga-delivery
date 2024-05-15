@@ -21,6 +21,8 @@ export default function Modal3({ className, setIsActive }) {
 
   let carrinho = getStorage();
 
+ 
+
   function renderItens() {
     if (carrinho) {
       const bolos = carrinho.bolos?.map((e) => {
@@ -140,11 +142,15 @@ export default function Modal3({ className, setIsActive }) {
 
   const router = useRouter();
 
-  const mensage = useMensage();
+  const {message, URLMessage } = useMensage();
+
+  
 
   return (
     <Container className={className}>
       <Title>Itens do seu pedido:</Title>
+
+    
       <p>
         Atenção o valor do frete final ainda pode estar sendo alterado conforme
         o pedido e destino
@@ -173,10 +179,11 @@ export default function Modal3({ className, setIsActive }) {
           </SButton>
           <SButton
             $as="a"
-            href={`https://api.whatsapp.com/send?phone=46988158699&text=${mensage}`}
+            href={`https://api.whatsapp.com/send?phone=46988158699&text=${URLMessage}`}
             target="_blank"
-            onClick={() => {
-              console.log(mensage);
+            onClick={async () => {
+              console.log(message);
+              await navigator.clipboard.writeText(message)
               localStorage.removeItem("carrinho");
               router.push("/");
             }}
