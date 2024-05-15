@@ -1,7 +1,7 @@
 import { useFormatToRealBRL } from "./useFormatRealBRL";
 import { useCarrinho } from "./useStorage";
 
-export const useMensage = () => {
+export const useMensage =  () => {
   const { getStorage } = useCarrinho();
   const carrinho = getStorage();
 
@@ -155,6 +155,7 @@ ${bolos}${
 *${entrega}*  _*${time}*_`;
 
   console.log(message);
-  return encodeURI(message);
+  
+  return {URLMessage :encodeURI(message), message};
   //
 };
