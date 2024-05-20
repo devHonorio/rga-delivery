@@ -340,14 +340,14 @@ export const produtos = {
       category: "docesGourmet",
       min: 10,
     },
-    // {
-    //   id: "tortinha-de-morango",
-    //   title: "Tortinha de morango",
-    //   price: 0.85,
-    //   image: "/cardapio/doces/gourmet/tortinha-de-morango.jpeg",
-    //   category: "docesGourmet",
-    //   min: 10,
-    // },
+     {
+       id: "tortinha-de-morango",
+       title: "Tortinha de morango",
+       price: 0.85,
+       image: "/cardapio/doces/gourmet/tortinha-de-morango.jpeg",
+       category: "docesGourmet",
+       min: 10,
+    },
     {
       id: "tortinha-de-maracuja",
       title: "Tortinha de maracujá",
